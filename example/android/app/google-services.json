@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "954948251469",
+    "project_id": "fir-design-system-83889",
+    "storage_bucket": "fir-design-system-83889.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954948251469:android:6c9fd7aa4473a1cfe6d104",
+        "android_client_info": {
+          "package_name": "com.example.demo_design_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoxJBTbjLZiOkJPJRIS-cQfJwQzkRazrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
