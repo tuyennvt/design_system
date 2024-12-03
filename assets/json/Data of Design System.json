@@ -1,0 +1,1472 @@
+{
+  "Theme Collection 1.Avocado":{
+    "Theme Collection 1": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#f7fcf9"
+        },
+        "25": {
+          "type": "color",
+          "value": "#f4faf3"
+        },
+        "50": {
+          "type": "color",
+          "value": "#e8f5e7"
+        },
+        "75": {
+          "type": "color",
+          "value": "#ddf0db"
+        },
+        "100": {
+          "type": "color",
+          "value": "#d1eccf"
+        },
+        "150": {
+          "type": "color",
+          "value": "#bae2b6"
+        },
+        "200": {
+          "type": "color",
+          "value": "#a3d89e"
+        },
+        "300": {
+          "type": "color",
+          "value": "#75c56e"
+        },
+        "400": {
+          "type": "color",
+          "value": "#47b13d"
+        },
+        "500": {
+          "type": "color",
+          "value": "#199e0d"
+        },
+        "600": {
+          "type": "color",
+          "value": "#147e0a"
+        },
+        "700": {
+          "type": "color",
+          "value": "#0f5f08"
+        },
+        "800": {
+          "type": "color",
+          "value": "#0a3f05"
+        },
+        "825": {
+          "type": "color",
+          "value": "#093705"
+        },
+        "850": {
+          "type": "color",
+          "value": "#082f04"
+        },
+        "875": {
+          "type": "color",
+          "value": "#062803"
+        },
+        "900": {
+          "type": "color",
+          "value": "#052003"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(25, 158, 13, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(25, 158, 13, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 1.Solider":{
+    "Theme Collection 1": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#f9fcfb"
+        },
+        "25": {
+          "type": "color",
+          "value": "#f5faf8"
+        },
+        "50": {
+          "type": "color",
+          "value": "#eaf4f1"
+        },
+        "75": {
+          "type": "color",
+          "value": "#e0efea"
+        },
+        "100": {
+          "type": "color",
+          "value": "#d6e9e2"
+        },
+        "150": {
+          "type": "color",
+          "value": "#c1dfd4"
+        },
+        "200": {
+          "type": "color",
+          "value": "#acd4c6"
+        },
+        "300": {
+          "type": "color",
+          "value": "#83bea9"
+        },
+        "400": {
+          "type": "color",
+          "value": "#59a98d"
+        },
+        "500": {
+          "type": "color",
+          "value": "#309370"
+        },
+        "600": {
+          "type": "color",
+          "value": "#26765a"
+        },
+        "700": {
+          "type": "color",
+          "value": "#1d5843"
+        },
+        "800": {
+          "type": "color",
+          "value": "#133b2d"
+        },
+        "825": {
+          "type": "color",
+          "value": "#113327"
+        },
+        "850": {
+          "type": "color",
+          "value": "#0e2c22"
+        },
+        "875": {
+          "type": "color",
+          "value": "#0c251c"
+        },
+        "900": {
+          "type": "color",
+          "value": "#0a1d16"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(48, 147, 112, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(48, 147, 112, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 1.Java":{
+    "Theme Collection 1": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#f7fcfd"
+        },
+        "25": {
+          "type": "color",
+          "value": "#f3fbfb"
+        },
+        "50": {
+          "type": "color",
+          "value": "#e7f7f7"
+        },
+        "75": {
+          "type": "color",
+          "value": "#dbf3f3"
+        },
+        "100": {
+          "type": "color",
+          "value": "#cfeeef"
+        },
+        "150": {
+          "type": "color",
+          "value": "#b6e6e7"
+        },
+        "200": {
+          "type": "color",
+          "value": "#9ededf"
+        },
+        "300": {
+          "type": "color",
+          "value": "#6ecdcf"
+        },
+        "400": {
+          "type": "color",
+          "value": "#3dbdbf"
+        },
+        "500": {
+          "type": "color",
+          "value": "#0dacaf"
+        },
+        "600": {
+          "type": "color",
+          "value": "#0a8a8c"
+        },
+        "700": {
+          "type": "color",
+          "value": "#086769"
+        },
+        "800": {
+          "type": "color",
+          "value": "#054546"
+        },
+        "825": {
+          "type": "color",
+          "value": "#053c3d"
+        },
+        "850": {
+          "type": "color",
+          "value": "#043435"
+        },
+        "875": {
+          "type": "color",
+          "value": "#032b2c"
+        },
+        "900": {
+          "type": "color",
+          "value": "#032223"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(13, 172, 175, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(13, 172, 175, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Color Collections.Shade of Green":{
+    "Theme Color Collections": {
+      "Primary": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.900}"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.500 Opacity 15}"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.500 Opacity 70}"
+        }
+      },
+      "Secondary": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.900}"
+        },
+        "500 70%": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.500}"
+        },
+        "500 15%": {
+          "type": "color",
+          "value": "{Theme Collection 1.Primary.500}"
+        }
+      }
+    },
+    "BG": {
+      "type": "color",
+      "value": "rgba(255, 255, 255, 0.6000)"
+    }
+  },
+  "Theme Color Collections.Blue Purple":{
+    "Theme Color Collections": {
+      "Primary": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.900}"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.500 Opacity 15}"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.500 Opacity 70}"
+        }
+      },
+      "Secondary": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.900}"
+        },
+        "500 70%": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.500}"
+        },
+        "500 15%": {
+          "type": "color",
+          "value": "{Theme Collection 2.Primary.500}"
+        }
+      }
+    },
+    "BG": {
+      "type": "color",
+      "value": "rgba(255, 255, 255, 0.6000)"
+    }
+  },
+  "Theme Color Collections.Light Warm":{
+    "Theme Color Collections": {
+      "Primary": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.900}"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.500 Opacity 15}"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.500 Opacity 70}"
+        }
+      },
+      "Secondary": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.900}"
+        },
+        "500 70%": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.500}"
+        },
+        "500 15%": {
+          "type": "color",
+          "value": "{Theme Collection 3.Primary.500}"
+        }
+      }
+    },
+    "BG": {
+      "type": "color",
+      "value": "rgba(255, 255, 255, 0.6000)"
+    }
+  },
+  "Theme Collection 2.Blue":{
+    "Theme Collection 2": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#ffffff"
+        },
+        "25": {
+          "type": "color",
+          "value": "#f2f8fe"
+        },
+        "50": {
+          "type": "color",
+          "value": "#e5f1fe"
+        },
+        "75": {
+          "type": "color",
+          "value": "#d9eafd"
+        },
+        "100": {
+          "type": "color",
+          "value": "#cce2fd"
+        },
+        "150": {
+          "type": "color",
+          "value": "#b3d4fc"
+        },
+        "200": {
+          "type": "color",
+          "value": "#99c6fb"
+        },
+        "300": {
+          "type": "color",
+          "value": "#66a9f8"
+        },
+        "400": {
+          "type": "color",
+          "value": "#338df6"
+        },
+        "500": {
+          "type": "color",
+          "value": "#0070f4"
+        },
+        "600": {
+          "type": "color",
+          "value": "#005ac3"
+        },
+        "700": {
+          "type": "color",
+          "value": "#004392"
+        },
+        "800": {
+          "type": "color",
+          "value": "#002d62"
+        },
+        "825": {
+          "type": "color",
+          "value": "#002755"
+        },
+        "850": {
+          "type": "color",
+          "value": "#002249"
+        },
+        "875": {
+          "type": "color",
+          "value": "#001c3d"
+        },
+        "900": {
+          "type": "color",
+          "value": "#001631"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(0, 112, 244, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(0, 112, 244, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 2.Dark Blue":{
+    "Theme Collection 2": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#fcfafe"
+        },
+        "25": {
+          "type": "color",
+          "value": "#f6f7fa"
+        },
+        "50": {
+          "type": "color",
+          "value": "#eceff4"
+        },
+        "75": {
+          "type": "color",
+          "value": "#e3e7ef"
+        },
+        "100": {
+          "type": "color",
+          "value": "#d9dfea"
+        },
+        "150": {
+          "type": "color",
+          "value": "#c6cfdf"
+        },
+        "200": {
+          "type": "color",
+          "value": "#b3bfd5"
+        },
+        "300": {
+          "type": "color",
+          "value": "#8d9ebf"
+        },
+        "400": {
+          "type": "color",
+          "value": "#677eaa"
+        },
+        "500": {
+          "type": "color",
+          "value": "#415e95"
+        },
+        "600": {
+          "type": "color",
+          "value": "#344b77"
+        },
+        "700": {
+          "type": "color",
+          "value": "#273859"
+        },
+        "800": {
+          "type": "color",
+          "value": "#1a263c"
+        },
+        "825": {
+          "type": "color",
+          "value": "#172134"
+        },
+        "850": {
+          "type": "color",
+          "value": "#141c2d"
+        },
+        "875": {
+          "type": "color",
+          "value": "#101825"
+        },
+        "900": {
+          "type": "color",
+          "value": "#0d131e"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(65, 94, 149, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(65, 94, 149, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 2.Grape":{
+    "Theme Collection 2": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#fbf9fe"
+        },
+        "25": {
+          "type": "color",
+          "value": "#f9f6fd"
+        },
+        "50": {
+          "type": "color",
+          "value": "#f3ecfb"
+        },
+        "75": {
+          "type": "color",
+          "value": "#ece3f9"
+        },
+        "100": {
+          "type": "color",
+          "value": "#e6d9f7"
+        },
+        "150": {
+          "type": "color",
+          "value": "#dac6f3"
+        },
+        "200": {
+          "type": "color",
+          "value": "#cdb3ef"
+        },
+        "300": {
+          "type": "color",
+          "value": "#b48de7"
+        },
+        "400": {
+          "type": "color",
+          "value": "#9b67df"
+        },
+        "500": {
+          "type": "color",
+          "value": "#8241d7"
+        },
+        "600": {
+          "type": "color",
+          "value": "#6834ac"
+        },
+        "700": {
+          "type": "color",
+          "value": "#4e2781"
+        },
+        "800": {
+          "type": "color",
+          "value": "#341a56"
+        },
+        "825": {
+          "type": "color",
+          "value": "#2e174b"
+        },
+        "850": {
+          "type": "color",
+          "value": "#271441"
+        },
+        "875": {
+          "type": "color",
+          "value": "#211036"
+        },
+        "900": {
+          "type": "color",
+          "value": "#1a0d2b"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(130, 65, 215, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(130, 65, 215, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 3.Magenta":{
+    "Theme Collection 3": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#fef9fa"
+        },
+        "25": {
+          "type": "color",
+          "value": "#fef5fb"
+        },
+        "50": {
+          "type": "color",
+          "value": "#fdeaf8"
+        },
+        "75": {
+          "type": "color",
+          "value": "#fce0f4"
+        },
+        "100": {
+          "type": "color",
+          "value": "#fbd5f0"
+        },
+        "150": {
+          "type": "color",
+          "value": "#f9c1e9"
+        },
+        "200": {
+          "type": "color",
+          "value": "#f7ace2"
+        },
+        "300": {
+          "type": "color",
+          "value": "#f382d3"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ef59c5"
+        },
+        "500": {
+          "type": "color",
+          "value": "#eb2fb6"
+        },
+        "600": {
+          "type": "color",
+          "value": "#bc2692"
+        },
+        "700": {
+          "type": "color",
+          "value": "#8d1c6d"
+        },
+        "800": {
+          "type": "color",
+          "value": "#5e1349"
+        },
+        "825": {
+          "type": "color",
+          "value": "#521040"
+        },
+        "850": {
+          "type": "color",
+          "value": "#470e37"
+        },
+        "875": {
+          "type": "color",
+          "value": "#3b0c2e"
+        },
+        "900": {
+          "type": "color",
+          "value": "#2f0924"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(235, 47, 182, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(235, 47, 182, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 3.Carrot":{
+    "Theme Collection 3": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#fffaf9"
+        },
+        "25": {
+          "type": "color",
+          "value": "#fff9f4"
+        },
+        "50": {
+          "type": "color",
+          "value": "#fef2e9"
+        },
+        "75": {
+          "type": "color",
+          "value": "#feecde"
+        },
+        "100": {
+          "type": "color",
+          "value": "#fde5d2"
+        },
+        "150": {
+          "type": "color",
+          "value": "#fdd8bc"
+        },
+        "200": {
+          "type": "color",
+          "value": "#fccba6"
+        },
+        "300": {
+          "type": "color",
+          "value": "#fab279"
+        },
+        "400": {
+          "type": "color",
+          "value": "#f9984d"
+        },
+        "500": {
+          "type": "color",
+          "value": "#f77e20"
+        },
+        "600": {
+          "type": "color",
+          "value": "#c6651a"
+        },
+        "700": {
+          "type": "color",
+          "value": "#944c13"
+        },
+        "800": {
+          "type": "color",
+          "value": "#63320d"
+        },
+        "825": {
+          "type": "color",
+          "value": "#562c0b"
+        },
+        "850": {
+          "type": "color",
+          "value": "#4a260a"
+        },
+        "875": {
+          "type": "color",
+          "value": "#3e2008"
+        },
+        "900": {
+          "type": "color",
+          "value": "#311906"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(247, 126, 32, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(247, 126, 32, 0.1500)"
+        }
+      }
+    }
+  },
+  "Theme Collection 3.Barn Red":{
+    "Theme Collection 3": {
+      "Primary": {
+        "15": {
+          "type": "color",
+          "value": "#fdf7f7"
+        },
+        "25": {
+          "type": "color",
+          "value": "#fff4f5"
+        },
+        "50": {
+          "type": "color",
+          "value": "#fee9ea"
+        },
+        "75": {
+          "type": "color",
+          "value": "#fedee0"
+        },
+        "100": {
+          "type": "color",
+          "value": "#fdd3d5"
+        },
+        "150": {
+          "type": "color",
+          "value": "#fcbdc0"
+        },
+        "200": {
+          "type": "color",
+          "value": "#fba7ab"
+        },
+        "300": {
+          "type": "color",
+          "value": "#f97a81"
+        },
+        "400": {
+          "type": "color",
+          "value": "#f74e57"
+        },
+        "500": {
+          "type": "color",
+          "value": "#f5222d"
+        },
+        "600": {
+          "type": "color",
+          "value": "#c41b24"
+        },
+        "700": {
+          "type": "color",
+          "value": "#93141b"
+        },
+        "800": {
+          "type": "color",
+          "value": "#620e12"
+        },
+        "825": {
+          "type": "color",
+          "value": "#560c10"
+        },
+        "850": {
+          "type": "color",
+          "value": "#4a0a0e"
+        },
+        "875": {
+          "type": "color",
+          "value": "#3d090b"
+        },
+        "900": {
+          "type": "color",
+          "value": "#310709"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(245, 34, 45, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(245, 34, 45, 0.1500)"
+        }
+      }
+    }
+  },
+  "Product Theme.Classic": {
+    "Product Style Type": {
+      "Primary Corlor": {
+        "25": {
+          "type": "color",
+          "value": "#f2f8fe"
+        },
+        "50": {
+          "type": "color",
+          "value": "#e5f1fe"
+        },
+        "75": {
+          "type": "color",
+          "value": "#d9eafd"
+        },
+        "100": {
+          "type": "color",
+          "value": "#cce2fd"
+        },
+        "150": {
+          "type": "color",
+          "value": "#b3d4fc"
+        },
+        "200": {
+          "type": "color",
+          "value": "#99c6fb"
+        },
+        "300": {
+          "type": "color",
+          "value": "#66a9f8"
+        },
+        "400": {
+          "type": "color",
+          "value": "#338df6"
+        },
+        "500": {
+          "type": "color",
+          "value": "#0070f4"
+        },
+        "600": {
+          "type": "color",
+          "value": "#005ac3"
+        },
+        "700": {
+          "type": "color",
+          "value": "#004392"
+        },
+        "800": {
+          "type": "color",
+          "value": "#002d62"
+        },
+        "825": {
+          "type": "color",
+          "value": "#002755"
+        },
+        "850": {
+          "type": "color",
+          "value": "#002249"
+        },
+        "875": {
+          "type": "color",
+          "value": "#001c3d"
+        },
+        "900": {
+          "type": "color",
+          "value": "#001631"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(0, 112, 244, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(0, 112, 244, 0.1500)"
+        }
+      },
+      "Background": {
+        "Light": {
+          "type": "color",
+          "value": "#ffffff"
+        },
+        "Dark": {
+          "type": "color",
+          "value": "#101010"
+        }
+      }
+    }
+  },
+  "Product Theme.Keivi": {
+    "Product Style Type": {
+      "Primary Corlor": {
+        "25": {
+          "type": "color",
+          "value": "#fff7f3"
+        },
+        "50": {
+          "type": "color",
+          "value": "#ffefe7"
+        },
+        "75": {
+          "type": "color",
+          "value": "#ffe7da"
+        },
+        "100": {
+          "type": "color",
+          "value": "#ffdece"
+        },
+        "150": {
+          "type": "color",
+          "value": "#ffceb6"
+        },
+        "200": {
+          "type": "color",
+          "value": "#ffbe9d"
+        },
+        "300": {
+          "type": "color",
+          "value": "#ff9d6c"
+        },
+        "400": {
+          "type": "color",
+          "value": "#ff7d3b"
+        },
+        "500": {
+          "type": "color",
+          "value": "#ff5c0a"
+        },
+        "600": {
+          "type": "color",
+          "value": "#cc4a08"
+        },
+        "700": {
+          "type": "color",
+          "value": "#993706"
+        },
+        "800": {
+          "type": "color",
+          "value": "#662504"
+        },
+        "825": {
+          "type": "color",
+          "value": "#592004"
+        },
+        "850": {
+          "type": "color",
+          "value": "#4d1c03"
+        },
+        "875": {
+          "type": "color",
+          "value": "#401703"
+        },
+        "900": {
+          "type": "color",
+          "value": "#331202"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "rgba(255, 92, 10, 0.7000)"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "rgba(255, 92, 10, 0.1500)"
+        }
+      },
+      "Background": {
+        "Light": {
+          "type": "color",
+          "value": "#ffffff"
+        },
+        "Dark": {
+          "type": "color",
+          "value": "#101010"
+        }
+      }
+    }
+  },
+  "Product Theme.Color Themes": {
+    "Product Style Type": {
+      "Primary Corlor": {
+        "25": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.25}"
+        },
+        "50": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.50}"
+        },
+        "75": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.75}"
+        },
+        "100": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.100}"
+        },
+        "150": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.150}"
+        },
+        "200": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.200}"
+        },
+        "300": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.300}"
+        },
+        "400": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.400}"
+        },
+        "500": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.500}"
+        },
+        "600": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.600}"
+        },
+        "700": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.700}"
+        },
+        "800": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.800}"
+        },
+        "825": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.825}"
+        },
+        "850": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.850}"
+        },
+        "875": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.875}"
+        },
+        "900": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.900}"
+        },
+        "500 Opacity 70": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.500 Opacity 70}"
+        },
+        "500 Opacity 15": {
+          "type": "color",
+          "value": "{Theme Color Collections.Primary.500 Opacity 15}"
+        }
+      },
+      "Background": {
+        "Light": {
+          "type": "color",
+          "value": "rgba(255, 255, 255, 0.7000)"
+        },
+        "Dark": {
+          "type": "color",
+          "value": "rgba(16, 16, 16, 0.7000)"
+        }
+      }
+    }
+  }
+}

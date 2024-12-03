@@ -1,10 +1,43 @@
-extension StringExtension on String? {
+import 'package:diacritic/diacritic.dart';
+
+extension StringExtensionWithNull on String? {
   bool get isNullOrEmpty {
     return this == null || this?.trim().isEmpty == true;
   }
 
   bool get isNotNullOrEmpty {
     return !isNullOrEmpty;
+  }
+}
+
+extension StringExtension on String {
+  String get toReferenceName {
+    final name = standardize.replaceAll('.', '');
+    return name.toFirstLowerCase;
+  }
+
+  String get toFirstLowerCase {
+    return '${this[0].toLowerCase()}${substring(1)}';
+  }
+
+  String get standardize {
+    return removeDiacritics(
+      replaceAll(RegExp(r'\s+'), '')
+          .replaceAll('-', '')
+          .replaceAll('%', '')
+          .replaceAll('{', '')
+          .replaceAll('}', '')
+          .replaceAll('(', '')
+          .replaceAll(')', ''),
+    );
+  }
+
+  String get toSnakeCase {
+    final regex = RegExp(r'(?<=[a-z])([A-Z])');
+    return replaceAllMapped(
+      regex,
+      (match) => '_${match.group(1)!.toLowerCase()}',
+    ).toLowerCase();
   }
 }
 

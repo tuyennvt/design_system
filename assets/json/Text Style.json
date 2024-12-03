@@ -1,0 +1,820 @@
+{
+  "Kv Text Style.Mobile 430":
+  {
+    "Display": {
+      "Size": {
+        "type": "number",
+        "value": "{Font Size.14}"
+      },
+      "Line Height": {
+        "type": "number",
+        "value": "{Line Height.15}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Font.Weight.Extra Bold}"
+      }
+    },
+    "Headline": {
+      "Weight": {
+        "type": "number",
+        "value": "{Weight.Bold}"
+      },
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.10}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.12}"
+        }
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.8}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.10}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.7}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.9}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.6}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.8}"
+        }
+      },
+      "XS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.5}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      }
+    },
+    "Title": {
+      "XXL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.6}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.8}"
+        }
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Weight.Semi Bold}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.5}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.5}"
+        }
+      }
+    },
+    "Body": {
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        },
+        "ME": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        },
+        "RE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Regular}"
+          }
+        },
+        "SE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Semi Bold}"
+          }
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        },
+        "RE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Regular}"
+          }
+        },
+        "SE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Semi Bold}"
+          }
+        },
+        "ME": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        },
+        "MEU": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        }
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.5}"
+        },
+        "RE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Regular}"
+          }
+        },
+        "SE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Semi Bold}"
+          }
+        },
+        "ME": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        }
+      }
+    },
+    "Label": {
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.5}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Weight.Medium}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.5}"
+        }
+      },
+      "XS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.4}"
+        }
+      }
+    },
+    "Caption": {
+      "Size": {
+        "type": "number",
+        "value": "{Font Size.3H}"
+      },
+      "Line Height": {
+        "type": "number",
+        "value": "{Line Height.5}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "SE": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Semi Bold}"
+        }
+      },
+      "IT": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      },
+      "RE": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      },
+      "ME": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Medium}"
+        }
+      },
+      "Underline": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      },
+      "Strikethrough": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      }
+    },
+    "Navigation": {
+      "Size": {
+        "type": "number",
+        "value": "{Font Size.2H}"
+      },
+      "Line Height": {
+        "type": "number",
+        "value": "{Line Height.3}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Font.Weight.Medium}"
+      }
+    },
+    "Icon": {
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.10}"
+        }
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.8}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.7}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.6}"
+        }
+      },
+      "XS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        }
+      },
+      "XXS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        }
+      },
+      "XXXS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3}"
+        }
+      }
+    }
+  },
+  "Kv Text Style.Desktop":
+  {
+    "Display": {
+      "Size": {
+        "type": "number",
+        "value": "{Font Size.14}"
+      },
+      "Line Height": {
+        "type": "number",
+        "value": "{Line Height.15}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Font.Weight.Extra Bold}"
+      }
+    },
+    "Headline": {
+      "Weight": {
+        "type": "number",
+        "value": "{Weight.Bold}"
+      },
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.10}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.12}"
+        }
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.8}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.10}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.6}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.8}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.5}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "XS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      }
+    },
+    "Title": {
+      "XXL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.5}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Weight.Semi Bold}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        }
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.5}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.4}"
+        }
+      }
+    },
+    "Body": {
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        },
+        "ME": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        },
+        "RE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Regular}"
+          }
+        },
+        "SE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Semi Bold}"
+          }
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.5}"
+        },
+        "RE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Regular}"
+          }
+        },
+        "SE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Semi Bold}"
+          }
+        },
+        "ME": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        },
+        "MEU": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        }
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.4}"
+        },
+        "RE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Regular}"
+          }
+        },
+        "SE": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Semi Bold}"
+          }
+        },
+        "ME": {
+          "Weight": {
+            "type": "number",
+            "value": "{Weight.Medium}"
+          }
+        }
+      }
+    },
+    "Label": {
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.7}"
+        }
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Weight.Medium}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.6}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.5}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.4}"
+        }
+      },
+      "XS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.2H}"
+        },
+        "Line Height": {
+          "type": "number",
+          "value": "{Line Height.3}"
+        }
+      }
+    },
+    "Caption": {
+      "Size": {
+        "type": "number",
+        "value": "{Font Size.3}"
+      },
+      "Line Height": {
+        "type": "number",
+        "value": "{Line Height.4}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "SE": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Semi Bold}"
+        }
+      },
+      "IT": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      },
+      "RE": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      },
+      "ME": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Medium}"
+        }
+      },
+      "Underline": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      },
+      "Strikethrough": {
+        "Weight": {
+          "type": "number",
+          "value": "{Weight.Regular}"
+        }
+      }
+    },
+    "Navigation": {
+      "Size": {
+        "type": "number",
+        "value": "{Font Size.2H}"
+      },
+      "Line Height": {
+        "type": "number",
+        "value": "{Line Height.3}"
+      },
+      "Paragraph Spacing": {
+        "type": "number",
+        "value": "{Paragraph Spacing.Auto}"
+      },
+      "Weight": {
+        "type": "number",
+        "value": "{Font.Weight.Medium}"
+      }
+    },
+    "Icon": {
+      "XL": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.8}"
+        }
+      },
+      "L": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.7}"
+        }
+      },
+      "M": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.6}"
+        }
+      },
+      "S": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.5}"
+        }
+      },
+      "XS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.4}"
+        }
+      },
+      "XXS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.3}"
+        }
+      },
+      "XXXS": {
+        "Size": {
+          "type": "number",
+          "value": "{Font Size.2H}"
+        }
+      }
+    }
+  }
+}

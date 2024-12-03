@@ -1,0 +1,770 @@
+{
+  "Breakpoint.M": {
+    "Global": {
+      "Padding": {
+        "XS": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.1H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.2}"
+          },
+          "1H": {
+            "type": "number",
+            "value": "{Padding.Will Remove Token}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Padding.1}"
+          }
+        },
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.2H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.3H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.4H}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Padding.5H}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Padding.3}"
+          },
+          "3H": {
+            "type": "number",
+            "value": "{Padding.4}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Padding.5}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.7}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.9}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.11}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Padding.13}"
+          }
+        },
+        "L": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.15H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.18H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.21H}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Padding.24H}"
+          }
+        }
+      },
+      "Margin": {
+        "XS": {
+          "2": {
+            "type": "number",
+            "value": "{Margin.1}"
+          }
+        },
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Margin.2H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Margin.3H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Margin.4H}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Margin.5H}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Margin.7}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Margin.9}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Margin.11}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Margin.13}"
+          }
+        }
+      },
+      "Gutter": {
+        "XS": {
+          "1": {
+            "type": "number",
+            "value": "{Gutter.1}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Gutter.1H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Gutter.2}"
+          }
+        },
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Gutter.2H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Gutter.3H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Gutter.4H}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Gutter.5H}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Gutter.3}"
+          },
+          "3H": {
+            "type": "number",
+            "value": "{Gutter.4}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Gutter.5}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Gutter.7}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Gutter.9}"
+          }
+        }
+      },
+      "Size": {
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.2H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.3H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.4H}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.5H}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Size Box.3}"
+          },
+          "3H": {
+            "type": "number",
+            "value": "{Size Box.5}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Size Box.5}"
+          },
+          "5H": {
+            "type": "number",
+            "value": "{Size Box.6}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.7}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.9}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.11}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.13}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Size Box.8}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Size Box.12}"
+          }
+        },
+        "L": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.15H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.18H}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.21H}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.24H}"
+          }
+        },
+        "XL": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.28}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.32}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.36}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.40}"
+          }
+        }
+      },
+      "Stroke": {
+        "MH": {
+          "type": "number",
+          "value": 0.5
+        },
+        "M": {
+          "type": "number",
+          "value": 1
+        }
+      },
+      "Icon": {
+        "XXS": {
+          "type": "number",
+          "value": "{Size Box.3H}"
+        },
+        "XS": {
+          "type": "number",
+          "value": "{Size Box.4H}"
+        },
+        "S": {
+          "type": "number",
+          "value": "{Size Box.6}"
+        },
+        "M": {
+          "type": "number",
+          "value": "{Size Box.7}"
+        },
+        "L": {
+          "type": "number",
+          "value": "{Size Box.8}"
+        },
+        "XL": {
+          "type": "number",
+          "value": "{Size Box.9}"
+        },
+        "XXL": {
+          "type": "number",
+          "value": "{Size Box.10}"
+        }
+      }
+    },
+    "Device": {
+      "Width": {
+        "type": "number",
+        "value": 430
+      },
+      "Height": {
+        "type": "number",
+        "value": 932
+      },
+      "Min Height": {
+        "type": "number",
+        "value": 932
+      }
+    },
+    "Safe Area": {
+      "Padding": {
+        "Top": {
+          "type": "number",
+          "value": 44
+        },
+        "Bottom": {
+          "type": "number",
+          "value": 34
+        }
+      },
+      "Height": {
+        "Top": {
+          "type": "number",
+          "value": 44
+        },
+        "Bottom": {
+          "type": "number",
+          "value": 34
+        }
+      }
+    },
+    "Sheet": {
+      "Max Height": {
+        "type": "number",
+        "value": 872
+      },
+      "Min Height": {
+        "type": "number",
+        "value": 240
+      }
+    },
+    "Form": {
+      "Checkbox-Radio": {
+        "type": "number",
+        "value": "{Size Box.6}"
+      }
+    }
+  },
+  "Breakpoint.S": {
+    "Global": {
+      "Padding": {
+        "XS": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.1}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.1H}"
+          },
+          "1H": {
+            "type": "number",
+            "value": "{Padding.Will Remove Token}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Padding.HQ}"
+          }
+        },
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.2}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.3}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.4}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Padding.5}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Padding.2H}"
+          },
+          "3H": {
+            "type": "number",
+            "value": "{Padding.3H}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Padding.4H}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.6}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.8}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.10}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Padding.12}"
+          }
+        },
+        "L": {
+          "1": {
+            "type": "number",
+            "value": "{Padding.14}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Padding.17}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Padding.20}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Padding.23}"
+          }
+        }
+      },
+      "Margin": {
+        "XS": {
+          "2": {
+            "type": "number",
+            "value": "{Margin.1}"
+          }
+        },
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Margin.2}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Margin.3}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Margin.4}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Margin.5}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Margin.6}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Margin.8}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Margin.10}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Margin.12}"
+          }
+        }
+      },
+      "Gutter": {
+        "XS": {
+          "1": {
+            "type": "number",
+            "value": "{Gutter.H}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Gutter.1}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Gutter.1H}"
+          }
+        },
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Gutter.2}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Gutter.3}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Gutter.4}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Gutter.5}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Gutter.2H}"
+          },
+          "3H": {
+            "type": "number",
+            "value": "{Gutter.3H}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Gutter.4H}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Gutter.6}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Gutter.8}"
+          }
+        }
+      },
+      "Size": {
+        "S": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.2}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.3}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.4}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.5}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Size Box.2H}"
+          },
+          "3H": {
+            "type": "number",
+            "value": "{Size Box.3H}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Size Box.4H}"
+          },
+          "5H": {
+            "type": "number",
+            "value": "{Size Box.5H}"
+          }
+        },
+        "M": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.6}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.8}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.10}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.12}"
+          },
+          "2H": {
+            "type": "number",
+            "value": "{Size Box.7}"
+          },
+          "4H": {
+            "type": "number",
+            "value": "{Size Box.11}"
+          }
+        },
+        "L": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.14}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.17}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.20}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.23}"
+          }
+        },
+        "XL": {
+          "1": {
+            "type": "number",
+            "value": "{Size Box.26}"
+          },
+          "2": {
+            "type": "number",
+            "value": "{Size Box.30}"
+          },
+          "3": {
+            "type": "number",
+            "value": "{Size Box.34}"
+          },
+          "4": {
+            "type": "number",
+            "value": "{Size Box.38}"
+          }
+        }
+      },
+      "Stroke": {
+        "MH": {
+          "type": "number",
+          "value": 0.5
+        },
+        "M": {
+          "type": "number",
+          "value": 1
+        }
+      },
+      "Icon": {
+        "XXS": {
+          "type": "number",
+          "value": "{Size Box.3}"
+        },
+        "XS": {
+          "type": "number",
+          "value": "{Size Box.4}"
+        },
+        "S": {
+          "type": "number",
+          "value": "{Size Box.5}"
+        },
+        "M": {
+          "type": "number",
+          "value": "{Size Box.6}"
+        },
+        "L": {
+          "type": "number",
+          "value": "{Size Box.7}"
+        },
+        "XL": {
+          "type": "number",
+          "value": "{Size Box.8}"
+        },
+        "XXL": {
+          "type": "number",
+          "value": "{Size Box.9}"
+        }
+      }
+    },
+    "Device": {
+      "Width": {
+        "type": "number",
+        "value": 375
+      },
+      "Height": {
+        "type": "number",
+        "value": 812
+      },
+      "Min Height": {
+        "type": "number",
+        "value": 812
+      }
+    },
+    "Safe Area": {
+      "Padding": {
+        "Top": {
+          "type": "number",
+          "value": 36
+        },
+        "Bottom": {
+          "type": "number",
+          "value": 34
+        }
+      },
+      "Height": {
+        "Top": {
+          "type": "number",
+          "value": 36
+        },
+        "Bottom": {
+          "type": "number",
+          "value": 34
+        }
+      }
+    },
+    "Sheet": {
+      "Max Height": {
+        "type": "number",
+        "value": 762
+      },
+      "Min Height": {
+        "type": "number",
+        "value": 200
+      }
+    },
+    "Form": {
+      "Checkbox-Radio": {
+        "type": "number",
+        "value": "{Size Box.5}"
+      }
+    }
+  }
+}

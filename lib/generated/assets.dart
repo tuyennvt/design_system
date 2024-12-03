@@ -2,6 +2,24 @@
 class Assets {
   Assets._();
 
+  static const String 1.5xKvConnect = 'assets/images/1.5x/kv_connect.webp';
+  static const String 1.5xKvConnectRevert = 'assets/images/1.5x/kv_connect_revert.webp';
+  static const String 1.5xKvFinance = 'assets/images/1.5x/kv_finance.webp';
+  static const String 1.5xKvFinanceRevert = 'assets/images/1.5x/kv_finance_revert.webp';
+  static const String 1.5xKvMaster = 'assets/images/1.5x/kv_master.webp';
+  static const String 1.5xKvMasterRevert = 'assets/images/1.5x/kv_master_revert.webp';
+  static const String 1.5xKvSoftware = 'assets/images/1.5x/kv_software.webp';
+  static const String 1.5xKvSoftwareRevert = 'assets/images/1.5x/kv_software_revert.webp';
+  static const String 4.0xKvConnect = 'assets/images/4.0x/kv_connect.webp';
+  static const String 4.0xKvConnectRevert = 'assets/images/4.0x/kv_connect_revert.webp';
+  static const String 4.0xKvFinance = 'assets/images/4.0x/kv_finance.webp';
+  static const String 4.0xKvFinanceRevert = 'assets/images/4.0x/kv_finance_revert.webp';
+  static const String 4.0xKvMaster = 'assets/images/4.0x/kv_master.webp';
+  static const String 4.0xKvMasterRevert = 'assets/images/4.0x/kv_master_revert.webp';
+  static const String 4.0xKvSoftware = 'assets/images/4.0x/kv_software.webp';
+  static const String 4.0xKvSoftwareRevert = 'assets/images/4.0x/kv_software_revert.webp';
+  static const String fontsCustomIcons = 'assets/fonts/custom-icons.ttf';
+  static const String fontsFaBrands400 = 'assets/fonts/fa-brands-400.ttf';
   static const String iconsArrowDownRight = 'assets/icons/arrow-down-right.svg';
   static const String iconsArrowUpRight = 'assets/icons/arrow-up-right.svg';
   static const String iconsAvatar = 'assets/icons/avatar.svg';
@@ -13,33 +31,26 @@ class Assets {
   static const String iconsChevronLeft = 'assets/icons/chevron-left.svg';
   static const String iconsChevronRight = 'assets/icons/chevron-right.svg';
   static const String iconsCircleCheck = 'assets/icons/circle-check.svg';
-  static const String iconsCircleExclamationRegular =
-      'assets/icons/circle-exclamation-regular.svg';
-  static const String iconsCircleExclamationSolid =
-      'assets/icons/circle-exclamation-solid.svg';
+  static const String iconsCircleExclamationRegular = 'assets/icons/circle-exclamation-regular.svg';
+  static const String iconsCircleExclamationSolid = 'assets/icons/circle-exclamation-solid.svg';
   static const String iconsCircleInfo = 'assets/icons/circle-info.svg';
-  static const String iconsCircleInfoRegular =
-      'assets/icons/circle-info-regular.svg';
+  static const String iconsCircleInfoRegular = 'assets/icons/circle-info-regular.svg';
   static const String iconsCircleXmark = 'assets/icons/circle-xmark.svg';
-  static const String iconsFileCircleExclamation =
-      'assets/icons/file-circle-exclamation.svg';
+  static const String iconsFileCircleExclamation = 'assets/icons/file-circle-exclamation.svg';
   static const String iconsImageSlash = 'assets/icons/image-slash.svg';
   static const String iconsLine = 'assets/icons/line.svg';
-  static const String iconsMagnifyingGlass =
-      'assets/icons/magnifying-glass.svg';
+  static const String iconsMagnifyingGlass = 'assets/icons/magnifying-glass.svg';
   static const String iconsPlus = 'assets/icons/plus.svg';
   static const String iconsThumbnail = 'assets/icons/thumbnail.svg';
   static const String iconsXmark = 'assets/icons/xmark.svg';
   static const String imagesKvConnect = 'assets/images/kv_connect.webp';
-  static const String imagesKvConnectRevert =
-      'assets/images/kv_connect_revert.webp';
+  static const String imagesKvConnectRevert = 'assets/images/kv_connect_revert.webp';
   static const String imagesKvFinance = 'assets/images/kv_finance.webp';
-  static const String imagesKvFinanceRevert =
-      'assets/images/kv_finance_revert.webp';
+  static const String imagesKvFinanceRevert = 'assets/images/kv_finance_revert.webp';
   static const String imagesKvMaster = 'assets/images/kv_master.webp';
-  static const String imagesKvMasterRevert =
-      'assets/images/kv_master_revert.webp';
+  static const String imagesKvMasterRevert = 'assets/images/kv_master_revert.webp';
   static const String imagesKvSoftware = 'assets/images/kv_software.webp';
-  static const String imagesKvSoftwareRevert =
-      'assets/images/kv_software_revert.webp';
+  static const String imagesKvSoftwareRevert = 'assets/images/kv_software_revert.webp';
+  static const String jsonData of Design System = 'assets/json/Data of Design System.json';
+
 }
