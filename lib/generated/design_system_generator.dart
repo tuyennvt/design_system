@@ -3,6 +3,7 @@ import 'dart:io';
 import 'breakpoint_generator.dart';
 import 'dimension_generator.dart';
 import 'foundation_generator.dart';
+import 'mobile_components_generator.dart';
 import 'text_style_generator.dart';
 import 'theme_generator.dart';
 
@@ -26,12 +27,16 @@ void main() async {
     inputFile: File('assets/json/Breakpoint.json'),
     outputFilePath: 'lib/breakpoint/',
   );
+  final mobileComponentsGenerator = MobileComponentsGenerator(
+    inputFile: File('assets/json/Mobile Components.json'),
+  );
   final kvDesignSystemGenerator = DesignSystemGenerator(
     themeGenerator: themeGenerator,
     textStyleGenerator: textStyleGenerator,
     foundationGenerator: foundationGenerator,
     dimensionGenerator: dimensionGenerator,
     breakpointGenerator: breakpointGenerator,
+    mobileComponentsGenerator: mobileComponentsGenerator,
   );
   await kvDesignSystemGenerator.generate();
 }
@@ -43,6 +48,7 @@ class DesignSystemGenerator {
     required this.foundationGenerator,
     required this.dimensionGenerator,
     required this.breakpointGenerator,
+    required this.mobileComponentsGenerator,
   });
 
   final ThemeGenerator themeGenerator;
@@ -50,6 +56,7 @@ class DesignSystemGenerator {
   final FoundationGenerator foundationGenerator;
   final DimensionGenerator dimensionGenerator;
   final BreakpointGenerator breakpointGenerator;
+  final MobileComponentsGenerator mobileComponentsGenerator;
 
   Future<void> generate() async {
     final kvDesignSystemContentTheme = await themeGenerator.generate();
@@ -58,12 +65,14 @@ class DesignSystemGenerator {
         await foundationGenerator.generate();
     final kvDesignSystemContentDimension = await dimensionGenerator.generate();
     final kvDesignSystemContentBreakpoint = await breakpointGenerator.generate();
+    final kvDesignSystemContentMobileComponents = await mobileComponentsGenerator.generate();
     final buffer = StringBuffer();
     buffer.writeln(kvDesignSystemContentTheme);
     buffer.writeln(kvDesignSystemContentTextStyle);
     buffer.writeln(kvDesignSystemContentFoundation);
     buffer.writeln(kvDesignSystemContentDimension);
     buffer.writeln(kvDesignSystemContentBreakpoint);
+    buffer.writeln(kvDesignSystemContentMobileComponents);
     await _createFile(content: buffer.toString());
   }
 

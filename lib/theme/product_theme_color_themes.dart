@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../kv_design_system.dart';
 
 class ProductThemeColorThemes implements ProductTheme {
+  ProductThemeColorThemes(this.themeColorCollections);
+
+	final ThemeColorCollections themeColorCollections;
+
 	@override
 	Color get productStyleTypePrimaryCorlor25 => themeColorCollections.themeColorCollectionsPrimary25;
 	@override

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../kv_design_system.dart';
 
 class ThemeColorCollectionsShadeofGreen implements ThemeColorCollections {
+  ThemeColorCollectionsShadeofGreen(this.themeCollection1);
+
+	final ThemeCollection1 themeCollection1;
+
 	@override
 	Color get themeColorCollectionsPrimary25 => themeCollection1.themeCollection1Primary25;
 	@override

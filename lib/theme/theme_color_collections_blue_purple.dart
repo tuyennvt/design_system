@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../kv_design_system.dart';
 
 class ThemeColorCollectionsBluePurple implements ThemeColorCollections {
+  ThemeColorCollectionsBluePurple(this.themeCollection2);
+
+	final ThemeCollection2 themeCollection2;
+
 	@override
 	Color get themeColorCollectionsPrimary25 => themeCollection2.themeCollection2Primary25;
 	@override
