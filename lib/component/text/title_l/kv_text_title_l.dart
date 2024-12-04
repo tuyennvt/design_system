@@ -6,7 +6,7 @@ class KvTextTitleL extends StatelessWidget {
   const KvTextTitleL({
     super.key,
     required this.title,
-    this.color = DTokens.colorTextNeutralBase,
+    this.color = KvDesignSystem().colorTextNeutralBase,
   });
 
   final String title;

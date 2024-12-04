@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 
 enum KvDotDividerSize {
   small,
@@ -28,11 +29,11 @@ class KvDotDivider extends StatelessWidget {
   TextStyle get textStyle {
     switch (size) {
       case KvDotDividerSize.small:
-        return KvTextStyles.labelS(color: DTokens.colorDividerDot);
+        return KvTextStyles.labelS(color: KvDesignSystem().dividerDot);
       case KvDotDividerSize.medium:
-        return KvTextStyles.labelM(color: DTokens.colorDividerDot);
+        return KvTextStyles.labelM(color: KvDesignSystem().dividerDot);
       case KvDotDividerSize.large:
-        return KvTextStyles.labelL(color: DTokens.colorDividerDot);
+        return KvTextStyles.labelL(color: KvDesignSystem().dividerDot);
     }
   }
 }

@@ -2,29 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
 
-enum KvIconContainerSize {
-  extraSmall(DTokens.sizeSize16),
-  small(DTokens.sizeSize24),
-  medium(DTokens.sizeSize32),
-  large(DTokens.sizeSize40);
-
-  const KvIconContainerSize(this.value);
-
-  final double value;
-}
-
 class KvIconContainer extends StatelessWidget {
   const KvIconContainer({
     super.key,
-    this.iconContainerSize = KvIconContainerSize.medium,
-    this.iconContainerStyle = KvIconContainerStyle.neutral,
-    required this.assetIcon,
+    this.size = KvIconContainerSize.medium,
+    this.style = KvIconContainerStyle.neutral,
+    required this.icon,
     this.onTap,
   });
 
-  final KvIconContainerSize iconContainerSize;
-  final KvIconContainerStyle iconContainerStyle;
-  final KvSvgAsset assetIcon;
+  final KvIconContainerSize size;
+  final KvIconContainerStyle style;
+  final IconData icon;
   final VoidCallback? onTap;
 
   @override
@@ -38,18 +27,15 @@ class KvIconContainer extends StatelessWidget {
           color: theme.backgroundColor,
           shape: BoxShape.circle,
         ),
-        constraints: BoxConstraints.tight(
-          Size.square(iconContainerSize.value),
-        ),
+        constraints: theme.boxConstraints,
         child: KvIcon(
-          assetIcon: assetIcon,
+          icon: icon,
           color: theme.iconColor,
-          size: KvIconSize.size16,
+          size: KvIconSize.iconXS,
         ),
       ),
     );
   }
 
-  KvIconContainerThemeData get theme =>
-      KvIconContainerThemeData(iconContainerStyle);
+  KvIconContainerThemeData get theme => KvIconContainerThemeData(style, size);
 }

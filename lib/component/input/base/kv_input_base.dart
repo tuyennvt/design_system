@@ -8,10 +8,10 @@ import 'kv_input_helper_text.dart';
 import 'kv_input_state.dart';
 
 enum KvInputSize {
-  small(DTokens.dataInputInputSizeS),
-  medium(DTokens.dataInputInputSizeM),
-  large(DTokens.dataInputInputSizeL),
-  extraLarge(DTokens.dataInputInputSizeXl);
+  small(KvDesignSystem().dataInputInputSizeS),
+  medium(KvDesignSystem().dataInputInputSizeM),
+  large(KvDesignSystem().dataInputInputSizeL),
+  extraLarge(KvDesignSystem().dataInputInputSizeXl);
 
   const KvInputSize(this.value);
 
@@ -122,7 +122,7 @@ class _KvInputBaseState extends State<KvInputBase> {
             ),
             child: Row(
               children: [
-                const SizedBox(width: DTokens.sizeSize16),
+                const SizedBox(width: KvDesignSystem().sizeSize16),
                 decorator.prefix,
                 Flexible(
                   child: TextField(
@@ -159,10 +159,10 @@ class _KvInputBaseState extends State<KvInputBase> {
                   },
                 ),
                 if (widget.decoration.assetSuffixIcon.isNotNullOrEmpty) ...{
-                  const SizedBox(width: DTokens.sizeSize16),
+                  const SizedBox(width: KvDesignSystem().sizeSize16),
                 },
                 decorator.suffix,
-                const SizedBox(width: DTokens.sizeSize16),
+                const SizedBox(width: KvDesignSystem().sizeSize16),
               ],
             ),
           ),

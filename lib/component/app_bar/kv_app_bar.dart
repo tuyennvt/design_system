@@ -62,23 +62,23 @@ class KvAppBar extends StatelessWidget implements PreferredSizeWidget {
                   height: kToolbarHeight,
                   child: Row(
                     children: [
-                      const SizedBox(width: DTokens.sizeSize16),
+                      const SizedBox(width: KvDesignSystem().sizeSize16),
                       if (visibleBack) ...{
                         _BackButton(
                           onBackPressed: onBackPressed,
                         ),
-                        const SizedBox(width: DTokens.sizeSize12),
+                        const SizedBox(width: KvDesignSystem().sizeSize12),
                       },
                       Expanded(child: _Child(child: child)),
                       _Actions(actions: actions),
-                      const SizedBox(width: DTokens.sizeSize16),
+                      const SizedBox(width: KvDesignSystem().sizeSize16),
                     ],
                   ),
                 ),
                 if (bottom != null) ...{
                   SizedBox(
                     width: double.maxFinite,
-                    height: DTokens.sizeSize40,
+                    height: KvDesignSystem().sizeSize40,
                     child: bottom!,
                   ),
                 },
@@ -93,7 +93,7 @@ class KvAppBar extends StatelessWidget implements PreferredSizeWidget {
   double get appBarHeight {
     double height = kToolbarHeight;
     if (bottom != null) {
-      height += DTokens.sizeSize40;
+      height += KvDesignSystem().sizeSize40;
     }
     return height;
   }
@@ -105,13 +105,13 @@ class KvAppBar extends StatelessWidget implements PreferredSizeWidget {
         return Colors.transparent;
       }
     }
-    return DTokens.colorBgLayerLevel0;
+    return KvDesignSystem().colorBgLayerLevel0;
   }
 
   BorderRadius get borderRadius {
     return const BorderRadius.only(
-      bottomLeft: Radius.circular(DTokens.sizeSize12),
-      bottomRight: Radius.circular(DTokens.sizeSize12),
+      bottomLeft: Radius.circular(KvDesignSystem().sizeSize12),
+      bottomRight: Radius.circular(KvDesignSystem().sizeSize12),
     );
   }
 
@@ -131,11 +131,11 @@ class _BackButton extends StatelessWidget {
         onBackPressed?.call();
       },
       child: KvIcon(
-        assetIcon: KvSvgAsset(
+        icon: KvSvgAsset(
           Assets.iconsChevronLeft,
           assetPackage: packageRoot,
         ),
-        color: DTokens.colorTextNeutralBase,
+        color: KvDesignSystem().colorTextNeutralBase,
         size: KvIconSize.size20,
       ),
     );

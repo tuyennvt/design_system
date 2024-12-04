@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
-import '../../foundation/d_tokens.dart';
 import '../../foundation/kv_icons.dart';
+import '../../kv_design_system.dart';
 
 class KvBanner extends StatelessWidget {
   const KvBanner({
@@ -36,7 +36,7 @@ class KvBanner extends StatelessWidget {
               bannerType: bannerType,
               theme: theme,
             ),
-            SizedBox(width: DTokens.bannerGutter.toDouble()),
+            SizedBox(width: KvDesignSystem().bannerGutter),
           },
           Expanded(
             child: Text(
@@ -49,11 +49,11 @@ class KvBanner extends StatelessWidget {
             ),
           ),
           if (actionButton != null) ...{
-            SizedBox(width: DTokens.bannerGutter.toDouble()),
+            SizedBox(width: KvDesignSystem().bannerGutter),
             actionButton!,
           },
           if (actionIcon != null) ...{
-            SizedBox(width: DTokens.bannerGutter.toDouble()),
+            SizedBox(width: KvDesignSystem().bannerGutter),
             _ActionIcon(
               icon: actionIcon!,
               theme: theme,

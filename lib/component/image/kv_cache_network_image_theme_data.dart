@@ -10,11 +10,11 @@ enum KvCacheNetworkImageType {
 }
 
 enum KvCacheNetworkImageSize {
-  extraSmall(DTokens.thumbnailThumbnailSizeXs),
-  small(DTokens.thumbnailThumbnailSizeS),
-  medium(DTokens.thumbnailThumbnailSizeM),
-  large(DTokens.thumbnailThumbnailSizeL),
-  extraLarge(DTokens.thumbnailThumbnailSizeXl);
+  extraSmall(KvDesignSystem().thumbnailThumbnailSizeXs),
+  small(KvDesignSystem().thumbnailThumbnailSizeS),
+  medium(KvDesignSystem().thumbnailThumbnailSizeM),
+  large(KvDesignSystem().thumbnailThumbnailSizeL),
+  extraLarge(KvDesignSystem().thumbnailThumbnailSizeXl);
 
   const KvCacheNetworkImageSize(this.value);
 
@@ -31,23 +31,23 @@ class KvCacheNetworkImageThemeData {
   final KvCacheNetworkImageType imageType;
 
   Color get backgroundColorDefault {
-    return DTokens.thumbnailThumbnailColorBgDefault;
+    return KvDesignSystem().thumbnailThumbnailColorBgDefault;
   }
 
   Color get backgroundColorError {
-    return DTokens.thumbnailThumbnailColorBgError;
+    return KvDesignSystem().thumbnailThumbnailColorBgError;
   }
 
   Color get backgroundColorNotFound {
-    return DTokens.thumbnailThumbnailColorBgNotFound;
+    return KvDesignSystem().thumbnailThumbnailColorBgNotFound;
   }
 
   Color get iconColorNotFound {
-    return DTokens.colorIconNeutralLabel;
+    return KvDesignSystem().colorIconNeutralLabel;
   }
 
   Color get iconColorError {
-    return DTokens.thumbnailThumbnailColorIconError;
+    return KvDesignSystem().thumbnailThumbnailColorIconError;
   }
 
   BoxShape get shape {

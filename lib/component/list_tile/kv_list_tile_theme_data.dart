@@ -30,9 +30,9 @@ class KvListTileThemeData {
   double get minHeight {
     switch (size) {
       case KvListTileSize.small:
-        return DTokens.sizeSize40;
+        return KvDesignSystem().sizeSize40;
       case KvListTileSize.medium:
-        return DTokens.sizeSize48;
+        return KvDesignSystem().sizeSize48;
     }
   }
 
@@ -41,12 +41,12 @@ class KvListTileThemeData {
       case KvListTileSize.small:
         return const EdgeInsets.symmetric(
           vertical: 8,
-          horizontal: DTokens.sizeSize16,
+          horizontal: KvDesignSystem().sizeSize16,
         );
       case KvListTileSize.medium:
         return const EdgeInsets.symmetric(
-          vertical: DTokens.sizeSize12,
-          horizontal: DTokens.sizeSize16,
+          vertical: KvDesignSystem().sizeSize12,
+          horizontal: KvDesignSystem().sizeSize16,
         );
     }
   }
@@ -57,7 +57,7 @@ class KvListTileThemeData {
         return const EdgeInsets.symmetric(vertical: 8);
       case KvListTileSize.medium:
         return const EdgeInsets.symmetric(
-            vertical: DTokens.sizeSize12,);
+            vertical: KvDesignSystem().sizeSize12,);
     }
   }
 }

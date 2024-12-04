@@ -28,7 +28,7 @@ class KvAppBarLogo extends StatelessWidget implements KvAppBarChild {
             logoAssetImage,
             package: 'employee_flutter_design_system',
           ),
-          height: DTokens.sizeSize40,
+          height: KvDesignSystem().sizeSize40,
         ),
       ],
     );

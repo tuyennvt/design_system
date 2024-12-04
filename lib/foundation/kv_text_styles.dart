@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'd_tokens.dart';
+import '../kv_design_system.dart';
 
-extension _FontWeightExt on int {
+extension _FontWeightExt on num {
   FontWeight get toFontWeight {
     switch (this) {
       case 100:
@@ -32,290 +32,358 @@ extension _FontWeightExt on int {
 class KvTextStyles {
   static const String fontFamily = 'Inter';
 
-  static double _getHeight(int size, int lineHeight) =>
-      (size / lineHeight).toDouble();
+  static double _getHeight(double size, double lineHeight) => size / lineHeight;
+
+  static Color _getColor(Color? color) =>
+      color ?? KvDesignSystem().textNeutralBase;
 
   static TextStyle display({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.displaySize.toDouble(),
-      fontWeight: DTokens.displayWeight.toFontWeight,
-      height: _getHeight(DTokens.displaySize, DTokens.displayLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().displaySize,
+      fontWeight: KvDesignSystem().displayWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().displaySize,
+        KvDesignSystem().displayLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle headlineXL({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.headlineXLSize.toDouble(),
-      fontWeight: DTokens.headlineWeight.toFontWeight,
-      height: _getHeight(DTokens.headlineXLSize, DTokens.headlineXLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().headlineXLSize,
+      fontWeight: KvDesignSystem().headlineWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().headlineXLSize,
+        KvDesignSystem().headlineXLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle headlineL({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.headlineLSize.toDouble(),
-      fontWeight: DTokens.headlineWeight.toFontWeight,
-      height: _getHeight(DTokens.headlineLSize, DTokens.headlineLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().headlineLSize,
+      fontWeight: KvDesignSystem().headlineWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().headlineLSize,
+        KvDesignSystem().headlineLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle headlineM({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.headlineMSize.toDouble(),
-      fontWeight: DTokens.headlineWeight.toFontWeight,
-      height: _getHeight(DTokens.headlineMSize, DTokens.headlineMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().headlineMSize,
+      fontWeight: KvDesignSystem().headlineWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().headlineMSize,
+        KvDesignSystem().headlineMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle headlineS({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.headlineSSize.toDouble(),
-      fontWeight: DTokens.headlineWeight.toFontWeight,
-      height: _getHeight(DTokens.headlineSSize, DTokens.headlineSLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().headlineSSize,
+      fontWeight: KvDesignSystem().headlineWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().headlineSSize,
+        KvDesignSystem().headlineSLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle headlineXS({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.headlineXSSize.toDouble(),
-      fontWeight: DTokens.headlineWeight.toFontWeight,
-      height: _getHeight(DTokens.headlineXSSize, DTokens.headlineXSLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().headlineXSSize,
+      fontWeight: KvDesignSystem().headlineWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().headlineXSSize,
+        KvDesignSystem().headlineXSLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle titleXL({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.titleXLSize.toDouble(),
-      fontWeight: DTokens.titleWeight.toFontWeight,
-      height: _getHeight(DTokens.titleXLSize, DTokens.titleXLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().titleXLSize,
+      fontWeight: KvDesignSystem().titleWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().titleXLSize,
+        KvDesignSystem().titleXLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle titleL({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.titleLSize.toDouble(),
-      fontWeight: DTokens.titleWeight.toFontWeight,
-      height: _getHeight(DTokens.titleLSize, DTokens.titleLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().titleLSize,
+      fontWeight: KvDesignSystem().titleWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().titleLSize,
+        KvDesignSystem().titleLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle titleM({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.titleMSize.toDouble(),
-      fontWeight: DTokens.titleWeight.toFontWeight,
-      height: _getHeight(DTokens.titleMSize, DTokens.titleMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().titleMSize,
+      fontWeight: KvDesignSystem().titleWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().titleMSize,
+        KvDesignSystem().titleMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle titleS({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.titleSSize.toDouble(),
-      fontWeight: DTokens.titleWeight.toFontWeight,
-      height: _getHeight(DTokens.titleSSize, DTokens.titleSLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().titleSSize,
+      fontWeight: KvDesignSystem().titleWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().titleSSize,
+        KvDesignSystem().titleSLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle labelXL({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.labelXLSize.toDouble(),
-      fontWeight: DTokens.labelWeight.toFontWeight,
-      height: _getHeight(DTokens.labelXLSize, DTokens.labelXLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().labelXLSize,
+      fontWeight: KvDesignSystem().labelWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().labelXLSize,
+        KvDesignSystem().labelXLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle labelL({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.labelLSize.toDouble(),
-      fontWeight: DTokens.labelWeight.toFontWeight,
-      height: _getHeight(DTokens.labelLSize, DTokens.labelLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().labelLSize,
+      fontWeight: KvDesignSystem().labelWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().labelLSize,
+        KvDesignSystem().labelLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle labelM({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.labelMSize.toDouble(),
-      fontWeight: DTokens.labelWeight.toFontWeight,
-      height: _getHeight(DTokens.labelMSize, DTokens.labelMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().labelMSize,
+      fontWeight: KvDesignSystem().labelWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().labelMSize,
+        KvDesignSystem().labelMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle labelS({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.labelSSize.toDouble(),
-      fontWeight: DTokens.labelWeight.toFontWeight,
-      height: _getHeight(DTokens.labelSSize, DTokens.labelSLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().labelSSize,
+      fontWeight: KvDesignSystem().labelWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().labelSSize,
+        KvDesignSystem().labelSLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle labelXS({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.labelXSSize.toDouble(),
-      fontWeight: DTokens.labelWeight.toFontWeight,
-      height: _getHeight(DTokens.labelXSSize, DTokens.labelXSLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().labelXSSize,
+      fontWeight: KvDesignSystem().labelWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().labelXSSize,
+        KvDesignSystem().labelXSLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyLRE({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyLSize.toDouble(),
-      fontWeight: DTokens.bodyLREWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyLSize, DTokens.bodyLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyLSize,
+      fontWeight: KvDesignSystem().bodyLREWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyLSize,
+        KvDesignSystem().bodyLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyLME({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyLSize.toDouble(),
-      fontWeight: DTokens.bodyLMEWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyLSize, DTokens.bodyLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyLSize,
+      fontWeight: KvDesignSystem().bodyLMEWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyLSize,
+        KvDesignSystem().bodyLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyLSE({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyLSize.toDouble(),
-      fontWeight: DTokens.bodyLSEWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyLSize, DTokens.bodyLLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyLSize,
+      fontWeight: KvDesignSystem().bodyLSEWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyLSize,
+        KvDesignSystem().bodyLLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyMRE({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyMSize.toDouble(),
-      fontWeight: DTokens.bodyMREWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyMSize, DTokens.bodyMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyMSize,
+      fontWeight: KvDesignSystem().bodyMREWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyMSize,
+        KvDesignSystem().bodyMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyMME({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyMSize.toDouble(),
-      fontWeight: DTokens.bodyMMEWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyMSize, DTokens.bodyMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyMSize,
+      fontWeight: KvDesignSystem().bodyMMEWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyMSize,
+        KvDesignSystem().bodyMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyMSE({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyMSize.toDouble(),
-      fontWeight: DTokens.bodyMSEWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyMSize, DTokens.bodyMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyMSize,
+      fontWeight: KvDesignSystem().bodyMSEWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyMSize,
+        KvDesignSystem().bodyMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle bodyMMEUnderline({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.bodyMSize.toDouble(),
-      fontWeight: DTokens.bodyMMEUWeight.toFontWeight,
-      height: _getHeight(DTokens.bodyMSize, DTokens.bodyMLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().bodyMSize,
+      fontWeight: KvDesignSystem().bodyMMEUWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().bodyMSize,
+        KvDesignSystem().bodyMLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       decoration: TextDecoration.underline,
       fontFamily: fontFamily,
@@ -323,66 +391,81 @@ class KvTextStyles {
   }
 
   static TextStyle cationRE({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.captionSize.toDouble(),
-      fontWeight: DTokens.captionREWeight.toFontWeight,
-      height: _getHeight(DTokens.captionSize, DTokens.captionLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().captionSize,
+      fontWeight: KvDesignSystem().captionREWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().captionSize,
+        KvDesignSystem().captionLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle cationME({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.captionSize.toDouble(),
-      fontWeight: DTokens.captionMEWeight.toFontWeight,
-      height: _getHeight(DTokens.captionSize, DTokens.captionLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().captionSize,
+      fontWeight: KvDesignSystem().captionMEWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().captionSize,
+        KvDesignSystem().captionLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle cationSE({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.captionSize.toDouble(),
-      fontWeight: DTokens.captionSEWeight.toFontWeight,
-      height: _getHeight(DTokens.captionSize, DTokens.captionLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().captionSize,
+      fontWeight: KvDesignSystem().captionSEWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().captionSize,
+        KvDesignSystem().captionLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle cationIT({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.captionSize.toDouble(),
-      fontWeight: DTokens.captionITWeight.toFontWeight,
+      color: _getColor(color),
+      fontSize: KvDesignSystem().captionSize,
+      fontWeight: KvDesignSystem().captionITWeight.toFontWeight,
       fontStyle: FontStyle.italic,
-      height: _getHeight(DTokens.captionSize, DTokens.captionLineHeight),
+      height: _getHeight(
+        KvDesignSystem().captionSize,
+        KvDesignSystem().captionLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle cationStrikethrough({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.captionSize.toDouble(),
-      fontWeight: DTokens.captionStrikethroughWeight.toFontWeight,
-      height: _getHeight(DTokens.captionSize, DTokens.captionLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().captionSize,
+      fontWeight: KvDesignSystem().captionStrikethroughWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().captionSize,
+        KvDesignSystem().captionLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       decoration: TextDecoration.lineThrough,
       fontFamily: fontFamily,
@@ -390,13 +473,16 @@ class KvTextStyles {
   }
 
   static TextStyle cationUnderline({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.captionSize.toDouble(),
-      fontWeight: DTokens.captionUnderlineWeight.toFontWeight,
-      height: _getHeight(DTokens.captionSize, DTokens.captionLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().captionSize,
+      fontWeight: KvDesignSystem().captionUnderlineWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().captionSize,
+        KvDesignSystem().captionLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       decoration: TextDecoration.underline,
       fontFamily: fontFamily,
@@ -404,27 +490,30 @@ class KvTextStyles {
   }
 
   static TextStyle navigation({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
   }) {
     return TextStyle(
-      color: color,
-      fontSize: DTokens.navigationSize.toDouble(),
-      fontWeight: DTokens.navigationWeight.toFontWeight,
-      height: _getHeight(DTokens.navigationSize, DTokens.navigationLineHeight),
+      color: _getColor(color),
+      fontSize: KvDesignSystem().navigationSize,
+      fontWeight: KvDesignSystem().navigationWeight.toFontWeight,
+      height: _getHeight(
+        KvDesignSystem().navigationSize,
+        KvDesignSystem().navigationLineHeight,
+      ),
       leadingDistribution: TextLeadingDistribution.even,
       fontFamily: fontFamily,
     );
   }
 
   static TextStyle freeStyle({
-    Color color = DTokens.textNeutralBase,
+    Color? color,
     double? fontSize,
     FontWeight? fontWeight,
     double? height,
     TextDecoration? decoration,
   }) {
     return TextStyle(
-      color: color,
+      color: _getColor(color),
       fontSize: fontSize,
       fontWeight: fontWeight,
       height: height,

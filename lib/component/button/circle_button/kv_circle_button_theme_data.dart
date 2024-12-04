@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../foundation/d_tokens.dart';
 import '../../../foundation/kv_icon.dart';
+import '../../../kv_design_system.dart';
 
 enum KvCircleButtonStyle {
   text,
@@ -52,28 +52,28 @@ class KvCircleButtonThemeData extends ButtonStyle {
     switch (buttonSize) {
       case KvCircleButtonSize.xSmall:
         return Size(
-          DTokens.buttonSizeXS.toDouble(),
-          DTokens.buttonSizeXS.toDouble(),
+          KvDesignSystem().buttonSizeXS,
+          KvDesignSystem().buttonSizeXS,
         );
       case KvCircleButtonSize.small:
         return Size(
-          DTokens.buttonSizeS.toDouble(),
-          DTokens.buttonSizeS.toDouble(),
+          KvDesignSystem().buttonSizeS,
+          KvDesignSystem().buttonSizeS,
         );
       case KvCircleButtonSize.medium:
         return Size(
-          DTokens.buttonSizeM.toDouble(),
-          DTokens.buttonSizeM.toDouble(),
+          KvDesignSystem().buttonSizeM,
+          KvDesignSystem().buttonSizeM,
         );
       case KvCircleButtonSize.large:
         return Size(
-          DTokens.buttonSizeL.toDouble(),
-          DTokens.buttonSizeL.toDouble(),
+          KvDesignSystem().buttonSizeL,
+          KvDesignSystem().buttonSizeL,
         );
       case KvCircleButtonSize.xLarge:
         return Size(
-          DTokens.buttonSizeXL.toDouble(),
-          DTokens.buttonSizeXL.toDouble(),
+          KvDesignSystem().buttonSizeXL,
+          KvDesignSystem().buttonSizeXL,
         );
     }
   }
@@ -109,14 +109,14 @@ class KvCircleButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCircleButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens.buttonColorBGPrimaryFadedDisabled;
+          return KvDesignSystem().buttonColorBGPrimaryFadedDisabled;
         }
-        return DTokens.buttonColorBGPrimaryFadedDefault;
+        return KvDesignSystem().buttonColorBGPrimaryFadedDefault;
       case KvCircleButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens.buttonColorBGNeutralFadedDisabled;
+          return KvDesignSystem().buttonColorBGNeutralFadedDisabled;
         }
-        return DTokens.buttonColorBGNeutralFadedDefault;
+        return KvDesignSystem().buttonColorBGNeutralFadedDefault;
     }
   }
 
@@ -130,16 +130,16 @@ class KvCircleButtonThemeData extends ButtonStyle {
           case KvCircleButtonStyle.text:
             switch (buttonVariant) {
               case KvCircleButtonVariant.primary:
-                return DTokens.buttonColorBGPrimaryTertiaryPressed;
+                return KvDesignSystem().buttonColorBGPrimaryTertiaryPressed;
               case KvCircleButtonVariant.neutral:
-                return DTokens.buttonColorBGNeutralTertiaryPressed;
+                return KvDesignSystem().buttonColorBGNeutralTertiaryPressed;
             }
           case KvCircleButtonStyle.faded:
             switch (buttonVariant) {
               case KvCircleButtonVariant.primary:
-                return DTokens.buttonColorBGPrimaryFadedPressed;
+                return KvDesignSystem().buttonColorBGPrimaryFadedPressed;
               case KvCircleButtonVariant.neutral:
-                return DTokens.buttonColorBGNeutralFadedPressed;
+                return KvDesignSystem().buttonColorBGNeutralFadedPressed;
             }
         }
       }
@@ -202,14 +202,14 @@ class KvCircleButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCircleButtonVariant.primary:
         if (enabled) {
-          return DTokens.buttonColorTextPrimaryTertiaryEnabled;
+          return KvDesignSystem().buttonColorTextPrimaryTertiaryEnabled;
         }
-        return DTokens.buttonColorTextPrimaryTertiaryDisabled;
+        return KvDesignSystem().buttonColorTextPrimaryTertiaryDisabled;
       case KvCircleButtonVariant.neutral:
         if (enabled) {
-          return DTokens.buttonColorIconCircleTextEnabled;
+          return KvDesignSystem().buttonColorIconCircleTextEnabled;
         }
-        return DTokens.buttonColorIconCircleTextDisabled;
+        return KvDesignSystem().buttonColorIconCircleTextDisabled;
     }
   }
 
@@ -217,14 +217,14 @@ class KvCircleButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCircleButtonVariant.primary:
         if (enabled) {
-          return DTokens.buttonColorTextPrimaryFadedEnabled;
+          return KvDesignSystem().buttonColorTextPrimaryFadedEnabled;
         }
-        return DTokens.buttonColorTextPrimaryFadedDisabled;
+        return KvDesignSystem().buttonColorTextPrimaryFadedDisabled;
       case KvCircleButtonVariant.neutral:
         if (enabled) {
-          return DTokens.buttonColorIconCircleFadedEnabled;
+          return KvDesignSystem().buttonColorIconCircleFadedEnabled;
         }
-        return DTokens.buttonColorIconCircleFadedDisabled;
+        return KvDesignSystem().buttonColorIconCircleFadedDisabled;
     }
   }
 

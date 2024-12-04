@@ -154,10 +154,10 @@ class _DialogActionDefault extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
-        DTokens.sizeSize16,
+        KvDesignSystem().sizeSize16,
         8,
-        DTokens.sizeSize16,
-        DTokens.sizeSize16,
+        KvDesignSystem().sizeSize16,
+        KvDesignSystem().sizeSize16,
       ),
       child: Row(
         children: [
@@ -201,10 +201,10 @@ class _DialogActionVerticalDefault extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
-        DTokens.sizeSize16,
+        KvDesignSystem().sizeSize16,
         8,
-        DTokens.sizeSize16,
-        DTokens.sizeSize16,
+        KvDesignSystem().sizeSize16,
+        KvDesignSystem().sizeSize16,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -242,10 +242,10 @@ class _DialogActionHighest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
-        DTokens.sizeSize16,
+        KvDesignSystem().sizeSize16,
         8,
-        DTokens.sizeSize16,
-        DTokens.sizeSize16,
+        KvDesignSystem().sizeSize16,
+        KvDesignSystem().sizeSize16,
       ),
       child: KvCommonButton(
         buttonStyle: KvCommonButtonStyle.outlinedButton,
@@ -277,7 +277,7 @@ class _DialogConfirmationDefault extends StatelessWidget {
       decoration: const BoxDecoration(
         border: Border(
           top: BorderSide(
-            color: DTokens.colorDividerBlock,
+            color: KvDesignSystem().colorDividerBlock,
           ),
         ),
       ),
@@ -295,9 +295,9 @@ class _DialogConfirmationDefault extends StatelessWidget {
             ),
           ),
           Container(
-            color: DTokens.colorDividerBlock,
+            color: KvDesignSystem().colorDividerBlock,
             width: 1,
-            height: DTokens.commonButtonSizeL,
+            height: KvDesignSystem().commonButtonSizeL,
           ),
           Expanded(
             child: Padding(

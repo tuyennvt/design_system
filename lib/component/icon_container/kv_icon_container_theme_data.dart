@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../style_dictionary/style_dictionary_color.dart';
+import '../../kv_design_system.dart';
 
 enum KvIconContainerStyle {
   neutral,
@@ -11,42 +11,65 @@ enum KvIconContainerStyle {
   warning,
 }
 
-class KvIconContainerThemeData {
-  KvIconContainerThemeData(this.iconContainerStyle);
+enum KvIconContainerSize {
+  small,
+  medium,
+  large,
+}
 
-  final KvIconContainerStyle iconContainerStyle;
+class KvIconContainerThemeData {
+  KvIconContainerThemeData(this.style, this.size);
+
+  final KvIconContainerStyle style;
+  final KvIconContainerSize size;
 
   Color get iconColor {
-    switch (iconContainerStyle) {
+    switch (style) {
       case KvIconContainerStyle.neutral:
-        return DTokens.colorIconNeutralLabel;
+        return KvDesignSystem().iconNeutralLabel;
       case KvIconContainerStyle.promotion:
-        return DTokens.colorIconPromotionOnfadedLabel;
+        return KvDesignSystem().iconPromotiononFadedLabel;
       case KvIconContainerStyle.success:
-        return DTokens.colorIconSuccessOnfadedLabel;
+        return KvDesignSystem().iconSuccessonFadedLabel;
       case KvIconContainerStyle.danger:
-        return DTokens.colorIconDangerOnfadedLabel;
+        return KvDesignSystem().iconDangeronFadedLabel;
       case KvIconContainerStyle.info:
-        return DTokens.colorIconInfoOnfadedLabel;
+        return KvDesignSystem().iconInfoonFadedLabel;
       case KvIconContainerStyle.warning:
-        return DTokens.colorIconWarningOnfadedLabel;
+        return KvDesignSystem().iconWarningonFadedLabel;
     }
   }
 
   Color get backgroundColor {
-    switch (iconContainerStyle) {
+    switch (style) {
       case KvIconContainerStyle.neutral:
-        return DTokens.colorBgNeutralFadedDefault;
+        return KvDesignSystem().bGNeutralFadedDefault;
       case KvIconContainerStyle.promotion:
-        return DTokens.colorBgPromotionFadedDefault;
+        return KvDesignSystem().bGPromotionFadedDefault;
       case KvIconContainerStyle.success:
-        return DTokens.colorBgSuccessFadedDefault;
+        return KvDesignSystem().bGSuccessFadedDefault;
       case KvIconContainerStyle.danger:
-        return DTokens.colorBgDangerFadedDefault;
+        return KvDesignSystem().bGDangerFadedDefault;
       case KvIconContainerStyle.info:
-        return DTokens.colorBgInfoFadedDefault;
+        return KvDesignSystem().bGInfoFadedDefault;
       case KvIconContainerStyle.warning:
-        return DTokens.colorBgWarningFadedDefault;
+        return KvDesignSystem().bGWarningFadedDefault;
     }
+  }
+
+  BoxConstraints get boxConstraints {
+    var numberSize = 0.0;
+    switch (size) {
+      case KvIconContainerSize.small:
+        numberSize = KvDesignSystem().iconContainerSizeS;
+        break;
+      case KvIconContainerSize.medium:
+        numberSize = KvDesignSystem().iconContainerSizeM;
+        break;
+      case KvIconContainerSize.large:
+        numberSize = KvDesignSystem().iconContainerSizeL;
+        break;
+    }
+    return BoxConstraints.tight(Size.square(numberSize));
   }
 }

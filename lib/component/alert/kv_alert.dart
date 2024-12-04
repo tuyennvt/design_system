@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
-import '../../foundation/d_tokens.dart';
 import '../../foundation/kv_icons.dart';
+import '../../kv_design_system.dart';
 import '../../utils.dart';
 
 class KvAlert extends StatelessWidget {
@@ -45,11 +45,11 @@ class KvAlert extends StatelessWidget {
               onPressed: onActionPressed,
             ),
             SizedBox(
-              width: DTokens.gutterItemHorizontal.toDouble(),
+              width: KvDesignSystem().gutterItemHorizontal,
             ),
-            const KvIcon(
+            KvIcon(
               icon: KvIcons.angle_right_regular,
-              color: DTokens.iconNeutralSecondaryAction,
+              color: KvDesignSystem().iconNeutralSecondaryAction,
               size: KvIconSize.iconXS,
             ),
           },
@@ -85,11 +85,11 @@ class KvAlert extends StatelessWidget {
                   onPressed: onActionPressed,
                 ),
                 SizedBox(
-                  width: DTokens.gutterItemHorizontal.toDouble(),
+                  width: KvDesignSystem().gutterItemHorizontal.toDouble(),
                 ),
-                const KvIcon(
+                KvIcon(
                   icon: KvIcons.angle_right_regular,
-                  color: DTokens.iconNeutralSecondaryAction,
+                  color: KvDesignSystem().iconNeutralSecondaryAction,
                   size: KvIconSize.iconXS,
                 ),
               ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../employee_flutter_design_system.dart';
-import '../../foundation/d_tokens.dart';
+import '../../foundation/kv_text_styles.dart';
+import '../../kv_design_system.dart';
 
 enum KvAlertStyle {
   defaultAlert,
@@ -20,52 +20,52 @@ class KvAlertThemeData {
   Color get background {
     switch (alertStyle) {
       case KvAlertStyle.defaultAlert:
-        return DTokens.alertColorBGNeutral;
+        return KvDesignSystem().alertColorBGNeutral;
       case KvAlertStyle.informationAlert:
-        return DTokens.alertColorBGInfo;
+        return KvDesignSystem().alertColorBGInfo;
       case KvAlertStyle.warningAlert:
-        return DTokens.alertColorBGWarning;
+        return KvDesignSystem().alertColorBGWarning;
       case KvAlertStyle.dangerAlert:
-        return DTokens.alertColorBGDanger;
+        return KvDesignSystem().alertColorBGDanger;
       case KvAlertStyle.successAlert:
-        return DTokens.alertColorBGSuccess;
+        return KvDesignSystem().alertColorBGSuccess;
       case KvAlertStyle.promotionAlert:
-        return DTokens.alertColorBGPromotion;
+        return KvDesignSystem().alertColorBGPromotion;
     }
   }
 
   Color get borderColor {
     switch (alertStyle) {
       case KvAlertStyle.defaultAlert:
-        return DTokens.alertColorBorderNeutral;
+        return KvDesignSystem().alertColorBorderNeutral;
       case KvAlertStyle.informationAlert:
-        return DTokens.alertColorBorderInfo;
+        return KvDesignSystem().alertColorBorderInfo;
       case KvAlertStyle.warningAlert:
-        return DTokens.alertColorBorderWarning;
+        return KvDesignSystem().alertColorBorderWarning;
       case KvAlertStyle.dangerAlert:
-        return DTokens.alertColorBorderDanger;
+        return KvDesignSystem().alertColorBorderDanger;
       case KvAlertStyle.successAlert:
-        return DTokens.alertColorBorderSuccess;
+        return KvDesignSystem().alertColorBorderSuccess;
       case KvAlertStyle.promotionAlert:
-        return DTokens.alertColorBorderPromotion;
+        return KvDesignSystem().alertColorBorderPromotion;
     }
   }
 
   Border get border {
     return Border.all(
       color: borderColor,
-      width: DTokens.alertStroke.toDouble(),
+      width: KvDesignSystem().alertStroke.toDouble(),
     );
   }
 
   BorderRadius get borderRadius {
     return BorderRadius.all(
-      Radius.circular(DTokens.alertRadius.toDouble()),
+      Radius.circular(KvDesignSystem().alertRadius.toDouble()),
     );
   }
 
   Color get prefixTitleIconColor {
-    return DTokens.iconNeutralLabel;
+    return KvDesignSystem().iconNeutralLabel;
   }
 
   TextStyle get titleTextStyle {
@@ -78,12 +78,12 @@ class KvAlertThemeData {
 
   EdgeInsets get padding {
     return EdgeInsets.symmetric(
-      vertical: DTokens.alertPaddingVertical.toDouble(),
-      horizontal: DTokens.alertPaddingHorizontal.toDouble(),
+      vertical: KvDesignSystem().alertPaddingVertical.toDouble(),
+      horizontal: KvDesignSystem().alertPaddingHorizontal.toDouble(),
     );
   }
 
-  double get gutter => DTokens.alertGutterVertical.toDouble();
+  double get gutter => KvDesignSystem().alertGutterVertical.toDouble();
 
   BoxDecoration get decoration {
     return BoxDecoration(
@@ -96,17 +96,17 @@ class KvAlertThemeData {
   Color get prefixIconColor {
     switch (alertStyle) {
       case KvAlertStyle.defaultAlert:
-        return DTokens.alertColorIconNeutral;
+        return KvDesignSystem().alertColorIconNeutral;
       case KvAlertStyle.informationAlert:
-        return DTokens.alertColorIconInfo;
+        return KvDesignSystem().alertColorIconInfo;
       case KvAlertStyle.warningAlert:
-        return DTokens.alertColorIconWarning;
+        return KvDesignSystem().alertColorIconWarning;
       case KvAlertStyle.dangerAlert:
-        return DTokens.alertColorIconDanger;
+        return KvDesignSystem().alertColorIconDanger;
       case KvAlertStyle.successAlert:
-        return DTokens.alertColorIconSuccess;
+        return KvDesignSystem().alertColorIconSuccess;
       case KvAlertStyle.promotionAlert:
-        return DTokens.alertColorIconPromotion;
+        return KvDesignSystem().alertColorIconPromotion;
     }
   }
 }

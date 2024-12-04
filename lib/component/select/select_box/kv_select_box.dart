@@ -114,7 +114,7 @@ class _SelectBoxState extends State<_SelectBox> {
                 border: decorator.border,
                 borderRadius: decorator.borderRadius,
               ),
-              height: DTokens.sizeSize56,
+              height: KvDesignSystem().sizeSize56,
               child: Row(
                 children: [
                   decorator.prefix,
@@ -181,7 +181,7 @@ class _SelectBoxChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: DTokens.sizeSize40,
+      height: KvDesignSystem().sizeSize40,
       child: Stack(
         children: [
           AnimatedAlign(
@@ -199,7 +199,7 @@ class _SelectBoxChild extends StatelessWidget {
             Align(
               alignment: Alignment.bottomLeft,
               child: SizedBox(
-                height: DTokens.sizeSize20,
+                height: KvDesignSystem().sizeSize20,
                 child: Text(
                   value,
                   style: decorator.valueStyle,

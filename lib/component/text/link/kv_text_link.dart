@@ -19,7 +19,7 @@ class KvTextLink extends StatelessWidget {
       child: Text(
         link,
         style: KvTextStyles.freeStyle(
-          color: DTokens.colorTextLink,
+          color: KvDesignSystem().colorTextLink,
           fontWeight: FontWeight.w400,
           fontSize: 14,
           decoration: TextDecoration.underline,

@@ -42,7 +42,7 @@ class KvListTileCenter extends StatelessWidget {
             children: [
               if (prefix != null) ...{
                 prefix!,
-                const SizedBox(width: DTokens.sizeSize12),
+                const SizedBox(width: KvDesignSystem().sizeSize12),
               },
               Expanded(
                 child: _ListTile(
@@ -54,7 +54,7 @@ class KvListTileCenter extends StatelessWidget {
                 ),
               ),
               if (suffix != null) ...{
-                const SizedBox(width: DTokens.sizeSize12),
+                const SizedBox(width: KvDesignSystem().sizeSize12),
                 suffix!,
               },
             ],
@@ -62,8 +62,8 @@ class KvListTileCenter extends StatelessWidget {
         ),
         if (!isLastItem) ...{
           const KvDivider(
-            indent: DTokens.sizeSize16,
-            endIndent: DTokens.sizeSize16,
+            indent: KvDesignSystem().sizeSize16,
+            endIndent: KvDesignSystem().sizeSize16,
           ),
         },
       ],

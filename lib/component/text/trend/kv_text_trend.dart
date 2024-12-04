@@ -28,7 +28,7 @@ class KvTextTrend extends StatelessWidget implements KvTextSupportWidget {
           style: KvTextStyles.labelS(color: color),
         ),
         KvIcon(
-          assetIcon: assetIcon,
+          icon: assetIcon,
           color: color,
           size: KvIconSize.size12,
         ),
@@ -39,9 +39,9 @@ class KvTextTrend extends StatelessWidget implements KvTextSupportWidget {
   Color get color {
     switch (type) {
       case KvTextTrendType.up:
-        return DTokens.colorTextSuccessOnwhiteTertiary;
+        return KvDesignSystem().colorTextSuccessOnwhiteTertiary;
       case KvTextTrendType.down:
-        return DTokens.colorTextDangerDefault;
+        return KvDesignSystem().colorTextDangerDefault;
     }
   }
 

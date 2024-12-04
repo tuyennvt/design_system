@@ -7,7 +7,7 @@ class KvTextHelperDescription extends StatelessWidget {
   const KvTextHelperDescription({
     super.key,
     required this.descText,
-    this.color = DTokens.colorTextNeutralSecondary,
+    this.color = KvDesignSystem().colorTextNeutralSecondary,
   });
 
   final String descText;

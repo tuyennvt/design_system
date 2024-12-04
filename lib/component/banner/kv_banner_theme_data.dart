@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../employee_flutter_design_system.dart';
-import '../../foundation/d_tokens.dart';
+import '../../foundation/kv_text_styles.dart';
+import '../../kv_design_system.dart';
 
 enum KvBannerType {
   defaultBanner,
@@ -18,52 +18,52 @@ class KvBannerThemeData {
   Color get backgroundColor {
     switch (bannerType) {
       case KvBannerType.defaultBanner:
-        return DTokens.bGNeutralFadedDefault;
+        return KvDesignSystem().bGNeutralFadedDefault;
       case KvBannerType.informationBanner:
-        return DTokens.bGInfoFadedDefault;
+        return KvDesignSystem().bGInfoFadedDefault;
       case KvBannerType.warningBanner:
-        return DTokens.bGWarningFadedDefault;
+        return KvDesignSystem().bGWarningFadedDefault;
       case KvBannerType.dangerBanner:
-        return DTokens.bGDangerFadedDefault;
+        return KvDesignSystem().bGDangerFadedDefault;
     }
   }
 
   Color get announcementIconColor {
     switch (bannerType) {
       case KvBannerType.defaultBanner:
-        return DTokens.iconNeutralonFadedLabel;
+        return KvDesignSystem().iconNeutralonFadedLabel;
       case KvBannerType.informationBanner:
-        return DTokens.iconInfoonFadedLabel;
+        return KvDesignSystem().iconInfoonFadedLabel;
       case KvBannerType.warningBanner:
-        return DTokens.iconWarningonFadedLabel;
+        return KvDesignSystem().iconWarningonFadedLabel;
       case KvBannerType.dangerBanner:
-        return DTokens.iconDangeronFadedLabel;
+        return KvDesignSystem().iconDangeronFadedLabel;
     }
   }
 
   Color get actionIconColor {
     switch (bannerType) {
       case KvBannerType.defaultBanner:
-        return DTokens.iconNeutralonFadedSecondaryAction;
+        return KvDesignSystem().iconNeutralonFadedSecondaryAction;
       case KvBannerType.informationBanner:
-        return DTokens.iconInfoonFadedSecondaryAction;
+        return KvDesignSystem().iconInfoonFadedSecondaryAction;
       case KvBannerType.warningBanner:
-        return DTokens.iconWarningonFadedSecondaryAction;
+        return KvDesignSystem().iconWarningonFadedSecondaryAction;
       case KvBannerType.dangerBanner:
-        return DTokens.iconDangeronFadedSecondaryAction;
+        return KvDesignSystem().iconDangeronFadedSecondaryAction;
     }
   }
 
   Color get contentColor {
     switch (bannerType) {
       case KvBannerType.defaultBanner:
-        return DTokens.textNeutralonFadedSecondary;
+        return KvDesignSystem().textNeutralonFadedSecondary;
       case KvBannerType.informationBanner:
-        return DTokens.textPrimaryonFadedSecondary;
+        return KvDesignSystem().textPrimaryonFadedSecondary;
       case KvBannerType.warningBanner:
-        return DTokens.textWarningonFadedSecondary;
+        return KvDesignSystem().textWarningonFadedSecondary;
       case KvBannerType.dangerBanner:
-        return DTokens.textDangeronFadedSecondary;
+        return KvDesignSystem().textDangeronFadedSecondary;
     }
   }
 
@@ -72,7 +72,7 @@ class KvBannerThemeData {
   }
 
   EdgeInsets get padding => EdgeInsets.symmetric(
-        vertical: DTokens.bannerPaddingVertical.toDouble(),
-        horizontal: DTokens.bannerPaddingHorizontal.toDouble(),
+        vertical: KvDesignSystem().bannerPaddingVertical.toDouble(),
+        horizontal: KvDesignSystem().bannerPaddingHorizontal.toDouble(),
       );
 }

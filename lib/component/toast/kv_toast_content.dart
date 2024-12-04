@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
-import '../../generated/assets.dart';
+import '../../foundation/kv_icons.dart';
+import '../../kv_design_system.dart';
 import '../../utils.dart';
 import '../button/close_button/kv_close_button.dart';
 
@@ -10,7 +11,7 @@ class KvToastContent extends StatelessWidget {
     required this.type,
     required this.title,
     this.description,
-    this.assetPrefixIcon,
+    this.prefixIcon,
     this.onClosed,
   });
 
@@ -24,12 +25,7 @@ class KvToastContent extends StatelessWidget {
       type: KvToastType.system,
       title: title,
       description: description,
-      assetPrefixIcon: showPrefixIcon
-          ? KvSvgAsset(
-              Assets.iconsBell,
-              assetPackage: packageRoot,
-            )
-          : null,
+      prefixIcon: showPrefixIcon ? KvIcons.bell_regular : null,
       onClosed: onClosed,
     );
   }
@@ -44,12 +40,7 @@ class KvToastContent extends StatelessWidget {
       type: KvToastType.information,
       title: title,
       description: description,
-      assetPrefixIcon: showPrefixIcon
-          ? KvSvgAsset(
-              Assets.iconsCircleInfo,
-              assetPackage: packageRoot,
-            )
-          : null,
+      prefixIcon: showPrefixIcon ? KvIcons.circle_info_regular : null,
       onClosed: onClosed,
     );
   }
@@ -64,12 +55,7 @@ class KvToastContent extends StatelessWidget {
       type: KvToastType.success,
       title: title,
       description: description,
-      assetPrefixIcon: showPrefixIcon
-          ? KvSvgAsset(
-              Assets.iconsCircleCheck,
-              assetPackage: packageRoot,
-            )
-          : null,
+      prefixIcon: showPrefixIcon ? KvIcons.circle_check_regular : null,
       onClosed: onClosed,
     );
   }
@@ -84,12 +70,7 @@ class KvToastContent extends StatelessWidget {
       type: KvToastType.warning,
       title: title,
       description: description,
-      assetPrefixIcon: showPrefixIcon
-          ? KvSvgAsset(
-              Assets.iconsCircleExclamationRegular,
-              assetPackage: packageRoot,
-            )
-          : null,
+      prefixIcon: showPrefixIcon ? KvIcons.triangle_exclamation_regular : null,
       onClosed: onClosed,
     );
   }
@@ -104,12 +85,7 @@ class KvToastContent extends StatelessWidget {
       type: KvToastType.danger,
       title: title,
       description: description,
-      assetPrefixIcon: showPrefixIcon
-          ? KvSvgAsset(
-              Assets.iconsCircleExclamationSolid,
-              assetPackage: packageRoot,
-            )
-          : null,
+      prefixIcon: showPrefixIcon ? KvIcons.circle_exclamation_regular : null,
       onClosed: onClosed,
     );
   }
@@ -117,59 +93,52 @@ class KvToastContent extends StatelessWidget {
   final KvToastType type;
   final String title;
   final String? description;
-  final KvSvgAsset? assetPrefixIcon;
+  final IconData? prefixIcon;
   final VoidCallback? onClosed;
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return Container(
+      padding: padding,
       decoration: BoxDecoration(
         color: background,
         borderRadius: borderRadius,
       ),
       child: Row(
         children: [
-          const SizedBox(
-            width: DTokens.sizeSize20,
-          ),
-          if (assetPrefixIcon.isNotNullOrEmpty) ...{
+          if (prefixIcon != null) ...{
             KvIcon(
-              assetIcon: assetPrefixIcon!,
+              icon: prefixIcon!,
               color: prefixIconColor,
             ),
-            const SizedBox(width: DTokens.sizeSize12),
+            SizedBox(width: KvDesignSystem().toastGutter),
           },
           Expanded(
-            child: Padding(
-              padding: contentPadding,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  title,
+                  style: KvTextStyles.titleM(color: titleColor),
+                ),
+                if (description.isNotNullOrEmpty) ...{
+                  const SizedBox(height: 4.0),
                   Text(
-                    title,
-                    style: KvTextStyles.titleM(color: titleColor),
+                    description!,
+                    style: KvTextStyles.cationRE(color: descriptionColor),
                   ),
-                  if (description.isNotNullOrEmpty) ...{
-                    const SizedBox(height: 4.0),
-                    Text(
-                      description!,
-                      style: KvTextStyles.cationRe(color: descriptionColor),
-                    ),
-                  },
-                ],
-              ),
+                },
+              ],
             ),
           ),
           if (onClosed != null) ...{
-            const SizedBox(width: DTokens.sizeSize12),
+            SizedBox(width: KvDesignSystem().toastGutter),
             KvCloseButton(
               onPressed: onClosed,
               color: closedIconColor,
             ),
           },
-          const SizedBox(
-            width: DTokens.sizeSize20,
-          ),
         ],
       ),
     );
@@ -177,108 +146,91 @@ class KvToastContent extends StatelessWidget {
 
   Duration get displayDuration => const Duration(seconds: 5);
 
-  EdgeInsets get margin => const EdgeInsets.only(
-        left: DTokens.sizeSize20,
-        right: DTokens.sizeSize20,
-        bottom: DTokens.sizeSize24,
+  EdgeInsets get padding => EdgeInsets.symmetric(
+        vertical: KvDesignSystem().toastPaddingVertical,
+        horizontal: KvDesignSystem().toastPaddingHorizontal,
       );
 
-  EdgeInsets get contentPadding => const EdgeInsets.only(
-        top: DTokens.sizeSize12,
-        bottom: DTokens.sizeSize12,
-      );
-
-  BorderRadius get borderRadius => const BorderRadius.all(
-        Radius.circular(DTokens.sizeSize12),
-      );
+  BorderRadius get borderRadius => const BorderRadius.all(Radius.circular(12));
 
   Color get prefixIconColor {
     switch (type) {
       case KvToastType.system:
-        return DTokens
-            .componentTokensToastColorIconDefault;
+        return KvDesignSystem().toastColorIconDefault;
       case KvToastType.information:
-        return DTokens.componentTokensToastColorIconInfo;
+        return KvDesignSystem().toastColorIconInfo;
       case KvToastType.success:
-        return DTokens
-            .componentTokensToastColorIconSuccess;
+        return KvDesignSystem().toastColorIconSuccess;
       case KvToastType.warning:
-        return DTokens
-            .componentTokensToastColorIconWarning;
+        return KvDesignSystem().toastColorIconWarning;
       case KvToastType.danger:
-        return DTokens
-            .componentTokensToastColorIconDanger;
+        return KvDesignSystem().toastColorIconDanger;
     }
   }
 
   Color get background {
     switch (type) {
       case KvToastType.system:
-        return DTokens.componentTokensToastColorBgDefault;
+        return KvDesignSystem().toastColorBGDefault;
       case KvToastType.information:
-        return DTokens
-            .componentTokensToastColorBgInformation;
+        return KvDesignSystem().toastColorBGInfo;
       case KvToastType.success:
-        return DTokens.componentTokensToastColorBgSuccess;
+        return KvDesignSystem().toastColorBGSuccess;
       case KvToastType.warning:
-        return DTokens.componentTokensToastColorBgWarning;
+        return KvDesignSystem().toastColorBGWarning;
       case KvToastType.danger:
-        return DTokens.componentTokensToastColorBgDanger;
+        return KvDesignSystem().toastColorBGDanger;
     }
   }
 
   Color get titleColor {
     switch (type) {
       case KvToastType.system:
-        return DTokens
-            .componentTokensToastColorTextTitleDefault;
+        return KvDesignSystem().toastColorTextTitleDefault;
       case KvToastType.information:
-        return DTokens
-            .componentTokensToastColorTextTitlePrimary;
+        return KvDesignSystem().toastColorTextTitleInfo;
       case KvToastType.success:
-        return DTokens
-            .componentTokensToastColorTextTitleSuccess;
+        return KvDesignSystem().toastColorTextTitleSuccess;
       case KvToastType.warning:
-        return DTokens
-            .componentTokensToastColorTextTitleWarning;
+        return KvDesignSystem().toastColorTextTitleWarning;
       case KvToastType.danger:
-        return DTokens
-            .componentTokensToastColorTextTitleDanger;
+        return KvDesignSystem().toastColorTextTitleDanger;
     }
   }
 
   Color get descriptionColor {
     switch (type) {
       case KvToastType.system:
-        return DTokens
-            .componentTokensToastColorTextSubDefault;
+        return KvDesignSystem().toastColorTextSubDefault;
       case KvToastType.information:
-        return DTokens
-            .componentTokensToastColorTextSubInfo;
+        return KvDesignSystem().toastColorTextSubInfo;
       case KvToastType.success:
-        return DTokens
-            .componentTokensToastColorTextSubSuccess;
+        return KvDesignSystem().toastColorTextSubSuccess;
       case KvToastType.warning:
-        return DTokens
-            .componentTokensToastColorTextSubWarning;
+        return KvDesignSystem().toastColorTextSubWarning;
       case KvToastType.danger:
-        return DTokens
-            .componentTokensToastColorTextSubDanger;
+        return KvDesignSystem().toastColorTextSubDanger;
     }
   }
 
   Color get closedIconColor {
     switch (type) {
       case KvToastType.system:
-        return DTokens.colorIconNeutralOnsolidPrimaryAction;
+        return KvDesignSystem().iconNeutralonSolidPrimaryAction;
       case KvToastType.information:
-        return DTokens.colorIconInfoSecondaryAction;
+        return KvDesignSystem().iconInfoSecondaryAction;
       case KvToastType.success:
-        return DTokens.colorIconSuccessSecondaryAction;
+        return KvDesignSystem().iconSuccessSecondaryAction;
       case KvToastType.warning:
-        return DTokens.colorIconWarningSecondaryAction;
+        return KvDesignSystem().iconWarningSecondaryAction;
       case KvToastType.danger:
-        return DTokens.colorIconDangerSecondaryAction;
+        return KvDesignSystem().iconDangerSecondaryAction;
     }
   }
+
+  EdgeInsets get margin => const EdgeInsets.only(
+        left: 20,
+        right: 20,
+        bottom: 24,
+      );
 }

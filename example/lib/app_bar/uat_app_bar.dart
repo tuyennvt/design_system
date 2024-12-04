@@ -34,7 +34,7 @@ class UatAppBarState extends State<UatAppBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: DTokens.colorBgLayerLevel2,
+      backgroundColor: KvDesignSystem().colorBgLayerLevel2,
       appBar: KvAppBar(
         visibleBack: true,
         onBackPressed: () {

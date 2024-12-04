@@ -16,7 +16,7 @@ class KvTextSubContent extends StatelessWidget
     return Text(
       subContent,
       style: KvTextStyles.cationRe(
-        color: DTokens.colorTextNeutralSecondary,
+        color: KvDesignSystem().colorTextNeutralSecondary,
       ),
     );
   }

@@ -11,7 +11,7 @@ class KvCommonButtonChild extends StatefulWidget {
     required this.buttonVariant,
     this.enabled = true,
     this.label,
-    this.assetIcon,
+    this.icon,
     this.badgeText,
   });
 
@@ -20,7 +20,7 @@ class KvCommonButtonChild extends StatefulWidget {
   final KvCommonButtonVariant buttonVariant;
   final bool enabled;
   final String? label;
-  final KvSvgAsset? assetIcon;
+  final IconData? icon;
   final String? badgeText;
 
   @override
@@ -33,24 +33,22 @@ class _KvCommonButtonChildState extends State<KvCommonButtonChild> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (widget.assetIcon.isNotNullOrEmpty) ...{
+        if (widget.icon != null) ...{
           _Icon(
-            assetIcon: widget.assetIcon!,
+            icon: widget.icon!,
             buttonSize: widget.buttonSize,
             enabled: widget.enabled,
             theme: theme,
           ),
         },
-        if (widget.assetIcon.isNotNullOrEmpty &&
-            widget.label.isNotNullOrEmpty) ...{
+        if (widget.icon != null && widget.label.isNotNullOrEmpty) ...{
           SizedBox(width: theme.gutter),
         },
         if (widget.label.isNotNullOrEmpty) ...{
           Text(widget.label!),
         },
         if (widget.badgeText.isNotNullOrEmpty &&
-            (widget.label.isNotNullOrEmpty ||
-                widget.assetIcon.isNotNullOrEmpty)) ...{
+            (widget.label.isNotNullOrEmpty || widget.icon != null)) ...{
           SizedBox(width: theme.gutter),
         },
         if (widget.badgeText.isNotNullOrEmpty) ...{
@@ -70,7 +68,7 @@ class _KvCommonButtonChildState extends State<KvCommonButtonChild> {
         buttonSize: widget.buttonSize,
         buttonVariant: widget.buttonVariant,
         label: widget.label,
-        assetIcon: widget.assetIcon,
+        icon: widget.icon,
         badgeText: widget.badgeText,
       );
 }
@@ -100,13 +98,13 @@ class _Badge extends StatelessWidget {
 
 class _Icon extends StatelessWidget {
   const _Icon({
-    required this.assetIcon,
+    required this.icon,
     required this.buttonSize,
     required this.enabled,
     required this.theme,
   });
 
-  final KvSvgAsset assetIcon;
+  final IconData icon;
   final KvCommonButtonSize buttonSize;
   final bool enabled;
   final KvCommonButtonThemeData theme;
@@ -114,7 +112,7 @@ class _Icon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KvIcon(
-      assetIcon: assetIcon,
+      icon: icon,
       color: theme.getIconColor(enabled),
       size: iconSize,
     );
@@ -122,12 +120,16 @@ class _Icon extends StatelessWidget {
 
   KvIconSize get iconSize {
     switch (buttonSize) {
+      case KvCommonButtonSize.xSmall:
+        return KvIconSize.iconXS;
       case KvCommonButtonSize.small:
-        return KvIconSize.size12;
+        return KvIconSize.iconS;
       case KvCommonButtonSize.medium:
-        return KvIconSize.size16;
+        return KvIconSize.iconM;
       case KvCommonButtonSize.large:
-        return KvIconSize.size20;
+        return KvIconSize.iconL;
+      case KvCommonButtonSize.xLarge:
+        return KvIconSize.iconXL;
     }
   }
 }

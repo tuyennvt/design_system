@@ -24,7 +24,7 @@ class KvAppBarMore extends StatelessWidget implements KvAppBarChild {
           imageType: KvCacheNetworkImageType.avatar,
         ),
         const SizedBox(
-          width: DTokens.sizeSize12,
+          width: KvDesignSystem().sizeSize12,
         ),
         Flexible(
           child: Column(

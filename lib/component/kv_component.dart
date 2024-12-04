@@ -26,7 +26,7 @@ export 'image/kv_cache_network_image.dart';
 export 'image/kv_cache_network_image_theme_data.dart';
 export 'input/base/kv_input_base.dart';
 export 'input/kv_input.dart';
-export 'kv_minium_tap_area.dart';
+export 'kv_minimum_tap_area.dart';
 export 'list_tile/kv_list_tile.dart';
 export 'list_tile/kv_list_tile_theme_data.dart';
 export 'radio/kv_radio.dart';

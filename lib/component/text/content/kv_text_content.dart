@@ -58,9 +58,9 @@ class KvTextContent extends StatelessWidget
   Color get contentColor {
     switch (hierarchy) {
       case KvTextContentHierarchy.primary:
-        return DTokens.colorTextNeutralBase;
+        return KvDesignSystem().colorTextNeutralBase;
       case KvTextContentHierarchy.secondary:
-        return DTokens.colorTextNeutralSecondary;
+        return KvDesignSystem().colorTextNeutralSecondary;
     }
   }
 

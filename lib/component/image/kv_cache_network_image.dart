@@ -325,7 +325,7 @@ class _ImageNotFound extends StatelessWidget {
         break;
     }
     return KvIcon(
-      assetIcon: KvSvgAsset(
+      icon: KvSvgAsset(
         Assets.iconsImageSlash,
         assetPackage: packageRoot,
       ),
@@ -384,7 +384,7 @@ class _ImageError extends StatelessWidget {
         break;
     }
     return KvIcon(
-      assetIcon: KvSvgAsset(
+      icon: KvSvgAsset(
         Assets.iconsFileCircleExclamation,
         assetPackage: packageRoot,
       ),
@@ -446,7 +446,7 @@ class _ImagePlaceholder extends StatelessWidget {
         break;
     }
     return KvIcon(
-      assetIcon: KvSvgAsset(
+      icon: KvSvgAsset(
         Assets.iconsFileCircleExclamation,
         assetPackage: packageRoot,
       ),

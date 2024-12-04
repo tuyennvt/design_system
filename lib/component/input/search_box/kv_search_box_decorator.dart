@@ -22,31 +22,31 @@ class KvSearchBoxDecorator {
   Color get backgroundColor {
     if (!enabled) {
       if (decoration.onLayer2) {
-        return DTokens.dataInputSearchColorBgOnLayer2;
+        return KvDesignSystem().dataInputSearchColorBgOnLayer2;
       }
-      return DTokens.dataInputSearchColorBgDefault;
+      return KvDesignSystem().dataInputSearchColorBgDefault;
     }
     switch (state) {
       case KvSearchBoxState.idle:
         if (decoration.onLayer2) {
-          return DTokens.dataInputSearchColorBgOnLayer2;
+          return KvDesignSystem().dataInputSearchColorBgOnLayer2;
         }
-        return DTokens.dataInputSearchColorBgDefault;
+        return KvDesignSystem().dataInputSearchColorBgDefault;
       case KvSearchBoxState.focused:
-        return DTokens.dataInputInputColorBgActivated;
+        return KvDesignSystem().dataInputInputColorBgActivated;
       case KvSearchBoxState.filled:
         if (decoration.onLayer2) {
-          return DTokens.dataInputSearchColorBgOnLayer2;
+          return KvDesignSystem().dataInputSearchColorBgOnLayer2;
         }
-        return DTokens.dataInputSearchColorBgDefault;
+        return KvDesignSystem().dataInputSearchColorBgDefault;
     }
   }
 
   Color get iconColor {
     if (!enabled) {
-      return DTokens.dataInputInputColorIconDisabled;
+      return KvDesignSystem().dataInputInputColorIconDisabled;
     }
-    return DTokens.colorIconNeutralLabel;
+    return KvDesignSystem().colorIconNeutralLabel;
   }
 
   TextStyle get textStyle {
@@ -61,10 +61,10 @@ class KvSearchBoxDecorator {
   TextStyle get hintStyle {
     Color hintColor;
     if (!enabled) {
-      hintColor = DTokens.dataInputInputColorTextDisabled;
+      hintColor = KvDesignSystem().dataInputInputColorTextDisabled;
     } else {
       hintColor =
-          DTokens.dataInputInputColorTextPlaceholder;
+          KvDesignSystem().dataInputInputColorTextPlaceholder;
     }
     switch (size) {
       case KvSearchBoxSize.small:
@@ -93,7 +93,7 @@ class KvSearchBoxDecorator {
       case KvSearchBoxState.focused:
         return const Border.fromBorderSide(
           BorderSide(
-            color: DTokens
+            color: KvDesignSystem()
                 .dataInputInputColorBorderActivated,
           ),
         );
@@ -109,7 +109,7 @@ class KvSearchBoxDecorator {
     return Padding(
       padding: const EdgeInsets.only(right: 8),
       child: KvIcon(
-        assetIcon: KvSvgAsset(
+        icon: KvSvgAsset(
           Assets.iconsMagnifyingGlass,
           assetPackage: packageRoot,
         ),

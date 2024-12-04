@@ -15,7 +15,7 @@ class KvTextHelperError extends StatelessWidget {
   Widget build(BuildContext context) {
     return KvTextHelperDescription(
       descText: errorText,
-      color: DTokens.colorTextDangerOnwhiteTertiary,
+      color: KvDesignSystem().colorTextDangerOnwhiteTertiary,
     );
   }
 }

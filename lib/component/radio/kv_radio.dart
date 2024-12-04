@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 import '../../utils.dart';
 
 class KvRadio<T> extends StatelessWidget {
@@ -46,12 +47,12 @@ class KvRadio<T> extends StatelessWidget {
                 border: Border.fromBorderSide(borderSide),
                 shape: BoxShape.circle,
               ),
-              width: DTokens.componentTokensRadioSize,
-              height: DTokens.componentTokensRadioSize,
+              width: KvDesignSystem().radioSize,
+              height: KvDesignSystem().radioSize,
               duration: const Duration(milliseconds: 167),
             ),
             if (content.isNotNullOrEmpty) ...{
-              const SizedBox(width: DTokens.sizeSize12),
+              SizedBox(width: KvDesignSystem().radioGutter),
               Flexible(
                 child: Text(
                   content!,
@@ -69,17 +70,17 @@ class KvRadio<T> extends StatelessWidget {
 
   Color get contentColor {
     if (enabled) {
-      return DTokens.colorTextNeutralBase;
+      return KvDesignSystem().textNeutralBase;
     } else {
-      return DTokens.colorTextNeutralDisabled;
+      return KvDesignSystem().textNeutralDisabled;
     }
   }
 
   Color get color {
     if (enabled) {
-      return DTokens.componentTokensRadioColorBgDefault;
+      return KvDesignSystem().radioColorBGDefault;
     } else {
-      return DTokens.componentTokensRadioColorBgDisabled;
+      return KvDesignSystem().radioColorBGDisabled;
     }
   }
 
@@ -91,19 +92,15 @@ class KvRadio<T> extends StatelessWidget {
   Color get borderColor {
     if (_selected) {
       if (enabled) {
-        return DTokens
-            .componentTokensRadioColorBorderSelectedDefault;
+        return KvDesignSystem().radioColorBorderSelectedDefault;
       } else {
-        return DTokens
-            .componentTokensRadioColorBorderSelectedDisabled;
+        return KvDesignSystem().radioColorBorderSelectedDisabled;
       }
     } else {
       if (enabled) {
-        return DTokens
-            .componentTokensRadioColorBorderDefaultDefault;
+        return KvDesignSystem().radioColorBorderUnSelectedDefault;
       } else {
-        return DTokens
-            .componentTokensRadioColorBorderDefaultDisabled;
+        return KvDesignSystem().radioColorBorderUnSelectedDisabled;
       }
     }
   }

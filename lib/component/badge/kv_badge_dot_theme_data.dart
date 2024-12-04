@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../foundation/d_tokens.dart';
+import '../../kv_design_system.dart';
 
 enum KvBadgeDotStatus {
   alert,
@@ -23,43 +23,43 @@ class KvBadgeDotThemeData {
     switch (status) {
       case KvBadgeDotStatus.alert:
         if (enabled) {
-          return DTokens.bGStatusAlertDefault;
+          return KvDesignSystem().bGStatusAlertDefault;
         }
-        return DTokens.bGStatusAlertDisabled;
+        return KvDesignSystem().bGStatusAlertDisabled;
       case KvBadgeDotStatus.completed:
         if (enabled) {
-          return DTokens.bGStatusCompleteDefault;
+          return KvDesignSystem().bGStatusCompleteDefault;
         }
-        return DTokens.bGStatusCompleteDisabled;
+        return KvDesignSystem().bGStatusCompleteDisabled;
       case KvBadgeDotStatus.pending:
         if (enabled) {
-          return DTokens.bGStatusPendingDefault;
+          return KvDesignSystem().bGStatusPendingDefault;
         }
-        return DTokens.bGStatusPendingDisabled;
+        return KvDesignSystem().bGStatusPendingDisabled;
       case KvBadgeDotStatus.processing:
         if (enabled) {
-          return DTokens.bGStatusProcessDefault;
+          return KvDesignSystem().bGStatusProcessDefault;
         }
-        return DTokens.bGStatusProcessDisabled;
+        return KvDesignSystem().bGStatusProcessDisabled;
       case KvBadgeDotStatus.inactive:
         if (enabled) {
-          return DTokens.bGStatusInActiveDefault;
+          return KvDesignSystem().bGStatusInActiveDefault;
         }
-        return DTokens.bGStatusInActiveDisabled;
+        return KvDesignSystem().bGStatusInActiveDisabled;
     }
   }
 
   BorderSide get border {
-    return const BorderSide(
-      color: DTokens.badgeDotStroke,
-      width: DTokens.badgeDotStrokeWidth,
+    return BorderSide(
+      color: KvDesignSystem().badgeDotStroke,
+      width: KvDesignSystem().badgeDotStrokeWidth,
     );
   }
 
   Size get size {
     return Size(
-      DTokens.badgeDotSizeM.toDouble(),
-      DTokens.badgeDotSizeM.toDouble(),
+      KvDesignSystem().badgeDotSizeM.toDouble(),
+      KvDesignSystem().badgeDotSizeM.toDouble(),
     );
   }
 }

@@ -98,7 +98,7 @@ class UatListState extends State<UatList> {
                       ? const Icon(
                           Icons.arrow_forward_ios,
                           size: 16,
-                          color: DTokens
+                          color: KvDesignSystem()
                               .colorIconNeutralSecondaryAction,
                         )
                       : null,

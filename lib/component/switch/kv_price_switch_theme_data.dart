@@ -17,15 +17,15 @@ class KvPriceSwitchThemeData {
   final KvPriceSwitchStyle style;
 
   Color get background {
-    return DTokens.colorBgNeutralFadedDefault;
+    return KvDesignSystem().colorBgNeutralFadedDefault;
   }
 
   Color get knobColor {
     switch (style) {
       case KvPriceSwitchStyle.defaultStyle:
-        return DTokens.colorBgLayerLevel0;
+        return KvDesignSystem().colorBgLayerLevel0;
       case KvPriceSwitchStyle.primaryStyle:
-        return DTokens.colorBgPrimarySolidDefault;
+        return KvDesignSystem().colorBgPrimarySolidDefault;
     }
   }
 
@@ -40,9 +40,9 @@ class KvPriceSwitchThemeData {
   Color get knobTextColor {
     switch (style) {
       case KvPriceSwitchStyle.defaultStyle:
-        return DTokens.colorTextPrimaryDefault;
+        return KvDesignSystem().colorTextPrimaryDefault;
       case KvPriceSwitchStyle.primaryStyle:
-        return DTokens.colorTextNeutralOnsolidDefault;
+        return KvDesignSystem().colorTextNeutralOnsolidDefault;
     }
   }
 
@@ -50,10 +50,10 @@ class KvPriceSwitchThemeData {
     switch (size) {
       case KvPriceSwitchSize.small:
         return KvTextStyles.titleS(
-            color: DTokens.colorTextNeutralDefault,);
+            color: KvDesignSystem().colorTextNeutralDefault,);
       case KvPriceSwitchSize.medium:
         return KvTextStyles.titleM(
-            color: DTokens.colorTextNeutralDefault,);
+            color: KvDesignSystem().colorTextNeutralDefault,);
     }
   }
 }

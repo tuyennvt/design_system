@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../employee_flutter_design_system.dart';
+import '../../../kv_design_system.dart';
 
 enum KvInlineButtonSize {
-  small(DTokens.sizeSize16),
-  medium(DTokens.sizeSize20),
-  large(DTokens.sizeSize24);
-
-  const KvInlineButtonSize(this.value);
-
-  final double value;
+  small,
+  medium,
+  large,
 }
 
 enum KvInlineButtonVariant {
@@ -18,7 +15,7 @@ enum KvInlineButtonVariant {
 }
 
 class KvInlineButtonThemeData {
-  const KvInlineButtonThemeData({
+  KvInlineButtonThemeData({
     required this.buttonSize,
     required this.buttonVariant,
     required this.enabled,
@@ -28,22 +25,20 @@ class KvInlineButtonThemeData {
   final KvInlineButtonVariant buttonVariant;
   final bool enabled;
 
+  final _kvDesignSystem = KvDesignSystem();
+
   Color get textColor {
     switch (buttonVariant) {
       case KvInlineButtonVariant.primary:
         if (enabled) {
-          return DTokens
-              .commonButtonInlineColorTextPrimaryDefault;
+          return _kvDesignSystem.buttonInlineColorTextPrimaryDefault;
         }
-        return DTokens
-            .commonButtonInlineColorTextPrimaryDisabled;
+        return _kvDesignSystem.buttonInlineColorTextPrimaryDisabled;
       case KvInlineButtonVariant.neutral:
         if (enabled) {
-          return DTokens
-              .commonButtonInlineColorTextNeutralDefault;
+          return _kvDesignSystem.buttonInlineColorTextNeutralDefault;
         }
-        return DTokens
-            .commonButtonInlineColorTextNeutralDisabled;
+        return _kvDesignSystem.buttonInlineColorTextNeutralDisabled;
     }
   }
 
@@ -61,11 +56,11 @@ class KvInlineButtonThemeData {
   KvIconSize get iconSize {
     switch (buttonSize) {
       case KvInlineButtonSize.small:
-        return KvIconSize.size12;
+        return KvIconSize.iconS;
       case KvInlineButtonSize.medium:
-        return KvIconSize.size16;
+        return KvIconSize.iconM;
       case KvInlineButtonSize.large:
-        return KvIconSize.size20;
+        return KvIconSize.iconL;
     }
   }
 
@@ -73,29 +68,25 @@ class KvInlineButtonThemeData {
     switch (buttonVariant) {
       case KvInlineButtonVariant.primary:
         if (enabled) {
-          return DTokens
-              .commonButtonInlineColorIconPrimaryDefault;
+          return _kvDesignSystem.buttonInlineColorIconPrimaryDefault;
         }
-        return DTokens
-            .commonButtonInlineColorIconPrimaryDisabled;
+        return _kvDesignSystem.buttonInlineColorIconPrimaryDisabled;
       case KvInlineButtonVariant.neutral:
         if (enabled) {
-          return DTokens
-              .commonButtonInlineColorIconNeutralDefault;
+          return _kvDesignSystem.buttonInlineColorIconNeutralDefault;
         }
-        return DTokens
-            .commonButtonInlineColorIconNeutralDisabled;
+        return _kvDesignSystem.buttonInlineColorIconNeutralDisabled;
     }
   }
 
   double get gutter {
     switch (buttonSize) {
       case KvInlineButtonSize.small:
-        return 4.0;
+        return _kvDesignSystem.buttonInlineGutterS;
       case KvInlineButtonSize.medium:
-        return 8.0;
+        return _kvDesignSystem.buttonInlineGutterM;
       case KvInlineButtonSize.large:
-        return 12.0;
+        return _kvDesignSystem.buttonInlineGutterL;
     }
   }
 }

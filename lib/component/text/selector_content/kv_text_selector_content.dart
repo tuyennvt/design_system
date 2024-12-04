@@ -44,9 +44,9 @@ class KvTextSelectorContent extends StatelessWidget {
 
   Color get textColor {
     if (value.isNotNullOrEmpty) {
-      return DTokens.colorTextNeutralBase;
+      return KvDesignSystem().colorTextNeutralBase;
     } else {
-      return DTokens.colorTextNeutralPlaceholder;
+      return KvDesignSystem().colorTextNeutralPlaceholder;
     }
   }
 }

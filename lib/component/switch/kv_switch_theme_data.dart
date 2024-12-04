@@ -13,12 +13,12 @@ class KvSwitchThemeData {
 
   Color get thumbColor {
     if (enabled) {
-      return DTokens.componentTokensToggleColorKnobEnabled;
+      return KvDesignSystem().componentTokensToggleColorKnobEnabled;
     } else {
       if (value) {
-        return DTokens.componentTokensToggleColorKnobDisabledOff;
+        return KvDesignSystem().componentTokensToggleColorKnobDisabledOff;
       } else {
-        return DTokens.componentTokensToggleColorKnobDisabledOn;
+        return KvDesignSystem().componentTokensToggleColorKnobDisabledOn;
       }
     }
   }
@@ -26,15 +26,15 @@ class KvSwitchThemeData {
   Color get trackColor {
     if (enabled) {
       if (value) {
-        return DTokens.componentTokensToggleColorBgDefaultOn;
+        return KvDesignSystem().componentTokensToggleColorBgDefaultOn;
       } else {
-        return DTokens.componentTokensToggleColorBgDefaultOff;
+        return KvDesignSystem().componentTokensToggleColorBgDefaultOff;
       }
     } else {
       if (value) {
-        return DTokens.componentTokensToggleColorBgDisabledOn;
+        return KvDesignSystem().componentTokensToggleColorBgDisabledOn;
       } else {
-        return DTokens.componentTokensToggleColorBgDisabledOff;
+        return KvDesignSystem().componentTokensToggleColorBgDisabledOff;
       }
     }
   }

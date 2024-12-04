@@ -43,15 +43,15 @@ class KvTextHeadline extends StatelessWidget {
   Color get valueColor {
     switch (style) {
       case KvTextHeadlineStyle.neutral:
-        return DTokens.colorTextNeutralBase;
+        return KvDesignSystem().colorTextNeutralBase;
       case KvTextHeadlineStyle.success:
-        return DTokens.colorTextSuccessOnwhiteTertiary;
+        return KvDesignSystem().colorTextSuccessOnwhiteTertiary;
       case KvTextHeadlineStyle.danger:
-        return DTokens.colorTextDangerOnwhiteTertiary;
+        return KvDesignSystem().colorTextDangerOnwhiteTertiary;
       case KvTextHeadlineStyle.warning:
-        return DTokens.colorTextWarningOnwhiteTertiary;
+        return KvDesignSystem().colorTextWarningOnwhiteTertiary;
       case KvTextHeadlineStyle.info:
-        return DTokens.colorTextInfoOnwhiteTertiary;
+        return KvDesignSystem().colorTextInfoOnwhiteTertiary;
     }
   }
 }

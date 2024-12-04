@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../employee_flutter_design_system.dart';
 
 const BoxConstraints defaultSelectBoxIconConstraints = BoxConstraints(
-  minWidth: DTokens.sizeSize16,
-  maxWidth: DTokens.sizeSize16,
-  minHeight: DTokens.sizeSize16,
-  maxHeight: DTokens.sizeSize16,
+  minWidth: KvDesignSystem().sizeSize16,
+  maxWidth: KvDesignSystem().sizeSize16,
+  minHeight: KvDesignSystem().sizeSize16,
+  maxHeight: KvDesignSystem().sizeSize16,
 );
 
 class KvSelectBoxDecoration {

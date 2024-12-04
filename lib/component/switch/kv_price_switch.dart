@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../employee_flutter_design_system.dart';
 
 enum KvPriceSwitchSize {
-  small(Size(84, DTokens.sizeSize24)),
-  medium(Size(84, DTokens.sizeSize32));
+  small(Size(84, KvDesignSystem().sizeSize24)),
+  medium(Size(84, KvDesignSystem().sizeSize32));
 
   const KvPriceSwitchSize(this.value);
 

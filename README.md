@@ -23,7 +23,7 @@ Ex:
 ```
 KvTextStyles.bodyL();
 
-KvTextStyles.labelL(color: DTokens.colorTextNeutralBase);
+KvTextStyles.labelL(color: KvDesignSystem().colorTextNeutralBase);
 ```
 
 #### 2. KvSvgAsset
@@ -53,7 +53,7 @@ KvIcon(
         'assets/icons/bars-progress.svg',
         assetPackage: packageRoot,
     ),
-    color: DTokens.colorTextNeutralSecondary,
+    color: KvDesignSystem().colorTextNeutralSecondary,
     size: KvIconSize.size16,
 )
 ```

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../style_dictionary/style_dictionary_size.dart';
+import '../../../kv_design_system.dart';
 import '../kv_button.dart';
 
 enum KvGroupButtonType {
@@ -26,7 +26,6 @@ class KvGroupButton extends StatelessWidget implements KvButton {
 
   @override
   Widget build(BuildContext context) {
-    final keyboardVisible = MediaQuery.of(context).viewInsets.bottom > 0;
     Widget child = type == KvGroupButtonType.horizontal
         ? _KvGroupButtonHorizontal(
             labelNegative: labelNegative,
@@ -40,23 +39,14 @@ class KvGroupButton extends StatelessWidget implements KvButton {
             labelPositive: labelPositive,
             onPositivePressed: onPositivePressed,
           );
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(
-            DTokens.sizeSize16,
-            DTokens.sizeSize16,
-            DTokens.sizeSize16,
-            8,
-          ),
-          child: child,
-        ),
-        if (!keyboardVisible) ...{
-          const SizedBox(height: 26),
-        }
-      ],
+    return Padding(
+      padding: EdgeInsets.only(
+        left: KvDesignSystem().buttonGroupPaddingLeft,
+        top: KvDesignSystem().buttonGroupPaddingTop,
+        right: KvDesignSystem().buttonGroupPaddingRight,
+        bottom: KvDesignSystem().buttonGroupPaddingBottom,
+      ),
+      child: child,
     );
   }
 }
@@ -85,7 +75,7 @@ class _KvGroupButtonHorizontal extends StatelessWidget {
             label: labelNegative,
           ),
         ),
-        const SizedBox(width: 8.0),
+        SizedBox(width: KvDesignSystem().buttonGroupGutterHorizontal),
         Expanded(
           child: KvCommonButton(
             onPressed: onPositivePressed,
@@ -121,7 +111,7 @@ class _KvGroupButtonVertical extends StatelessWidget {
           onPressed: onNegativePressed,
           label: labelNegative,
         ),
-        const SizedBox(height: 8.0),
+        SizedBox(height: KvDesignSystem().buttonGroupGutterVertical),
         KvCommonButton(
           onPressed: onPositivePressed,
           label: labelPositive,

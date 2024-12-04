@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../employee_flutter_design_system.dart';
-import '../../generated/assets.dart';
+import '../../foundation/kv_icons.dart';
+import '../../kv_design_system.dart';
 import '../../utils.dart';
 
 class KvCheckbox extends StatelessWidget {
@@ -43,27 +43,22 @@ class KvCheckbox extends StatelessWidget {
               decoration: BoxDecoration(
                 color: color,
                 border: border,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(6.0),
-                ),
+                borderRadius:
+                    BorderRadius.circular(KvDesignSystem().checkboxRadius),
               ),
-              width: DTokens.componentTokensCheckboxSize,
-              height: DTokens.componentTokensCheckboxSize,
+              width: KvDesignSystem().checkboxSize,
+              height: KvDesignSystem().checkboxSize,
               duration: const Duration(milliseconds: 167),
               child: _selected
-                  ? SvgPicture.asset(
-                      KvSvgAsset(
-                        Assets.iconsCheck,
-                        assetPackage: packageRoot,
-                      ).value,
-                      width: 10,
-                      height: 10,
-                      fit: BoxFit.scaleDown,
+                  ? KvIcon(
+                      icon: KvIcons.check_solid,
+                      color: KvDesignSystem().checkboxColorBGTickDefault,
+                      size: KvIconSize.iconXS,
                     )
                   : const SizedBox(),
             ),
             if (content.isNotNullOrEmpty) ...{
-              const SizedBox(width: DTokens.sizeSize12),
+              SizedBox(width: KvDesignSystem().checkboxGutter),
               Flexible(
                 child: Text(
                   content!,
@@ -81,28 +76,24 @@ class KvCheckbox extends StatelessWidget {
 
   Color get contentColor {
     if (enabled) {
-      return DTokens.colorTextNeutralBase;
+      return KvDesignSystem().textNeutralBase;
     } else {
-      return DTokens.colorTextNeutralDisabled;
+      return KvDesignSystem().textNeutralDisabled;
     }
   }
 
   Color get color {
     if (_selected) {
       if (enabled) {
-        return DTokens
-            .componentTokensCheckboxColorBgSelectedDefault;
+        return KvDesignSystem().checkboxColorBGSelectedDefault;
       } else {
-        return DTokens
-            .componentTokensCheckboxColorBgSelectedDisabled;
+        return KvDesignSystem().checkboxColorBGSelectedDisabled;
       }
     } else {
       if (enabled) {
-        return DTokens
-            .componentTokensCheckboxColorBgDefaultDefault;
+        return KvDesignSystem().checkboxColorBGUnSelectedDefault;
       } else {
-        return DTokens
-            .componentTokensCheckboxColorBgDefaultDisabled;
+        return KvDesignSystem().checkboxColorBGUnSelectedDisabled;
       }
     }
   }
@@ -116,11 +107,9 @@ class KvCheckbox extends StatelessWidget {
 
   Color get borderColor {
     if (enabled) {
-      return DTokens
-          .componentTokensCheckboxColorBorderDefault;
+      return KvDesignSystem().checkboxColorBorderDefault;
     } else {
-      return DTokens
-          .componentTokensCheckboxColorBorderDisabled;
+      return KvDesignSystem().checkboxColorBorderDisabled;
     }
   }
 }

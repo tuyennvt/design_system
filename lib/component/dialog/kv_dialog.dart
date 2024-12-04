@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 import '../../utils.dart';
 import '../button/close_button/kv_close_button.dart';
+import 'kv_dialog_action.dart';
 
 class KvDialog extends StatelessWidget {
   const KvDialog({
@@ -21,16 +22,16 @@ class KvDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: DTokens.colorBgLayerLevel0,
+      backgroundColor: KvDesignSystem().bGLayerLevel0,
       insetPadding: const EdgeInsets.symmetric(
-        horizontal: DTokens.sizeSize32,
+        horizontal: KvDesignSystem().sizeSize32,
       ),
       shape: const RoundedRectangleBorder(
         borderRadius: _borderRadius,
       ),
       child: DecoratedBox(
         decoration: const BoxDecoration(
-          color: DTokens.colorBgLayerLevel0,
+          color: KvDesignSystem().colorBgLayerLevel0,
           borderRadius: _borderRadius,
         ),
         child: Column(
@@ -58,15 +59,15 @@ class KvDialog extends StatelessWidget {
 
   static const BorderRadius _borderRadius = BorderRadius.all(
     Radius.circular(
-      DTokens.sizeSize16,
+      KvDesignSystem().sizeSize16,
     ),
   );
 
   EdgeInsets get contentPadding {
     return EdgeInsets.only(
-      left: DTokens.sizeSize16,
-      top: title.isNullOrEmpty ? DTokens.sizeSize20 : 0,
-      right: DTokens.sizeSize16,
+      left: KvDesignSystem().sizeSize16,
+      top: title.isNullOrEmpty ? KvDesignSystem().sizeSize20 : 0,
+      right: KvDesignSystem().sizeSize16,
       bottom: 8,
     );
   }
@@ -85,11 +86,11 @@ class _KvAppBarPopup extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
-      height: DTokens.sizeSize56,
+      height: KvDesignSystem().sizeSize56,
       child: Row(
         children: [
           const SizedBox(
-            width: DTokens.sizeSize16,
+            width: KvDesignSystem().sizeSize16,
           ),
           Expanded(
             child: Text(
@@ -103,7 +104,7 @@ class _KvAppBarPopup extends StatelessWidget {
             onPressed: onClosePressed,
           ),
           const SizedBox(
-            width: DTokens.sizeSize16,
+            width: KvDesignSystem().sizeSize16,
           ),
         ],
       ),

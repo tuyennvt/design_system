@@ -35,13 +35,13 @@ class KvListTileItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: theme.crossAxisAlignment,
         children: [
-          const SizedBox(width: DTokens.sizeSize16),
+          const SizedBox(width: KvDesignSystem().sizeSize16),
           if (prefix != null) ...{
             Padding(
               padding: theme.paddingVertical,
               child: prefix!,
             ),
-            const SizedBox(width: DTokens.sizeSize12),
+            const SizedBox(width: KvDesignSystem().sizeSize12),
           },
           Expanded(
             child: Column(
@@ -63,10 +63,10 @@ class KvListTileItem extends StatelessWidget {
                         ),
                       ),
                       if (suffix != null) ...{
-                        const SizedBox(width: DTokens.sizeSize12),
+                        const SizedBox(width: KvDesignSystem().sizeSize12),
                         suffix!,
                       },
-                      const SizedBox(width: DTokens.sizeSize16),
+                      const SizedBox(width: KvDesignSystem().sizeSize16),
                     ],
                   ),
                 ),

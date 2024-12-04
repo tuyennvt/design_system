@@ -18,7 +18,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
     Clip clipBehavior = Clip.none,
     MaterialStatesController? statesController,
     String? label,
-    KvSvgAsset? assetIcon,
+    IconData? icon,
     String? badgeText,
   }) {
     return KvCommonButton._(
@@ -27,7 +27,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
       buttonSize: buttonSize,
       buttonVariant: buttonVariant,
       label: label,
-      assetIcon: assetIcon,
+      icon: icon,
       badgeText: badgeText,
       onPressed: onPressed,
       onLongPress: onLongPress,
@@ -43,7 +43,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
         buttonVariant: buttonVariant,
         enabled: onPressed != null,
         label: label,
-        assetIcon: assetIcon,
+        icon: icon,
         badgeText: badgeText,
       ),
     );
@@ -55,7 +55,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
     required this.buttonSize,
     required this.buttonVariant,
     this.label,
-    this.assetIcon,
+    this.icon,
     this.badgeText,
     required super.onPressed,
     super.onLongPress,
@@ -73,7 +73,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
   final KvCommonButtonSize buttonSize;
   final KvCommonButtonVariant buttonVariant;
   final String? label;
-  final KvSvgAsset? assetIcon;
+  final IconData? icon;
   final String? badgeText;
 
   @override
@@ -84,7 +84,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
       buttonSize: buttonSize,
       buttonVariant: buttonVariant,
       label: label,
-      assetIcon: assetIcon,
+      icon: icon,
       badgeText: badgeText,
     );
   }
@@ -97,7 +97,7 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
       buttonSize: buttonSize,
       buttonVariant: buttonVariant,
       label: label,
-      assetIcon: assetIcon,
+      icon: icon,
       badgeText: badgeText,
     );
   }

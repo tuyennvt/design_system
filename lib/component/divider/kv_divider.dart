@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../style_dictionary/style_dictionary_color.dart';
+import '../../kv_design_system.dart';
 
 class KvDivider extends StatelessWidget {
   const KvDivider({
@@ -17,8 +17,7 @@ class KvDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:
-          const BoxDecoration(color: DTokens.colorDividerBlock),
+      decoration: BoxDecoration(color: KvDesignSystem().dividerBlock),
       height: thickness,
       margin: EdgeInsets.only(
         left: indent,

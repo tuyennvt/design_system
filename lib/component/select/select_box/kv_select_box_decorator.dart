@@ -29,27 +29,27 @@ class KvSelectBoxDecorator {
     Color inputBorderColor;
     if (!enabled) {
       inputBorderColor =
-          DTokens.dataInputInputColorBorderDisabled;
+          KvDesignSystem().dataInputInputColorBorderDisabled;
     } else if (enabled && readOnly) {
       inputBorderColor =
-          DTokens.dataInputInputColorBorderDefault;
+          KvDesignSystem().dataInputInputColorBorderDefault;
     } else {
       switch (inputState) {
         case KvInputState.idle:
           inputBorderColor =
-              DTokens.dataInputInputColorBorderDefault;
+              KvDesignSystem().dataInputInputColorBorderDefault;
           break;
         case KvInputState.focused:
           inputBorderColor =
-              DTokens.dataInputInputColorBorderActivated;
+              KvDesignSystem().dataInputInputColorBorderActivated;
           break;
         case KvInputState.focusedError:
           inputBorderColor =
-              DTokens.dataInputInputColorBorderError;
+              KvDesignSystem().dataInputInputColorBorderError;
           break;
         case KvInputState.error:
           inputBorderColor =
-              DTokens.dataInputInputColorBorderError;
+              KvDesignSystem().dataInputInputColorBorderError;
           break;
       }
     }
@@ -60,7 +60,7 @@ class KvSelectBoxDecorator {
     BoxConstraints constraints = decoration.prefixIconConstraints;
     if (decoration.assetPrefixIcon.isNotNullOrEmpty) {
       return Padding(
-        padding: const EdgeInsets.only(right: DTokens.sizeSize16),
+        padding: const EdgeInsets.only(right: KvDesignSystem().sizeSize16),
         child: ConstrainedBox(
           constraints: constraints,
           child: SvgPicture.asset(
@@ -94,7 +94,7 @@ class KvSelectBoxDecorator {
     return Padding(
       padding: const EdgeInsets.only(left: 4),
       child: KvIcon(
-        assetIcon: KvSvgAsset(
+        icon: KvSvgAsset(
           Assets.iconsChevronDown,
           assetPackage: packageRoot,
         ),
@@ -106,49 +106,49 @@ class KvSelectBoxDecorator {
 
   EdgeInsets get padding {
     return const EdgeInsets.symmetric(
-        horizontal: DTokens.sizeSize16,);
+        horizontal: KvDesignSystem().sizeSize16,);
   }
 
   Color get prefixIconColor {
     if (enabled) {
-      return DTokens.dataInputInputColorIconPrefix;
+      return KvDesignSystem().dataInputInputColorIconPrefix;
     }
-    return DTokens.dataInputInputColorIconDisabled;
+    return KvDesignSystem().dataInputInputColorIconDisabled;
   }
 
   Color get suffixIconColor {
     if (enabled) {
-      return DTokens.dataInputInputColorIconAction;
+      return KvDesignSystem().dataInputInputColorIconAction;
     }
-    return DTokens.dataInputInputColorIconDisabled;
+    return KvDesignSystem().dataInputInputColorIconDisabled;
   }
 
   Color get backgroundColor {
     if (!enabled) {
-      return DTokens.dataInputInputColorBgDisabled;
+      return KvDesignSystem().dataInputInputColorBgDisabled;
     } else if (enabled && readOnly) {
-      return DTokens.dataInputInputColorBgReadOnly;
+      return KvDesignSystem().dataInputInputColorBgReadOnly;
     }
     switch (inputState) {
       case KvInputState.idle:
-        return DTokens.dataInputInputColorBgDefault;
+        return KvDesignSystem().dataInputInputColorBgDefault;
       case KvInputState.focused:
-        return DTokens.dataInputInputColorBgActivated;
+        return KvDesignSystem().dataInputInputColorBgActivated;
       case KvInputState.focusedError:
-        return DTokens.dataInputInputColorBgDefault;
+        return KvDesignSystem().dataInputInputColorBgDefault;
       case KvInputState.error:
-        return DTokens.dataInputInputColorBgDefault;
+        return KvDesignSystem().dataInputInputColorBgDefault;
     }
   }
 
   TextStyle get valueStyle {
     Color color;
     if (!enabled) {
-      color = DTokens.dataInputInputColorTextDisabled;
+      color = KvDesignSystem().dataInputInputColorTextDisabled;
     } else if (readOnly) {
-      color = DTokens.dataInputInputColorTextReadOnly;
+      color = KvDesignSystem().dataInputInputColorTextReadOnly;
     } else {
-      color = DTokens.dataInputInputColorTextFilled;
+      color = KvDesignSystem().dataInputInputColorTextFilled;
     }
     return KvTextStyles.bodyMMe(color: color);
   }
@@ -164,7 +164,7 @@ class KvSelectBoxDecorator {
           Text(
             decoration.secondaryLabelText!,
             style: const TextStyle(
-              color: DTokens.colorTextDangerDefault,
+              color: KvDesignSystem().colorTextDangerDefault,
             ),
           ),
         },
@@ -175,14 +175,14 @@ class KvSelectBoxDecorator {
   TextStyle get labelStyle {
     return KvTextStyles.bodyMMe(
       color: enabled
-          ? DTokens.dataInputInputColorTextPlaceholder
-          : DTokens.dataInputInputColorTextDisabled,
+          ? KvDesignSystem().dataInputInputColorTextPlaceholder
+          : KvDesignSystem().dataInputInputColorTextDisabled,
     );
   }
 
   TextStyle get floatingLabelStyle {
     return KvTextStyles.cationRe(
-      color: DTokens.colorTextNeutralLabel,
+      color: KvDesignSystem().colorTextNeutralLabel,
     );
   }
 }

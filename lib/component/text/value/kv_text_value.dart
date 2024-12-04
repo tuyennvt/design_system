@@ -58,10 +58,10 @@ class KvTextValue extends StatelessWidget
       case KvTextValueHierarchy.titleLarge:
       case KvTextValueHierarchy.primaryRegular:
       case KvTextValueHierarchy.primaryMedium:
-        return DTokens.colorTextNeutralBase;
+        return KvDesignSystem().colorTextNeutralBase;
       case KvTextValueHierarchy.secondaryRegular:
       case KvTextValueHierarchy.secondaryMedium:
-        return DTokens.colorTextNeutralSecondary;
+        return KvDesignSystem().colorTextNeutralSecondary;
     }
   }
 

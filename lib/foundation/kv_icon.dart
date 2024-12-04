@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'd_tokens.dart';
-import '../kv_design_token.dart';
-
+import '../kv_design_system.dart';
 
 enum KvIconSize {
-  iconXXXS(DTokens.iconXXXSSize),
-  iconXXS(DTokens.iconXXSSize),
-  iconXS(DTokens.iconXSSize),
-  iconS(DTokens.iconSSize),
-  iconM(DTokens.iconMSize),
-  iconL(DTokens.iconLSize),
-  iconXL(DTokens.iconXLSize);
-
-  const KvIconSize(this.value);
-
-  final int value;
+  iconXXXS,
+  iconXXS,
+  iconXS,
+  iconS,
+  iconM,
+  iconL,
+  iconXL,
 }
 
 class KvIcon extends StatelessWidget {
@@ -34,8 +28,27 @@ class KvIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      size: size.value.toDouble(),
+      size: _size,
       color: color,
     );
+  }
+
+  double get _size {
+    switch (size) {
+      case KvIconSize.iconXXXS:
+        return KvDesignSystem().iconXXXSSize;
+      case KvIconSize.iconXXS:
+        return KvDesignSystem().iconXXSSize;
+      case KvIconSize.iconXS:
+        return KvDesignSystem().iconXSSize;
+      case KvIconSize.iconS:
+        return KvDesignSystem().iconSSize;
+      case KvIconSize.iconM:
+        return KvDesignSystem().iconMSize;
+      case KvIconSize.iconL:
+        return KvDesignSystem().iconLSize;
+      case KvIconSize.iconXL:
+        return KvDesignSystem().iconXLSize;
+    }
   }
 }

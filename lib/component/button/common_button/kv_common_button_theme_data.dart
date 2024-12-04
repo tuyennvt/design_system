@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../../employee_flutter_design_system.dart';
-import '../../../foundation/d_tokens.dart';
+import '../../../foundation/kv_text_styles.dart';
+import '../../../kv_design_system.dart';
 import '../../../utils.dart';
+import '../../badge/kv_badge_theme_data.dart';
 
 enum KvCommonButtonSize {
-  small(DTokens.commonButtonSizeS),
-  medium(DTokens.commonButtonSizeM),
-  large(DTokens.commonButtonSizeL);
-
-  const KvCommonButtonSize(this.value);
-
-  final double value;
+  xSmall,
+  small,
+  medium,
+  large,
+  xLarge,
 }
 
 enum KvCommonButtonVariant {
@@ -36,7 +35,7 @@ class KvCommonButtonThemeData extends ButtonStyle {
     required this.buttonSize,
     required this.buttonVariant,
     this.label,
-    this.assetIcon,
+    this.icon,
     this.badgeText,
   }) : super(
           animationDuration: kThemeChangeDuration,
@@ -49,27 +48,19 @@ class KvCommonButtonThemeData extends ButtonStyle {
   final KvCommonButtonSize buttonSize;
   final KvCommonButtonVariant buttonVariant;
   final String? label;
-  final KvSvgAsset? assetIcon;
+  final IconData? icon;
   final String? badgeText;
 
   @override
   MaterialStateProperty<Size?>? get minimumSize => MaterialStatePropertyAll(
-        Size(
-          0,
-          buttonSize.value,
-        ),
+        Size(0, _size),
       );
 
   @override
   MaterialStateProperty<Size?>? get fixedSize {
-    if (assetIcon.isNotNullOrEmpty &&
-        label.isNullOrEmpty &&
-        badgeText.isNullOrEmpty) {
+    if (icon != null && label.isNullOrEmpty && badgeText.isNullOrEmpty) {
       return MaterialStatePropertyAll(
-        Size(
-          buttonSize.value,
-          buttonSize.value,
-        ),
+        Size(_size, _size),
       );
     }
     return null;
@@ -77,39 +68,48 @@ class KvCommonButtonThemeData extends ButtonStyle {
 
   @override
   MaterialStateProperty<Size?>? get maximumSize => MaterialStatePropertyAll(
-        Size(
-          double.maxFinite,
-          buttonSize.value,
-        ),
+        Size(double.maxFinite, _size),
       );
+
+  double get _size {
+    switch (buttonSize) {
+      case KvCommonButtonSize.xSmall:
+        return KvDesignSystem().buttonSizeXS;
+      case KvCommonButtonSize.small:
+        return KvDesignSystem().buttonSizeS;
+      case KvCommonButtonSize.medium:
+        return KvDesignSystem().buttonSizeM;
+      case KvCommonButtonSize.large:
+        return KvDesignSystem().buttonSizeL;
+      case KvCommonButtonSize.xLarge:
+        return KvDesignSystem().buttonSizeXL;
+    }
+  }
 
   @override
   MaterialStateProperty<EdgeInsetsGeometry?>? get padding {
-    if (label.isNullOrEmpty &&
-        assetIcon.isNotNullOrEmpty &&
-        badgeText.isNullOrEmpty) {
+    if (label.isNullOrEmpty && icon != null && badgeText.isNullOrEmpty) {
       return const MaterialStatePropertyAll(EdgeInsets.zero);
     }
     double verticalPadding;
     double horizontalPadding;
     switch (buttonSize) {
+      case KvCommonButtonSize.xSmall:
       case KvCommonButtonSize.small:
-        verticalPadding =
-            DTokens.commonButtonSizePaddingVerticalS;
-        horizontalPadding =
-            DTokens.commonButtonSizePaddingHorizontalS;
+        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalS;
+        horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalS;
         break;
       case KvCommonButtonSize.medium:
-        verticalPadding =
-            DTokens.commonButtonSizePaddingVerticalM;
-        horizontalPadding =
-            DTokens.commonButtonSizePaddingHorizontalM;
+        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalM;
+        horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalM;
         break;
       case KvCommonButtonSize.large:
-        verticalPadding =
-            DTokens.commonButtonSizePaddingVerticalL;
-        horizontalPadding =
-            DTokens.commonButtonSizePaddingHorizontalL;
+        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalL;
+        horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalL;
+        break;
+      case KvCommonButtonSize.xLarge:
+        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalXL;
+        horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalXL;
         break;
     }
     return MaterialStatePropertyAll(
@@ -141,47 +141,37 @@ class KvCommonButtonThemeData extends ButtonStyle {
       switch (buttonVariant) {
         case KvCommonButtonVariant.primary:
           if (states.contains(MaterialState.disabled)) {
-            borderColor = DTokens
-                .commonButtonColorBorderPrimaryDisabled;
+            borderColor = KvDesignSystem().buttonColorBorderPrimaryDisabled;
           } else {
-            borderColor = DTokens
-                .commonButtonColorBorderPrimaryEnabled;
+            borderColor = KvDesignSystem().buttonColorBorderPrimaryEnabled;
           }
           break;
         case KvCommonButtonVariant.success:
           if (states.contains(MaterialState.disabled)) {
-            borderColor = DTokens
-                .commonButtonColorBorderSuccessDisabled;
+            borderColor = KvDesignSystem().buttonColorBorderSuccessDisabled;
           } else {
-            borderColor = DTokens
-                .commonButtonColorBorderSuccessEnabled;
+            borderColor = KvDesignSystem().buttonColorBorderSuccessEnabled;
           }
           break;
         case KvCommonButtonVariant.danger:
           if (states.contains(MaterialState.disabled)) {
-            borderColor = DTokens
-                .commonButtonColorBorderDangerDisabled;
+            borderColor = KvDesignSystem().buttonColorBorderDangerDisabled;
           } else {
-            borderColor = DTokens
-                .commonButtonColorBorderDangerEnabled;
+            borderColor = KvDesignSystem().buttonColorBorderDangerEnabled;
           }
           break;
         case KvCommonButtonVariant.warning:
           if (states.contains(MaterialState.disabled)) {
-            borderColor = DTokens
-                .commonButtonColorBorderWarningDisabled;
+            borderColor = KvDesignSystem().buttonColorBorderWarningDisabled;
           } else {
-            borderColor = DTokens
-                .commonButtonColorBorderWarningEnabled;
+            borderColor = KvDesignSystem().buttonColorBorderWarningEnabled;
           }
           break;
         case KvCommonButtonVariant.neutral:
           if (states.contains(MaterialState.disabled)) {
-            borderColor = DTokens
-                .commonButtonColorBorderNeutralDisabled;
+            borderColor = KvDesignSystem().buttonColorBorderNeutralDisabled;
           } else {
-            borderColor = DTokens
-                .commonButtonColorBorderNeutralEnabled;
+            borderColor = KvDesignSystem().buttonColorBorderNeutralEnabled;
           }
           break;
       }
@@ -212,39 +202,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgPrimarySolidDisabled;
+          return KvDesignSystem().buttonColorBGPrimarySolidDisabled;
         }
-        return DTokens
-            .commonButtonColorBgPrimarySolidDefault;
+        return KvDesignSystem().buttonColorBGPrimarySolidDefault;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgSuccessSolidDisabled;
+          return KvDesignSystem().buttonColorBGSuccessSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorBgSuccessSolidDefault;
+        return KvDesignSystem().buttonColorBGSuccessSolidDefault;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgDangerSolidDisabled;
+          return KvDesignSystem().buttonColorBGDangerSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorBgDangerSolidDefault;
+        return KvDesignSystem().buttonColorBGDangerSolidDefault;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgWarningSolidDisabled;
+          return KvDesignSystem().buttonColorBGWarningSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorBgWarningSolidDefault;
+        return KvDesignSystem().buttonColorBGWarningSolidDefault;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgNeutralSolidDisabled;
+          return KvDesignSystem().buttonColorBGNeutralSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorBgNeutralSolidDefault;
+        return KvDesignSystem().buttonColorBGNeutralSolidDefault;
     }
   }
 
@@ -252,39 +232,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgPrimaryOutlineDisabled;
+          return KvDesignSystem().buttonColorBGPrimaryOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorBgPrimaryOutlineDefault;
+        return KvDesignSystem().buttonColorBGPrimaryOutlineDefault;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgSuccessOutlineDisabled;
+          return KvDesignSystem().buttonColorBGSuccessOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorBgSuccessOutlineDefault;
+        return KvDesignSystem().buttonColorBGSuccessOutlineDefault;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgDangerOutlineDisabled;
+          return KvDesignSystem().buttonColorBGDangerOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorBgDangerOutlineDefault;
+        return KvDesignSystem().buttonColorBGDangerOutlineDefault;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgWarningOutlineDisabled;
+          return KvDesignSystem().buttonColorBGWarningOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorBgWarningOutlineDefault;
+        return KvDesignSystem().buttonColorBGWarningOutlineDefault;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgNeutralOutlineDisabled;
+          return KvDesignSystem().buttonColorBGNeutralOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorBgNeutralOutlineDefault;
+        return KvDesignSystem().buttonColorBGNeutralOutlineDefault;
     }
   }
 
@@ -292,39 +262,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgPrimaryFadedDisabled;
+          return KvDesignSystem().buttonColorBGPrimaryFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorBgPrimaryFadedDefault;
+        return KvDesignSystem().buttonColorBGPrimaryFadedDefault;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgSuccessFadedDisabled;
+          return KvDesignSystem().buttonColorBGSuccessFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorBgSuccessFadedDefault;
+        return KvDesignSystem().buttonColorBGSuccessFadedDefault;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgDangerFadedDisabled;
+          return KvDesignSystem().buttonColorBGDangerFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorBgDangerFadedDefault;
+        return KvDesignSystem().buttonColorBGDangerFadedDefault;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgWarningFadedDisabled;
+          return KvDesignSystem().buttonColorBGWarningFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorBgWarningFadedDefault;
+        return KvDesignSystem().buttonColorBGWarningFadedDefault;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgNeutralFadedDisabled;
+          return KvDesignSystem().buttonColorBGNeutralFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorBgNeutralFadedDefault;
+        return KvDesignSystem().buttonColorBGNeutralFadedDefault;
     }
   }
 
@@ -332,39 +292,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgPrimaryTertiaryDisabled;
+          return KvDesignSystem().buttonColorBGPrimaryTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorBgPrimaryTertiaryDefault;
+        return KvDesignSystem().buttonColorBGPrimaryTertiaryDefault;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgSuccessTertiaryDisabled;
+          return KvDesignSystem().buttonColorBGSuccessTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorBgSuccessTertiaryDefault;
+        return KvDesignSystem().buttonColorBGSuccessTertiaryDefault;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgDangerTertiaryDisabled;
+          return KvDesignSystem().buttonColorBGDangerTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorBgDangerTertiaryDefault;
+        return KvDesignSystem().buttonColorBGDangerTertiaryDefault;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgWarningTertiaryDisabled;
+          return KvDesignSystem().buttonColorBGWarningTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorBgWarningTertiaryDefault;
+        return KvDesignSystem().buttonColorBGWarningTertiaryDefault;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorBgNeutralTertiaryDisabled;
+          return KvDesignSystem().buttonColorBGNeutralTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorBgNeutralTertiaryDefault;
+        return KvDesignSystem().buttonColorBGNeutralTertiaryDefault;
     }
   }
 
@@ -373,12 +323,16 @@ class KvCommonButtonThemeData extends ButtonStyle {
     return MaterialStateProperty.resolveWith(
       (states) {
         switch (buttonSize) {
+          case KvCommonButtonSize.xSmall:
+            return KvTextStyles.labelXS();
           case KvCommonButtonSize.small:
             return KvTextStyles.labelS();
           case KvCommonButtonSize.medium:
             return KvTextStyles.labelM();
           case KvCommonButtonSize.large:
             return KvTextStyles.labelL();
+          case KvCommonButtonSize.xLarge:
+            return KvTextStyles.labelXL();
         }
       },
     );
@@ -404,39 +358,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextPrimarySolidDisabled;
+          return KvDesignSystem().buttonColorTextPrimarySolidDisabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimarySolidEnabled;
+        return KvDesignSystem().buttonColorTextPrimarySolidEnabled;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextSuccessSolidDisabled;
+          return KvDesignSystem().buttonColorTextSuccessSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessSolidEnabled;
+        return KvDesignSystem().buttonColorTextSuccessSolidEnabled;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextDangerSolidDisabled;
+          return KvDesignSystem().buttonColorTextDangerSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerSolidEnabled;
+        return KvDesignSystem().buttonColorTextDangerSolidEnabled;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextWarningSolidDisabled;
+          return KvDesignSystem().buttonColorTextWarningSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningSolidEnabled;
+        return KvDesignSystem().buttonColorTextWarningSolidEnabled;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextNeutralSolidDisabled;
+          return KvDesignSystem().buttonColorTextNeutralSolidDisabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralSolidEnabled;
+        return KvDesignSystem().buttonColorTextNeutralSolidEnabled;
     }
   }
 
@@ -444,39 +388,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextPrimaryOutlineDisabled;
+          return KvDesignSystem().buttonColorTextPrimaryOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimaryOutlineEnabled;
+        return KvDesignSystem().buttonColorTextPrimaryOutlineEnabled;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextSuccessOutlineDisabled;
+          return KvDesignSystem().buttonColorTextSuccessOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessOutlineEnabled;
+        return KvDesignSystem().buttonColorTextSuccessOutlineEnabled;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextDangerOutlineDisabled;
+          return KvDesignSystem().buttonColorTextDangerOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerOutlineEnabled;
+        return KvDesignSystem().buttonColorTextDangerOutlineEnabled;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextWarningOutlineDisabled;
+          return KvDesignSystem().buttonColorTextWarningOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningOutlineEnabled;
+        return KvDesignSystem().buttonColorTextWarningOutlineEnabled;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextNeutralOutlineDisabled;
+          return KvDesignSystem().buttonColorTextNeutralOutlineDisabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralOutlineEnabled;
+        return KvDesignSystem().buttonColorTextNeutralOutlineEnabled;
     }
   }
 
@@ -484,39 +418,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextPrimaryFadedDisabled;
+          return KvDesignSystem().buttonColorTextPrimaryFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimaryFadedEnabled;
+        return KvDesignSystem().buttonColorTextPrimaryFadedEnabled;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextSuccessFadedDisabled;
+          return KvDesignSystem().buttonColorTextSuccessFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessFadedEnabled;
+        return KvDesignSystem().buttonColorTextSuccessFadedEnabled;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextDangerFadedDisabled;
+          return KvDesignSystem().buttonColorTextDangerFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerFadedEnabled;
+        return KvDesignSystem().buttonColorTextDangerFadedEnabled;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextWarningFadedDisabled;
+          return KvDesignSystem().buttonColorTextWarningFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningFadedEnabled;
+        return KvDesignSystem().buttonColorTextWarningFadedEnabled;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextNeutralFadedDisabled;
+          return KvDesignSystem().buttonColorTextNeutralFadedDisabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralFadedEnabled;
+        return KvDesignSystem().buttonColorTextNeutralFadedEnabled;
     }
   }
 
@@ -524,39 +448,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextPrimaryTertiaryDisabled;
+          return KvDesignSystem().buttonColorTextPrimaryTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimaryTertiaryEnabled;
+        return KvDesignSystem().buttonColorTextPrimaryTertiaryEnabled;
       case KvCommonButtonVariant.success:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextSuccessTertiaryDisabled;
+          return KvDesignSystem().buttonColorTextSuccessTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessTertiaryEnabled;
+        return KvDesignSystem().buttonColorTextSuccessTertiaryEnabled;
       case KvCommonButtonVariant.danger:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextDangerTertiaryDisabled;
+          return KvDesignSystem().buttonColorTextDangerTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerTertiaryEnabled;
+        return KvDesignSystem().buttonColorTextDangerTertiaryEnabled;
       case KvCommonButtonVariant.warning:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextWarningTertiaryDisabled;
+          return KvDesignSystem().buttonColorTextWarningTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningTertiaryEnabled;
+        return KvDesignSystem().buttonColorTextWarningTertiaryEnabled;
       case KvCommonButtonVariant.neutral:
         if (states.contains(MaterialState.disabled)) {
-          return DTokens
-              .commonButtonColorTextNeutralTertiaryDisabled;
+          return KvDesignSystem().buttonColorTextNeutralTertiaryDisabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralTertiaryEnabled;
+        return KvDesignSystem().buttonColorTextNeutralTertiaryEnabled;
     }
   }
 
@@ -584,80 +498,60 @@ class KvCommonButtonThemeData extends ButtonStyle {
   Color _getOverlayColorSolidButton() {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
-        return DTokens
-            .commonButtonColorBgPrimarySolidPressed;
+        return KvDesignSystem().buttonColorBGPrimarySolidPressed;
       case KvCommonButtonVariant.success:
-        return DTokens
-            .commonButtonColorBgSuccessSolidPressed;
+        return KvDesignSystem().buttonColorBGSuccessSolidPressed;
       case KvCommonButtonVariant.danger:
-        return DTokens
-            .commonButtonColorBgDangerSolidPressed;
+        return KvDesignSystem().buttonColorBGDangerSolidPressed;
       case KvCommonButtonVariant.warning:
-        return DTokens
-            .commonButtonColorBgWarningSolidPressed;
+        return KvDesignSystem().buttonColorBGWarningSolidPressed;
       case KvCommonButtonVariant.neutral:
-        return DTokens
-            .commonButtonColorBgNeutralSolidPressed;
+        return KvDesignSystem().buttonColorBGNeutralSolidPressed;
     }
   }
 
   Color _getOverlayColorOutlineButton() {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
-        return DTokens
-            .commonButtonColorBgPrimaryOutlinePressed;
+        return KvDesignSystem().buttonColorBGPrimaryOutlinePressed;
       case KvCommonButtonVariant.success:
-        return DTokens
-            .commonButtonColorBgSuccessOutlinePressed;
+        return KvDesignSystem().buttonColorBGSuccessOutlinePressed;
       case KvCommonButtonVariant.danger:
-        return DTokens
-            .commonButtonColorBgDangerOutlinePressed;
+        return KvDesignSystem().buttonColorBGDangerOutlinePressed;
       case KvCommonButtonVariant.warning:
-        return DTokens
-            .commonButtonColorBgWarningOutlinePressed;
+        return KvDesignSystem().buttonColorBGWarningOutlinePressed;
       case KvCommonButtonVariant.neutral:
-        return DTokens
-            .commonButtonColorBgNeutralOutlinePressed;
+        return KvDesignSystem().buttonColorBGNeutralOutlinePressed;
     }
   }
 
   Color _getOverlayColorFadedButton() {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
-        return DTokens
-            .commonButtonColorBgPrimaryFadedPressed;
+        return KvDesignSystem().buttonColorBGPrimaryFadedPressed;
       case KvCommonButtonVariant.success:
-        return DTokens
-            .commonButtonColorBgSuccessFadedPressed;
+        return KvDesignSystem().buttonColorBGSuccessFadedPressed;
       case KvCommonButtonVariant.danger:
-        return DTokens
-            .commonButtonColorBgDangerFadedPressed;
+        return KvDesignSystem().buttonColorBGDangerFadedPressed;
       case KvCommonButtonVariant.warning:
-        return DTokens
-            .commonButtonColorBgWarningFadedPressed;
+        return KvDesignSystem().buttonColorBGWarningFadedPressed;
       case KvCommonButtonVariant.neutral:
-        return DTokens
-            .commonButtonColorBgNeutralFadedPressed;
+        return KvDesignSystem().buttonColorBGNeutralFadedPressed;
     }
   }
 
   Color _getOverlayColorTextButton() {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
-        return DTokens
-            .commonButtonColorBgPrimaryTertiaryPressed;
+        return KvDesignSystem().buttonColorBGPrimaryTertiaryPressed;
       case KvCommonButtonVariant.success:
-        return DTokens
-            .commonButtonColorBgSuccessTertiaryPressed;
+        return KvDesignSystem().buttonColorBGSuccessTertiaryPressed;
       case KvCommonButtonVariant.danger:
-        return DTokens
-            .commonButtonColorBgDangerTertiaryPressed;
+        return KvDesignSystem().buttonColorBGDangerTertiaryPressed;
       case KvCommonButtonVariant.warning:
-        return DTokens
-            .commonButtonColorBgWarningTertiaryPressed;
+        return KvDesignSystem().buttonColorBGWarningTertiaryPressed;
       case KvCommonButtonVariant.neutral:
-        return DTokens
-            .commonButtonColorBgNeutralTertiaryPressed;
+        return KvDesignSystem().buttonColorBGNeutralTertiaryPressed;
     }
   }
 
@@ -705,12 +599,15 @@ class KvCommonButtonThemeData extends ButtonStyle {
 
   double get gutter {
     switch (buttonSize) {
+      case KvCommonButtonSize.xSmall:
       case KvCommonButtonSize.small:
-        return DTokens.commonButtonSizeGutterS;
+        return KvDesignSystem().buttonSizeGutterS;
       case KvCommonButtonSize.medium:
-        return DTokens.commonButtonSizeGutterM;
+        return KvDesignSystem().buttonSizeGutterM;
       case KvCommonButtonSize.large:
-        return DTokens.commonButtonSizeGutterL;
+        return KvDesignSystem().buttonSizeGutterL;
+      case KvCommonButtonSize.xLarge:
+        return KvDesignSystem().buttonSizeGutterXL;
     }
   }
 
@@ -742,12 +639,15 @@ class KvCommonButtonThemeData extends ButtonStyle {
 
   KvBadgeSize get badgeSize {
     switch (buttonSize) {
+      case KvCommonButtonSize.xSmall:
       case KvCommonButtonSize.small:
         return KvBadgeSize.small;
       case KvCommonButtonSize.medium:
         return KvBadgeSize.medium;
       case KvCommonButtonSize.large:
         return KvBadgeSize.large;
+      case KvCommonButtonSize.xLarge:
+        return KvBadgeSize.xLarge;
     }
   }
 
@@ -768,39 +668,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextPrimarySolidEnabled;
+          return KvDesignSystem().buttonColorTextPrimarySolidEnabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimarySolidDisabled;
+        return KvDesignSystem().buttonColorTextPrimarySolidDisabled;
       case KvCommonButtonVariant.success:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextSuccessSolidEnabled;
+          return KvDesignSystem().buttonColorTextSuccessSolidEnabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessSolidDisabled;
+        return KvDesignSystem().buttonColorTextSuccessSolidDisabled;
       case KvCommonButtonVariant.danger:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextDangerSolidEnabled;
+          return KvDesignSystem().buttonColorTextDangerSolidEnabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerSolidDisabled;
+        return KvDesignSystem().buttonColorTextDangerSolidDisabled;
       case KvCommonButtonVariant.warning:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextWarningSolidEnabled;
+          return KvDesignSystem().buttonColorTextWarningSolidEnabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningSolidDisabled;
+        return KvDesignSystem().buttonColorTextWarningSolidDisabled;
       case KvCommonButtonVariant.neutral:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextNeutralSolidEnabled;
+          return KvDesignSystem().buttonColorTextNeutralSolidEnabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralSolidDisabled;
+        return KvDesignSystem().buttonColorTextNeutralSolidDisabled;
     }
   }
 
@@ -808,39 +698,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextPrimaryOutlineEnabled;
+          return KvDesignSystem().buttonColorTextPrimaryOutlineEnabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimaryOutlineDisabled;
+        return KvDesignSystem().buttonColorTextPrimaryOutlineDisabled;
       case KvCommonButtonVariant.success:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextSuccessOutlineEnabled;
+          return KvDesignSystem().buttonColorTextSuccessOutlineEnabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessOutlineDisabled;
+        return KvDesignSystem().buttonColorTextSuccessOutlineDisabled;
       case KvCommonButtonVariant.danger:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextDangerOutlineEnabled;
+          return KvDesignSystem().buttonColorTextDangerOutlineEnabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerOutlineDisabled;
+        return KvDesignSystem().buttonColorTextDangerOutlineDisabled;
       case KvCommonButtonVariant.warning:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextWarningOutlineEnabled;
+          return KvDesignSystem().buttonColorTextWarningOutlineEnabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningOutlineDisabled;
+        return KvDesignSystem().buttonColorTextWarningOutlineDisabled;
       case KvCommonButtonVariant.neutral:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextNeutralOutlineEnabled;
+          return KvDesignSystem().buttonColorTextNeutralOutlineEnabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralOutlineDisabled;
+        return KvDesignSystem().buttonColorTextNeutralOutlineDisabled;
     }
   }
 
@@ -848,39 +728,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextPrimaryFadedEnabled;
+          return KvDesignSystem().buttonColorTextPrimaryFadedEnabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimaryFadedDisabled;
+        return KvDesignSystem().buttonColorTextPrimaryFadedDisabled;
       case KvCommonButtonVariant.success:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextSuccessFadedEnabled;
+          return KvDesignSystem().buttonColorTextSuccessFadedEnabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessFadedDisabled;
+        return KvDesignSystem().buttonColorTextSuccessFadedDisabled;
       case KvCommonButtonVariant.danger:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextDangerFadedEnabled;
+          return KvDesignSystem().buttonColorTextDangerFadedEnabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerFadedDisabled;
+        return KvDesignSystem().buttonColorTextDangerFadedDisabled;
       case KvCommonButtonVariant.warning:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextWarningFadedEnabled;
+          return KvDesignSystem().buttonColorTextWarningFadedEnabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningFadedDisabled;
+        return KvDesignSystem().buttonColorTextWarningFadedDisabled;
       case KvCommonButtonVariant.neutral:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextNeutralFadedEnabled;
+          return KvDesignSystem().buttonColorTextNeutralFadedEnabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralFadedDisabled;
+        return KvDesignSystem().buttonColorTextNeutralFadedDisabled;
     }
   }
 
@@ -888,39 +758,29 @@ class KvCommonButtonThemeData extends ButtonStyle {
     switch (buttonVariant) {
       case KvCommonButtonVariant.primary:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextPrimaryTertiaryEnabled;
+          return KvDesignSystem().buttonColorTextPrimaryTertiaryEnabled;
         }
-        return DTokens
-            .commonButtonColorTextPrimaryTertiaryDisabled;
+        return KvDesignSystem().buttonColorTextPrimaryTertiaryDisabled;
       case KvCommonButtonVariant.success:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextSuccessTertiaryEnabled;
+          return KvDesignSystem().buttonColorTextSuccessTertiaryEnabled;
         }
-        return DTokens
-            .commonButtonColorTextSuccessTertiaryDisabled;
+        return KvDesignSystem().buttonColorTextSuccessTertiaryDisabled;
       case KvCommonButtonVariant.danger:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextDangerTertiaryEnabled;
+          return KvDesignSystem().buttonColorTextDangerTertiaryEnabled;
         }
-        return DTokens
-            .commonButtonColorTextDangerTertiaryDisabled;
+        return KvDesignSystem().buttonColorTextDangerTertiaryDisabled;
       case KvCommonButtonVariant.warning:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextWarningTertiaryEnabled;
+          return KvDesignSystem().buttonColorTextWarningTertiaryEnabled;
         }
-        return DTokens
-            .commonButtonColorTextWarningTertiaryDisabled;
+        return KvDesignSystem().buttonColorTextWarningTertiaryDisabled;
       case KvCommonButtonVariant.neutral:
         if (enabled) {
-          return DTokens
-              .commonButtonColorTextNeutralTertiaryEnabled;
+          return KvDesignSystem().buttonColorTextNeutralTertiaryEnabled;
         }
-        return DTokens
-            .commonButtonColorTextNeutralTertiaryDisabled;
+        return KvDesignSystem().buttonColorTextNeutralTertiaryDisabled;
     }
   }
 }

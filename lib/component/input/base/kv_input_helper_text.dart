@@ -20,16 +20,16 @@ class KvInputHelperText extends StatelessWidget {
     }
     return Padding(
       padding: const EdgeInsets.only(
-        left: DTokens.sizeSize16,
+        left: KvDesignSystem().sizeSize16,
         top: 4,
-        right: DTokens.sizeSize16,
+        right: KvDesignSystem().sizeSize16,
       ),
       child: Text(
         helperText ?? errorText ?? '',
         style: KvTextStyles.cationRe(
           color: errorText != null
-              ? DTokens.colorTextDangerOnwhiteTertiary
-              : DTokens.colorTextNeutralSecondary,
+              ? KvDesignSystem().colorTextDangerOnwhiteTertiary
+              : KvDesignSystem().colorTextNeutralSecondary,
         ),
       ),
     );

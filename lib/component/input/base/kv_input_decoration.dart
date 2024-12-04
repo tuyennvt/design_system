@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../employee_flutter_design_system.dart';
 
 const BoxConstraints defaultInputIconConstraints = BoxConstraints(
-  minWidth: DTokens.sizeSize20,
-  maxWidth: DTokens.sizeSize20,
-  minHeight: DTokens.sizeSize20,
-  maxHeight: DTokens.sizeSize20,
+  minWidth: KvDesignSystem().sizeSize20,
+  maxWidth: KvDesignSystem().sizeSize20,
+  minHeight: KvDesignSystem().sizeSize20,
+  maxHeight: KvDesignSystem().sizeSize20,
 );
 
 class KvInputDecoration {

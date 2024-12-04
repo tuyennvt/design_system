@@ -8,16 +8,16 @@ class KvInlineButton extends StatelessWidget implements KvButton {
     this.buttonSize = KvInlineButtonSize.medium,
     this.buttonVariant = KvInlineButtonVariant.primary,
     required this.text,
-    this.assetPrefixIcon,
-    this.assetSuffixIcon,
+    this.prefixIcon,
+    this.suffixIcon,
     required this.onPressed,
   });
 
   final KvInlineButtonSize buttonSize;
   final KvInlineButtonVariant buttonVariant;
   final String text;
-  final KvSvgAsset? assetPrefixIcon;
-  final KvSvgAsset? assetSuffixIcon;
+  final IconData? prefixIcon;
+  final IconData? suffixIcon;
   final VoidCallback? onPressed;
 
   @override
@@ -28,9 +28,9 @@ class KvInlineButton extends StatelessWidget implements KvButton {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (assetPrefixIcon.isNotNullOrEmpty) ...{
+          if (prefixIcon != null) ...{
             KvIcon(
-              assetIcon: assetPrefixIcon!,
+              icon: prefixIcon!,
               color: theme.iconColor,
               size: theme.iconSize,
             ),
@@ -40,10 +40,10 @@ class KvInlineButton extends StatelessWidget implements KvButton {
             text,
             style: theme.textStyle,
           ),
-          if (assetSuffixIcon.isNotNullOrEmpty) ...{
+          if (suffixIcon != null) ...{
             SizedBox(width: theme.gutter),
             KvIcon(
-              assetIcon: assetSuffixIcon!,
+              icon: suffixIcon!,
               color: theme.iconColor,
               size: theme.iconSize,
             ),

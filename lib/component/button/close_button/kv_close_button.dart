@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../../employee_flutter_design_system.dart';
-import '../../../foundation/d_tokens.dart';
+import '../../../foundation/kv_icon.dart';
 import '../../../foundation/kv_icons.dart';
+import '../../../kv_design_system.dart';
+import '../../kv_minimum_tap_area.dart';
+import '../kv_button.dart';
 
 class KvCloseButton extends StatelessWidget implements KvButton {
   const KvCloseButton({
     super.key,
     this.onPressed,
-    this.color = DTokens.iconNeutralPrimaryAction,
+    this.color,
   });
 
   final VoidCallback? onPressed;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class KvCloseButton extends StatelessWidget implements KvButton {
       onTap: () => onPressed?.call(),
       child: KvIcon(
         icon: KvIcons.circle_xmark_regular,
-        color: color,
+        color: color ?? KvDesignSystem().iconNeutralPrimaryAction,
         size: KvIconSize.iconXS,
       ),
     );

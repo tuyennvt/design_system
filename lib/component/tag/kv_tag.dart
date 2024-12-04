@@ -42,7 +42,7 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
         children: [
           if (assetPrefixIcon.isNotNullOrEmpty) ...{
             KvIcon(
-              assetIcon: assetPrefixIcon!,
+              icon: assetPrefixIcon!,
               color: theme.prefixIconColor,
               size: theme.prefixIconSize,
             ),
@@ -65,7 +65,7 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
                 }
               },
               child: KvIcon(
-                assetIcon: assetSuffixIcon!,
+                icon: assetSuffixIcon!,
                 color: theme.suffixIconColor,
                 size: theme.suffixIconSize,
               ),

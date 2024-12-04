@@ -26,18 +26,18 @@ class KvAppBarSubContent extends StatelessWidget {
           Text(
             subContent,
             style: KvTextStyles.cationRe(
-              color: DTokens.colorTextNeutralSecondary,
+              color: KvDesignSystem().colorTextNeutralSecondary,
             ),
           ),
           if (showIcon) ...{
             Padding(
               padding: const EdgeInsets.only(left: 4.0),
               child: KvIcon(
-                assetIcon: KvSvgAsset(
+                icon: KvSvgAsset(
                   Assets.iconsCaretDown,
                   assetPackage: packageRoot,
                 ),
-                color: DTokens.colorTextNeutralSecondary,
+                color: KvDesignSystem().colorTextNeutralSecondary,
                 size: KvIconSize.size16,
               ),
             ),

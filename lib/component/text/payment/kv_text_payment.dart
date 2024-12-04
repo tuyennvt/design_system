@@ -15,7 +15,7 @@ class KvTextPayment extends StatelessWidget {
     return Text(
       number,
       style: KvTextStyles.freeStyle(
-        color: DTokens.colorTextLink,
+        color: KvDesignSystem().colorTextLink,
         fontWeight: FontWeight.w600,
         fontSize: 18,
         height: 24 / 18,

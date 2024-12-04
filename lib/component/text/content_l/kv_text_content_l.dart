@@ -6,7 +6,7 @@ class KvTextContentL extends StatelessWidget {
   const KvTextContentL({
     super.key,
     required this.content,
-    this.color = DTokens.colorTextNeutralBase,
+    this.color = KvDesignSystem().colorTextNeutralBase,
   });
 
   final String content;

@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
-import '../../foundation/d_tokens.dart';
+import '../../kv_design_system.dart';
 
 enum KvBadgeSize {
-  small(DTokens.badgeSizeSMinWidth, DTokens.badgeSizeSHeight),
-  medium(DTokens.badgeSizeMMinWidth, DTokens.badgeSizeMHeight),
-  large(DTokens.badgeSizeLMinWidth, DTokens.badgeSizeLHeight),
-  xLarge(DTokens.badgeSizeXLMinWidth, DTokens.badgeSizeXLHeight);
-
-  const KvBadgeSize(this.minWidth, this.height);
-
-  final int minWidth;
-  final int height;
+  small,
+  medium,
+  large,
+  xLarge,
 }
 
 enum KvBadgeType {
@@ -58,7 +53,7 @@ class KvBadgeThemeData {
 
   BorderRadius? get borderRadius {
     if (type == KvBadgeType.maxBadge) {
-      return BorderRadius.circular(DTokens.badgeRadius.toDouble());
+      return BorderRadius.circular(KvDesignSystem().badgeRadius);
     }
     return null;
   }
@@ -67,7 +62,7 @@ class KvBadgeThemeData {
     if (style == KvBadgeStyle.outline) {
       return Border.all(
         color: borderColor,
-        width: DTokens.badgeStroke.toDouble(),
+        width: KvDesignSystem().badgeStroke,
       );
     }
     return null;
@@ -77,29 +72,29 @@ class KvBadgeThemeData {
     switch (variant) {
       case KvBadgeVariant.primary:
         if (enable) {
-          return DTokens.badgeColorBorderPrimaryDefault;
+          return KvDesignSystem().badgeColorBorderPrimaryDefault;
         }
-        return DTokens.badgeColorBorderPrimaryDisabled;
+        return KvDesignSystem().badgeColorBorderPrimaryDisabled;
       case KvBadgeVariant.neutral:
         if (enable) {
-          return DTokens.badgeColorBorderNeutralDefault;
+          return KvDesignSystem().badgeColorBorderNeutralDefault;
         }
-        return DTokens.badgeColorBorderNeutralDisabled;
+        return KvDesignSystem().badgeColorBorderNeutralDisabled;
       case KvBadgeVariant.success:
         if (enable) {
-          return DTokens.badgeColorBorderSuccessDefault;
+          return KvDesignSystem().badgeColorBorderSuccessDefault;
         }
-        return DTokens.badgeColorBorderSuccessDisabled;
+        return KvDesignSystem().badgeColorBorderSuccessDisabled;
       case KvBadgeVariant.danger:
         if (enable) {
-          return DTokens.badgeColorBorderDangerDefault;
+          return KvDesignSystem().badgeColorBorderDangerDefault;
         }
-        return DTokens.badgeColorBorderDangerDisabled;
+        return KvDesignSystem().badgeColorBorderDangerDisabled;
       case KvBadgeVariant.warning:
         if (enable) {
-          return DTokens.badgeColorBorderWarningDefault;
+          return KvDesignSystem().badgeColorBorderWarningDefault;
         }
-        return DTokens.badgeColorBorderWarningDisabled;
+        return KvDesignSystem().badgeColorBorderWarningDisabled;
     }
   }
 
@@ -122,20 +117,20 @@ class KvBadgeThemeData {
     if (enable) {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGPrimarySolidDefault;
+          return KvDesignSystem().badgeColorBGPrimarySolidDefault;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGPrimaryonSolidDefault;
+          return KvDesignSystem().badgeColorBGPrimaryonSolidDefault;
       }
     } else {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGPrimarySolidDisabled;
+          return KvDesignSystem().badgeColorBGPrimarySolidDisabled;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGPrimaryonSolidDisabled;
+          return KvDesignSystem().badgeColorBGPrimaryonSolidDisabled;
       }
     }
   }
@@ -144,20 +139,20 @@ class KvBadgeThemeData {
     if (enable) {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGNeutralSolidDefault;
+          return KvDesignSystem().badgeColorBGNeutralSolidDefault;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGNeutralonSolidDefault;
+          return KvDesignSystem().badgeColorBGNeutralonSolidDefault;
       }
     } else {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGNeutralSolidDisabled;
+          return KvDesignSystem().badgeColorBGNeutralSolidDisabled;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGNeutralonSolidDisabled;
+          return KvDesignSystem().badgeColorBGNeutralonSolidDisabled;
       }
     }
   }
@@ -166,20 +161,20 @@ class KvBadgeThemeData {
     if (enable) {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGSuccessSolidDefault;
+          return KvDesignSystem().badgeColorBGSuccessSolidDefault;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGSuccessonSolidDefault;
+          return KvDesignSystem().badgeColorBGSuccessonSolidDefault;
       }
     } else {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGSuccessSolidDisabled;
+          return KvDesignSystem().badgeColorBGSuccessSolidDisabled;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGSuccessonSolidDisabled;
+          return KvDesignSystem().badgeColorBGSuccessonSolidDisabled;
       }
     }
   }
@@ -188,20 +183,20 @@ class KvBadgeThemeData {
     if (enable) {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGDangerSolidDefault;
+          return KvDesignSystem().badgeColorBGDangerSolidDefault;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGDangeronSolidDefault;
+          return KvDesignSystem().badgeColorBGDangeronSolidDefault;
       }
     } else {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGDangerSolidDisabled;
+          return KvDesignSystem().badgeColorBGDangerSolidDisabled;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGDangeronSolidDisabled;
+          return KvDesignSystem().badgeColorBGDangeronSolidDisabled;
       }
     }
   }
@@ -210,20 +205,20 @@ class KvBadgeThemeData {
     if (enable) {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGWarningSolidDefault;
+          return KvDesignSystem().badgeColorBGWarningSolidDefault;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGWarningonSolidDefault;
+          return KvDesignSystem().badgeColorBGWarningonSolidDefault;
       }
     } else {
       switch (style) {
         case KvBadgeStyle.solid:
-          return DTokens.badgeColorBGWarningSolidDisabled;
+          return KvDesignSystem().badgeColorBGWarningSolidDisabled;
         case KvBadgeStyle.outline:
-          return DTokens.colorTransparent;
+          return KvDesignSystem().colorTransparent;
         case KvBadgeStyle.onBackground:
-          return DTokens.badgeColorBGWarningonSolidDisabled;
+          return KvDesignSystem().badgeColorBGWarningonSolidDisabled;
       }
     }
   }
@@ -232,19 +227,19 @@ class KvBadgeThemeData {
     switch (size) {
       case KvBadgeSize.small:
         return EdgeInsets.only(
-          left: DTokens.badgeSizeSPaddingHorizontal.toDouble(),
+          left: KvDesignSystem().badgeSizeSPaddingHorizontal,
         );
       case KvBadgeSize.medium:
         return EdgeInsets.only(
-          left: DTokens.badgeSizeMPaddingHorizontal.toDouble(),
+          left: KvDesignSystem().badgeSizeMPaddingHorizontal,
         );
       case KvBadgeSize.large:
         return EdgeInsets.only(
-          left: DTokens.badgeSizeLPaddingHorizontal.toDouble(),
+          left: KvDesignSystem().badgeSizeLPaddingHorizontal,
         );
       case KvBadgeSize.xLarge:
         return EdgeInsets.only(
-          left: DTokens.badgeSizeXLPaddingHorizontal.toDouble(),
+          left: KvDesignSystem().badgeSizeXLPaddingHorizontal,
         );
     }
   }
@@ -281,19 +276,19 @@ class KvBadgeThemeData {
     switch (style) {
       case KvBadgeStyle.solid:
         if (enable) {
-          return DTokens.badgeColorTextPrimarySolidDefault;
+          return KvDesignSystem().badgeColorTextPrimarySolidDefault;
         }
-        return DTokens.badgeColorTextPrimarySolidDisabled;
+        return KvDesignSystem().badgeColorTextPrimarySolidDisabled;
       case KvBadgeStyle.outline:
         if (enable) {
-          return DTokens.badgeColorTextPrimaryOutlineDefault;
+          return KvDesignSystem().badgeColorTextPrimaryOutlineDefault;
         }
-        return DTokens.badgeColorTextPrimaryOutlineDisabled;
+        return KvDesignSystem().badgeColorTextPrimaryOutlineDisabled;
       case KvBadgeStyle.onBackground:
         if (enable) {
-          return DTokens.badgeColorTextPrimaryonSolidDefault;
+          return KvDesignSystem().badgeColorTextPrimaryonSolidDefault;
         }
-        return DTokens.badgeColorTextPrimaryonSolidDisabled;
+        return KvDesignSystem().badgeColorTextPrimaryonSolidDisabled;
     }
   }
 
@@ -301,19 +296,19 @@ class KvBadgeThemeData {
     switch (style) {
       case KvBadgeStyle.solid:
         if (enable) {
-          return DTokens.badgeColorTextNeutralSolidDefault;
+          return KvDesignSystem().badgeColorTextNeutralSolidDefault;
         }
-        return DTokens.badgeColorTextNeutralSolidDisabled;
+        return KvDesignSystem().badgeColorTextNeutralSolidDisabled;
       case KvBadgeStyle.outline:
         if (enable) {
-          return DTokens.badgeColorTextNeutralOutlineDefault;
+          return KvDesignSystem().badgeColorTextNeutralOutlineDefault;
         }
-        return DTokens.badgeColorTextNeutralOutlineDisabled;
+        return KvDesignSystem().badgeColorTextNeutralOutlineDisabled;
       case KvBadgeStyle.onBackground:
         if (enable) {
-          return DTokens.badgeColorTextNeutralonSolidDefault;
+          return KvDesignSystem().badgeColorTextNeutralonSolidDefault;
         }
-        return DTokens.badgeColorTextNeutralonSolidDisabled;
+        return KvDesignSystem().badgeColorTextNeutralonSolidDisabled;
     }
   }
 
@@ -321,19 +316,19 @@ class KvBadgeThemeData {
     switch (style) {
       case KvBadgeStyle.solid:
         if (enable) {
-          return DTokens.badgeColorTextSuccessSolidDefault;
+          return KvDesignSystem().badgeColorTextSuccessSolidDefault;
         }
-        return DTokens.badgeColorTextSuccessSolidDisabled;
+        return KvDesignSystem().badgeColorTextSuccessSolidDisabled;
       case KvBadgeStyle.outline:
         if (enable) {
-          return DTokens.badgeColorTextSuccessOutlineDefault;
+          return KvDesignSystem().badgeColorTextSuccessOutlineDefault;
         }
-        return DTokens.badgeColorTextSuccessOutlineDisabled;
+        return KvDesignSystem().badgeColorTextSuccessOutlineDisabled;
       case KvBadgeStyle.onBackground:
         if (enable) {
-          return DTokens.badgeColorTextSuccessonSolidDefault;
+          return KvDesignSystem().badgeColorTextSuccessonSolidDefault;
         }
-        return DTokens.badgeColorTextSuccessonSolidDisabled;
+        return KvDesignSystem().badgeColorTextSuccessonSolidDisabled;
     }
   }
 
@@ -341,19 +336,19 @@ class KvBadgeThemeData {
     switch (style) {
       case KvBadgeStyle.solid:
         if (enable) {
-          return DTokens.badgeColorTextDangerSolidDefault;
+          return KvDesignSystem().badgeColorTextDangerSolidDefault;
         }
-        return DTokens.badgeColorTextDangerSolidDisabled;
+        return KvDesignSystem().badgeColorTextDangerSolidDisabled;
       case KvBadgeStyle.outline:
         if (enable) {
-          return DTokens.badgeColorTextDangerOutlineDefault;
+          return KvDesignSystem().badgeColorTextDangerOutlineDefault;
         }
-        return DTokens.badgeColorTextDangerOutlineDisabled;
+        return KvDesignSystem().badgeColorTextDangerOutlineDisabled;
       case KvBadgeStyle.onBackground:
         if (enable) {
-          return DTokens.badgeColorTextDangeronSolidDefault;
+          return KvDesignSystem().badgeColorTextDangeronSolidDefault;
         }
-        return DTokens.badgeColorTextDangeronSolidDisabled;
+        return KvDesignSystem().badgeColorTextDangeronSolidDisabled;
     }
   }
 
@@ -361,27 +356,47 @@ class KvBadgeThemeData {
     switch (style) {
       case KvBadgeStyle.solid:
         if (enable) {
-          return DTokens.badgeColorTextWarningSolidDefault;
+          return KvDesignSystem().badgeColorTextWarningSolidDefault;
         }
-        return DTokens.badgeColorTextWarningSolidDisabled;
+        return KvDesignSystem().badgeColorTextWarningSolidDisabled;
       case KvBadgeStyle.outline:
         if (enable) {
-          return DTokens.badgeColorTextWarningOutlineDefault;
+          return KvDesignSystem().badgeColorTextWarningOutlineDefault;
         }
-        return DTokens.badgeColorTextWarningOutlineDisabled;
+        return KvDesignSystem().badgeColorTextWarningOutlineDisabled;
       case KvBadgeStyle.onBackground:
         if (enable) {
-          return DTokens.badgeColorTextWarningonSolidDefault;
+          return KvDesignSystem().badgeColorTextWarningonSolidDefault;
         }
-        return DTokens.badgeColorTextWarningonSolidDisabled;
+        return KvDesignSystem().badgeColorTextWarningonSolidDisabled;
     }
   }
 
   BoxConstraints get constraints {
+    var minWidth = 0.0;
+    var height = 0.0;
+    switch (size) {
+      case KvBadgeSize.small:
+        minWidth = KvDesignSystem().badgeSizeSMinWidth;
+        height = KvDesignSystem().badgeSizeSHeight;
+        break;
+      case KvBadgeSize.medium:
+        minWidth = KvDesignSystem().badgeSizeMMinWidth;
+        height = KvDesignSystem().badgeSizeMHeight;
+        break;
+      case KvBadgeSize.large:
+        minWidth = KvDesignSystem().badgeSizeLMinWidth;
+        height = KvDesignSystem().badgeSizeMHeight;
+        break;
+      case KvBadgeSize.xLarge:
+        minWidth = KvDesignSystem().badgeSizeXLMinWidth;
+        height = KvDesignSystem().badgeSizeXLHeight;
+        break;
+    }
     return BoxConstraints(
-      minWidth: size.minWidth.toDouble(),
-      minHeight: size.height.toDouble(),
-      maxHeight: size.height.toDouble(),
+      minWidth: minWidth,
+      minHeight: height,
+      maxHeight: height,
     );
   }
 }

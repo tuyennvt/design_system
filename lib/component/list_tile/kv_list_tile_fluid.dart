@@ -37,7 +37,7 @@ class KvListTileFluid extends StatelessWidget {
           bottom: BorderSide(
             color: isLastItem
                 ? Colors.transparent
-                : DTokens.colorDividerBlock,
+                : KvDesignSystem().colorDividerBlock,
           ),
         ),
       ),
@@ -47,7 +47,7 @@ class KvListTileFluid extends StatelessWidget {
         children: [
           if (prefix != null) ...{
             prefix!,
-            const SizedBox(width: DTokens.sizeSize12),
+            const SizedBox(width: KvDesignSystem().sizeSize12),
           },
           Expanded(
             child: _ListTile(
@@ -59,7 +59,7 @@ class KvListTileFluid extends StatelessWidget {
             ),
           ),
           if (suffix != null) ...{
-            const SizedBox(width: DTokens.sizeSize12),
+            const SizedBox(width: KvDesignSystem().sizeSize12),
             suffix!,
           },
         ],

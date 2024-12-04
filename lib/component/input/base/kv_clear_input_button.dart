@@ -21,7 +21,7 @@ class KvClearInputButton extends StatelessWidget {
       child: KvMinimumTapArea(
         onTap: onPressed,
         child: KvIcon(
-          assetIcon: KvSvgAsset(
+          icon: KvSvgAsset(
             Assets.iconsCircleXmark,
             assetPackage: packageRoot,
           ),

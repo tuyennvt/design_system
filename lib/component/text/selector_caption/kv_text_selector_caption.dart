@@ -25,16 +25,16 @@ class KvTextSelectorCaption extends StatelessWidget
           Text(
             text,
             style: KvTextStyles.cationRe(
-              color: DTokens.colorTextNeutralSecondary,
+              color: KvDesignSystem().colorTextNeutralSecondary,
             ),
           ),
           const SizedBox(width: 4),
           KvIcon(
-            assetIcon: KvSvgAsset(
+            icon: KvSvgAsset(
               Assets.iconsCaretDown,
               assetPackage: packageRoot,
             ),
-            color: DTokens.colorIconNeutralSecondaryAction,
+            color: KvDesignSystem().colorIconNeutralSecondaryAction,
             size: KvIconSize.size12,
           ),
         ],

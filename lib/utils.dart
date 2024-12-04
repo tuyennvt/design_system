@@ -1,5 +1,7 @@
 import 'package:diacritic/diacritic.dart';
 
+import 'kv_design_system.dart';
+
 extension StringExtensionWithNull on String? {
   bool get isNullOrEmpty {
     return this == null || this?.trim().isEmpty == true;
@@ -47,6 +49,17 @@ extension ListExtension on List? {
   }
 
   bool get isNotNullOrEmpty {
+    final themeCollection2 = ThemeCollection2Blue();
+    KvDesignSystem().init(
+      themeCollection1: ThemeCollection1Avocado(),
+      themeColorCollections: ThemeColorCollectionsBluePurple(themeCollection2),
+      themeCollection2: themeCollection2,
+      themeCollection3: ThemeCollection3Carrot(),
+      productTheme: ProductThemeClassic(),
+      kvTextStyle: KvTextStyleMobile430(),
+      dimensionMobile: DimensionMobileM(),
+      breakpoint: BreakpointM(),
+    );
     return !isNullOrEmpty;
   }
 }

@@ -8,8 +8,8 @@ import '../kv_input.dart';
 import 'kv_search_box_decorator.dart';
 
 enum KvSearchBoxSize {
-  small(DTokens.sizeSize32),
-  medium(DTokens.sizeSize40);
+  small(KvDesignSystem().sizeSize32),
+  medium(KvDesignSystem().sizeSize40);
 
   const KvSearchBoxSize(this.value);
 
@@ -112,7 +112,7 @@ class _KvSearchBoxState extends State<KvSearchBox> {
         child: Row(
           children: [
             const SizedBox(
-              width: DTokens.sizeSize16,
+              width: KvDesignSystem().sizeSize16,
             ),
             decorator.prefix,
             Flexible(
@@ -133,7 +133,7 @@ class _KvSearchBoxState extends State<KvSearchBox> {
               ),
             ),
             const SizedBox(
-              width: DTokens.sizeSize12,
+              width: KvDesignSystem().sizeSize12,
             ),
             KvClearInputButton(
               visible: _state == KvSearchBoxState.focused ||
@@ -147,7 +147,7 @@ class _KvSearchBoxState extends State<KvSearchBox> {
               },
             ),
             const SizedBox(
-              width: DTokens.sizeSize16,
+              width: KvDesignSystem().sizeSize16,
             ),
           ],
         ),
