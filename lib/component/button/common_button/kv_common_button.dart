@@ -6,9 +6,9 @@ import 'kv_common_button_child.dart';
 class KvCommonButton extends ButtonStyleButton implements KvButton {
   factory KvCommonButton({
     Key? key,
-    KvCommonButtonStyle buttonStyle = KvCommonButtonStyle.solidButton,
-    KvCommonButtonSize buttonSize = KvCommonButtonSize.large,
-    KvCommonButtonVariant buttonVariant = KvCommonButtonVariant.primary,
+    KvCommonButtonStyle style = KvCommonButtonStyle.solid,
+    KvCommonButtonSize size = KvCommonButtonSize.large,
+    KvCommonButtonVariant variant = KvCommonButtonVariant.primary,
     required VoidCallback? onPressed,
     VoidCallback? onLongPress,
     ValueChanged<bool>? onHover,
@@ -23,9 +23,9 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
   }) {
     return KvCommonButton._(
       key: key,
-      buttonStyle: buttonStyle,
-      buttonSize: buttonSize,
-      buttonVariant: buttonVariant,
+      buttonStyle: style,
+      buttonSize: size,
+      buttonVariant: variant,
       label: label,
       icon: icon,
       badgeText: badgeText,
@@ -38,9 +38,9 @@ class KvCommonButton extends ButtonStyleButton implements KvButton {
       clipBehavior: clipBehavior,
       statesController: statesController,
       child: KvCommonButtonChild(
-        buttonStyle: buttonStyle,
-        buttonSize: buttonSize,
-        buttonVariant: buttonVariant,
+        buttonStyle: style,
+        buttonSize: size,
+        buttonVariant: variant,
         enabled: onPressed != null,
         label: label,
         icon: icon,

@@ -228,7 +228,7 @@ class KvCircleButtonThemeData extends ButtonStyle {
     }
   }
 
-  KvIconSize get iconSize {
+  KvIconSize get kvIconSize {
     switch (buttonSize) {
       case KvCircleButtonSize.xSmall:
         return KvIconSize.iconXS;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../kv_design_system.dart';
 import '../kv_button.dart';
 
-enum KvGroupButtonType {
+enum KvGroupButtonOrientation {
   vertical,
   horizontal,
 }
@@ -11,14 +11,14 @@ enum KvGroupButtonType {
 class KvGroupButton extends StatelessWidget implements KvButton {
   const KvGroupButton({
     super.key,
-    this.type = KvGroupButtonType.horizontal,
+    this.orientation = KvGroupButtonOrientation.horizontal,
     required this.labelNegative,
     this.onNegativePressed,
     required this.labelPositive,
     this.onPositivePressed,
   });
 
-  final KvGroupButtonType type;
+  final KvGroupButtonOrientation orientation;
   final String labelNegative;
   final VoidCallback? onNegativePressed;
   final String labelPositive;
@@ -26,7 +26,7 @@ class KvGroupButton extends StatelessWidget implements KvButton {
 
   @override
   Widget build(BuildContext context) {
-    Widget child = type == KvGroupButtonType.horizontal
+    final child = orientation == KvGroupButtonOrientation.horizontal
         ? _KvGroupButtonHorizontal(
             labelNegative: labelNegative,
             onNegativePressed: onNegativePressed,
@@ -70,7 +70,7 @@ class _KvGroupButtonHorizontal extends StatelessWidget {
       children: [
         Expanded(
           child: KvCommonButton(
-            buttonStyle: KvCommonButtonStyle.outlinedButton,
+            style: KvCommonButtonStyle.outlined,
             onPressed: onNegativePressed,
             label: labelNegative,
           ),
@@ -107,7 +107,7 @@ class _KvGroupButtonVertical extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         KvCommonButton(
-          buttonStyle: KvCommonButtonStyle.outlinedButton,
+          style: KvCommonButtonStyle.outlined,
           onPressed: onNegativePressed,
           label: labelNegative,
         ),

@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 
 enum KvTagSize {
-  small(KvDesignSystem().sizeSize16),
-  mediumHeavy(18.0),
-  medium(KvDesignSystem().sizeSize20),
-  large(KvDesignSystem().sizeSize24);
-
-  const KvTagSize(this.value);
-
-  final double value;
+  small,
+  medium,
+  large;
 }
 
-enum KvTagStyle {
+enum KvTagVariant {
   neutral,
   promotion,
   information,
@@ -22,7 +18,7 @@ enum KvTagStyle {
   success,
 }
 
-enum KvTagType {
+enum KvTagStyle {
   text,
   outline,
   faded,
@@ -32,35 +28,35 @@ enum KvTagType {
 class KvTagThemeData {
   const KvTagThemeData({
     required this.size,
+    required this.variant,
     required this.style,
-    required this.type,
   });
 
   final KvTagSize size;
+  final KvTagVariant variant;
   final KvTagStyle style;
-  final KvTagType type;
 
   Border? get border {
-    if (type == KvTagType.outline) {
+    if (style == KvTagStyle.outline) {
       Color borderColor;
-      switch (style) {
-        case KvTagStyle.neutral:
-          borderColor = KvDesignSystem().colorBorderNeutralFaded;
+      switch (variant) {
+        case KvTagVariant.neutral:
+          borderColor = KvDesignSystem().borderNeutralFaded;
           break;
-        case KvTagStyle.promotion:
-          borderColor = KvDesignSystem().colorBorderPromotionFaded;
+        case KvTagVariant.promotion:
+          borderColor = KvDesignSystem().borderPromotionFaded;
           break;
-        case KvTagStyle.information:
-          borderColor = KvDesignSystem().colorBorderInformationFaded;
+        case KvTagVariant.information:
+          borderColor = KvDesignSystem().borderInformationFaded;
           break;
-        case KvTagStyle.warning:
-          borderColor = KvDesignSystem().colorBorderWarningFaded;
+        case KvTagVariant.warning:
+          borderColor = KvDesignSystem().borderWarningFaded;
           break;
-        case KvTagStyle.danger:
-          borderColor = KvDesignSystem().colorBorderDangerFaded;
+        case KvTagVariant.danger:
+          borderColor = KvDesignSystem().borderDangerFaded;
           break;
-        case KvTagStyle.success:
-          borderColor = KvDesignSystem().colorBorderSuccessFaded;
+        case KvTagVariant.success:
+          borderColor = KvDesignSystem().borderSuccessFaded;
           break;
       }
       return Border.all(color: borderColor);
@@ -69,56 +65,54 @@ class KvTagThemeData {
   }
 
   Color get backgroundColor {
-    switch (type) {
-      case KvTagType.text:
-      case KvTagType.outline:
+    switch (style) {
+      case KvTagStyle.text:
+      case KvTagStyle.outline:
         return Colors.transparent;
-      case KvTagType.faded:
+      case KvTagStyle.faded:
         return backgroundColorFaded;
-      case KvTagType.solid:
+      case KvTagStyle.solid:
         return backgroundColorSolid;
     }
   }
 
   Color get backgroundColorFaded {
-    switch (style) {
-      case KvTagStyle.neutral:
-        return KvDesignSystem().colorBgNeutralFadedDefault;
-      case KvTagStyle.promotion:
-        return KvDesignSystem().colorBgPromotionFadedDefault;
-      case KvTagStyle.information:
-        return KvDesignSystem().colorBgInfoFadedDefault;
-      case KvTagStyle.warning:
-        return KvDesignSystem().colorBgWarningFadedDefault;
-      case KvTagStyle.danger:
-        return KvDesignSystem().colorBgDangerFadedDefault;
-      case KvTagStyle.success:
-        return KvDesignSystem().colorBgSuccessFadedDefault;
+    switch (variant) {
+      case KvTagVariant.neutral:
+        return KvDesignSystem().bGNeutralFadedDefault;
+      case KvTagVariant.promotion:
+        return KvDesignSystem().bGPromotionFadedDefault;
+      case KvTagVariant.information:
+        return KvDesignSystem().bGInfoFadedDefault;
+      case KvTagVariant.warning:
+        return KvDesignSystem().bGWarningFadedDefault;
+      case KvTagVariant.danger:
+        return KvDesignSystem().bGDangerFadedDefault;
+      case KvTagVariant.success:
+        return KvDesignSystem().bGSuccessFadedDefault;
     }
   }
 
   Color get backgroundColorSolid {
-    switch (style) {
-      case KvTagStyle.neutral:
-        return KvDesignSystem().colorBgNeutralSolidDefault;
-      case KvTagStyle.promotion:
-        return KvDesignSystem().colorBgPromotionSolidDefault;
-      case KvTagStyle.information:
-        return KvDesignSystem().colorBgInfoSolidDefault;
-      case KvTagStyle.warning:
-        return KvDesignSystem().colorBgWarningSolidDefault;
-      case KvTagStyle.danger:
-        return KvDesignSystem().colorBgDangerSolidDefault;
-      case KvTagStyle.success:
-        return KvDesignSystem().colorBgSuccessSolidDefault;
+    switch (variant) {
+      case KvTagVariant.neutral:
+        return KvDesignSystem().bGNeutralSolidDefault;
+      case KvTagVariant.promotion:
+        return KvDesignSystem().bGPromotionSolidDefault;
+      case KvTagVariant.information:
+        return KvDesignSystem().bGInfoSolidDefault;
+      case KvTagVariant.warning:
+        return KvDesignSystem().bGWarningSolidDefault;
+      case KvTagVariant.danger:
+        return KvDesignSystem().bGDangerSolidDefault;
+      case KvTagVariant.success:
+        return KvDesignSystem().bGSuccessSolidDefault;
     }
   }
 
   TextStyle get labelStyle {
     switch (size) {
       case KvTagSize.small:
-        return KvTextStyles.labelXS(color: labelColor);
-      case KvTagSize.mediumHeavy:
         return KvTextStyles.labelXS(color: labelColor);
       case KvTagSize.medium:
         return KvTextStyles.labelS(color: labelColor);
@@ -128,316 +122,335 @@ class KvTagThemeData {
   }
 
   Color get labelColor {
-    switch (style) {
-      case KvTagStyle.neutral:
+    switch (variant) {
+      case KvTagVariant.neutral:
         return labelColorNeutral;
-      case KvTagStyle.promotion:
+      case KvTagVariant.promotion:
         return labelColorPromotion;
-      case KvTagStyle.information:
+      case KvTagVariant.information:
         return labelColorInformation;
-      case KvTagStyle.warning:
+      case KvTagVariant.warning:
         return labelColorWarning;
-      case KvTagStyle.danger:
+      case KvTagVariant.danger:
         return labelColorDanger;
-      case KvTagStyle.success:
+      case KvTagVariant.success:
         return labelColorSuccess;
     }
   }
 
   Color get labelColorNeutral {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorTextNeutralSecondary;
-      case KvTagType.outline:
-        return KvDesignSystem().colorTextNeutralSecondary;
-      case KvTagType.faded:
-        return KvDesignSystem().colorTextNeutralOnfadedSecondary;
-      case KvTagType.solid:
-        return KvDesignSystem().colorTextNeutralOnsolidSecondary;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().textNeutralSecondary;
+      case KvTagStyle.outline:
+        return KvDesignSystem().textNeutralSecondary;
+      case KvTagStyle.faded:
+        return KvDesignSystem().textNeutralonFadedSecondary;
+      case KvTagStyle.solid:
+        return KvDesignSystem().textNeutralonSolidSecondary;
     }
   }
 
   Color get labelColorPromotion {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorTextPromotionOnwhiteSecondary;
-      case KvTagType.outline:
-        return KvDesignSystem().colorTextPromotionOnwhiteSecondary;
-      case KvTagType.faded:
-        return KvDesignSystem().colorTextPromotionOnfadedSecondary;
-      case KvTagType.solid:
-        return KvDesignSystem().colorTextPromotionOnsolidSecondary;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().textPromotiononWhiteSecondary;
+      case KvTagStyle.outline:
+        return KvDesignSystem().textPromotiononWhiteSecondary;
+      case KvTagStyle.faded:
+        return KvDesignSystem().textPromotiononFadedSecondary;
+      case KvTagStyle.solid:
+        return KvDesignSystem().textPromotiononSolidSecondary;
     }
   }
 
   Color get labelColorInformation {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorTextInfoOnwhiteSecondary;
-      case KvTagType.outline:
-        return KvDesignSystem().colorTextInfoOnwhiteSecondary;
-      case KvTagType.faded:
-        return KvDesignSystem().colorTextInfoOnfadedSecondary;
-      case KvTagType.solid:
-        return KvDesignSystem().colorTextInfoOnsolidSecondary;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().textInfoonWhiteSecondary;
+      case KvTagStyle.outline:
+        return KvDesignSystem().textInfoonWhiteSecondary;
+      case KvTagStyle.faded:
+        return KvDesignSystem().textInfoonFadedSecondary;
+      case KvTagStyle.solid:
+        return KvDesignSystem().textInfoonSolidSecondary;
     }
   }
 
   Color get labelColorWarning {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorTextWarningOnwhiteSecondary;
-      case KvTagType.outline:
-        return KvDesignSystem().colorTextWarningOnwhiteSecondary;
-      case KvTagType.faded:
-        return KvDesignSystem().colorTextWarningOnfadedSecondary;
-      case KvTagType.solid:
-        return KvDesignSystem().colorTextWarningOnsolidSecondary;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().textWarningonWhiteSecondary;
+      case KvTagStyle.outline:
+        return KvDesignSystem().textWarningonWhiteSecondary;
+      case KvTagStyle.faded:
+        return KvDesignSystem().textWarningonFadedSecondary;
+      case KvTagStyle.solid:
+        return KvDesignSystem().textWarningonSolidSecondary;
     }
   }
 
   Color get labelColorDanger {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorTextDangerOnwhiteSecondary;
-      case KvTagType.outline:
-        return KvDesignSystem().colorTextDangerOnwhiteSecondary;
-      case KvTagType.faded:
-        return KvDesignSystem().colorTextDangerOnfadedSecondary;
-      case KvTagType.solid:
-        return KvDesignSystem().colorTextDangerOnsolidSecondary;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().textDangeronWhiteSecondary;
+      case KvTagStyle.outline:
+        return KvDesignSystem().textDangeronWhiteSecondary;
+      case KvTagStyle.faded:
+        return KvDesignSystem().textDangeronFadedSecondary;
+      case KvTagStyle.solid:
+        return KvDesignSystem().textDangeronSolidSecondary;
     }
   }
 
   Color get labelColorSuccess {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorTextSuccessOnwhiteSecondary;
-      case KvTagType.outline:
-        return KvDesignSystem().colorTextSuccessOnwhiteSecondary;
-      case KvTagType.faded:
-        return KvDesignSystem().colorTextSuccessOnfadedSecondary;
-      case KvTagType.solid:
-        return KvDesignSystem().colorTextSuccessOnsolidSecondary;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().textSuccessonWhiteSecondary;
+      case KvTagStyle.outline:
+        return KvDesignSystem().textSuccessonWhiteSecondary;
+      case KvTagStyle.faded:
+        return KvDesignSystem().textSuccessonFadedSecondary;
+      case KvTagStyle.solid:
+        return KvDesignSystem().textSuccessonSolidSecondary;
     }
   }
 
   EdgeInsets get padding {
-    return const EdgeInsets.symmetric(horizontal: 4);
+    var horizontal = 0.0;
+    var vertical = 0.0;
+    switch (size) {
+      case KvTagSize.small:
+        horizontal = KvDesignSystem().tagSizeSPaddingHorizontal;
+        vertical = KvDesignSystem().tagSizeSPaddingVertical;
+        break;
+      case KvTagSize.medium:
+        horizontal = 6;
+        vertical = 2;
+        break;
+      case KvTagSize.large:
+        horizontal = 6;
+        vertical = 2;
+        break;
+    }
+    return EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal);
   }
 
   BorderRadius get borderRadius {
-    return const BorderRadius.all(Radius.circular(4));
+    return BorderRadius.circular(KvDesignSystem().tagRadius);
   }
 
   KvIconSize get prefixIconSize {
     switch (size) {
       case KvTagSize.small:
-        return KvIconSize.size12;
-      case KvTagSize.mediumHeavy:
-        return KvIconSize.size12;
+        return KvIconSize.iconXXS;
       case KvTagSize.medium:
-        return KvIconSize.size16;
+        return KvIconSize.iconXXS;
       case KvTagSize.large:
-        return KvIconSize.size20;
+        return KvIconSize.iconXS;
     }
   }
 
   KvIconSize get suffixIconSize {
-    return KvIconSize.size12;
+    switch (size) {
+      case KvTagSize.small:
+        return KvIconSize.iconXXS;
+      case KvTagSize.medium:
+        return KvIconSize.iconXXS;
+      case KvTagSize.large:
+        return KvIconSize.iconXS;
+    }
   }
 
-  double get gutter {
-    return 4.0;
-  }
+  double get gutter => KvDesignSystem().tagSizeGutter;
 
   Color get prefixIconColor {
-    switch (style) {
-      case KvTagStyle.neutral:
+    switch (variant) {
+      case KvTagVariant.neutral:
         return prefixIconColorNeutral;
-      case KvTagStyle.promotion:
+      case KvTagVariant.promotion:
         return prefixIconColorPromotion;
-      case KvTagStyle.information:
+      case KvTagVariant.information:
         return prefixIconColorInformation;
-      case KvTagStyle.warning:
+      case KvTagVariant.warning:
         return prefixIconColorWarning;
-      case KvTagStyle.danger:
+      case KvTagVariant.danger:
         return prefixIconColorDanger;
-      case KvTagStyle.success:
+      case KvTagVariant.success:
         return prefixIconColorSuccess;
     }
   }
 
   Color get prefixIconColorNeutral {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconNeutralLabel;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconNeutralLabel;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconNeutralOnfadedLabel;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconNeutralOnsolidLabel;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconNeutralLabel;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconNeutralLabel;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconNeutralonFadedLabel;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconNeutralonSolidLabel;
     }
   }
 
   Color get prefixIconColorPromotion {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconPromotionLabel;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconPromotionLabel;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconPromotionOnfadedLabel;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconPromotionOnsolidLabel;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconPromotionLabel;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconPromotionLabel;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconPromotiononFadedLabel;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconPromotiononSolidLabel;
     }
   }
 
   Color get prefixIconColorInformation {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconInfoLabel;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconInfoLabel;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconInfoOnfadedLabel;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconInfoOnsolidLabel;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconInfoLabel;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconInfoLabel;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconInfoonFadedLabel;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconInfoonSolidLabel;
     }
   }
 
   Color get prefixIconColorWarning {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconWarningLabel;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconWarningLabel;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconWarningOnfadedLabel;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconWarningOnsolidLabel;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconWarningLabel;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconWarningLabel;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconWarningonFadedLabel;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconWarningonSolidLabel;
     }
   }
 
   Color get prefixIconColorDanger {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconDangerLabel;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconDangerLabel;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconDangerOnfadedLabel;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconDangerOnsolidLabel;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconDangerLabel;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconDangerLabel;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconDangeronFadedLabel;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconDangeronSolidLabel;
     }
   }
 
   Color get prefixIconColorSuccess {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconSuccessLabel;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconSuccessLabel;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconSuccessOnfadedLabel;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconSuccessOnsolidLabel;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconSuccessLabel;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconSuccessLabel;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconSuccessonFadedLabel;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconSuccessonSolidLabel;
     }
   }
 
   Color get suffixIconColor {
-    switch (style) {
-      case KvTagStyle.neutral:
+    switch (variant) {
+      case KvTagVariant.neutral:
         return suffixIconColorNeutral;
-      case KvTagStyle.promotion:
+      case KvTagVariant.promotion:
         return suffixIconColorPromotion;
-      case KvTagStyle.information:
+      case KvTagVariant.information:
         return suffixIconColorInformation;
-      case KvTagStyle.warning:
+      case KvTagVariant.warning:
         return suffixIconColorWarning;
-      case KvTagStyle.danger:
+      case KvTagVariant.danger:
         return suffixIconColorDanger;
-      case KvTagStyle.success:
+      case KvTagVariant.success:
         return suffixIconColorSuccess;
     }
   }
 
   Color get suffixIconColorNeutral {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconNeutralSecondaryAction;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconNeutralSecondaryAction;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconNeutralOnfadedSecondaryAction;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconNeutralOnsolidSecondaryAction;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconNeutralSecondaryAction;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconNeutralSecondaryAction;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconNeutralonFadedSecondaryAction;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconNeutralonSolidSecondaryAction;
     }
   }
 
   Color get suffixIconColorPromotion {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconPromotionSecondaryAction;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconPromotionSecondaryAction;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconPromotionOnfadedSecondaryAction;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconPromotionOnsolidSecondaryAction;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconPromotionSecondaryAction;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconPromotionSecondaryAction;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconPromotiononFadedSecondaryAction;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconPromotiononSolidSecondaryAction;
     }
   }
 
   Color get suffixIconColorInformation {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconInfoSecondaryAction;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconInfoSecondaryAction;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconInfoOnfadedSecondaryAction;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconInfoOnsolidSecondaryAction;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconInfoSecondaryAction;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconInfoSecondaryAction;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconInfoonFadedSecondaryAction;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconInfoonSolidSecondaryAction;
     }
   }
 
   Color get suffixIconColorWarning {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconWarningSecondaryAction;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconWarningSecondaryAction;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconWarningOnfadedSecondaryAction;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconWarningOnsolidSecondaryAction;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconWarningSecondaryAction;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconWarningSecondaryAction;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconWarningonFadedSecondaryAction;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconWarningonSolidSecondaryAction;
     }
   }
 
   Color get suffixIconColorDanger {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconDangerSecondaryAction;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconDangerSecondaryAction;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconDangerOnfadedSecondaryAction;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconDangerOnsolidSecondaryAction;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconDangerSecondaryAction;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconDangerSecondaryAction;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconDangeronFadedSecondaryAction;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconDangeronSolidSecondaryAction;
     }
   }
 
   Color get suffixIconColorSuccess {
-    switch (type) {
-      case KvTagType.text:
-        return KvDesignSystem().colorIconSuccessSecondaryAction;
-      case KvTagType.outline:
-        return KvDesignSystem().colorIconSuccessSecondaryAction;
-      case KvTagType.faded:
-        return KvDesignSystem().colorIconSuccessOnfadedSecondaryAction;
-      case KvTagType.solid:
-        return KvDesignSystem().colorIconSuccessOnsolidSecondaryAction;
+    switch (style) {
+      case KvTagStyle.text:
+        return KvDesignSystem().iconSuccessSecondaryAction;
+      case KvTagStyle.outline:
+        return KvDesignSystem().iconSuccessSecondaryAction;
+      case KvTagStyle.faded:
+        return KvDesignSystem().iconSuccessonFadedSecondaryAction;
+      case KvTagStyle.solid:
+        return KvDesignSystem().iconSuccessonSolidSecondaryAction;
     }
   }
 }

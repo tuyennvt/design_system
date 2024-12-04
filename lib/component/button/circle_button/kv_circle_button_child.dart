@@ -35,7 +35,7 @@ class _KvCircleButtonChildState extends State<KvCircleButtonChild> {
         KvIcon(
           icon: widget.icon,
           color: theme.getIconColor(widget.enabled),
-          size: theme.iconSize,
+          size: theme.kvIconSize,
         ),
         if (widget.badge != null) ...{
           Positioned(

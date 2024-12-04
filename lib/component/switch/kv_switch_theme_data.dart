@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../style_dictionary/style_dictionary_components_color.dart';
+import '../../kv_design_system.dart';
 
 class KvSwitchThemeData {
   const KvSwitchThemeData({
@@ -13,12 +13,12 @@ class KvSwitchThemeData {
 
   Color get thumbColor {
     if (enabled) {
-      return KvDesignSystem().componentTokensToggleColorKnobEnabled;
+      return KvDesignSystem().toggleColorKnobEnable;
     } else {
       if (value) {
-        return KvDesignSystem().componentTokensToggleColorKnobDisabledOff;
+        return KvDesignSystem().toggleColorKnobDisabledSelected;
       } else {
-        return KvDesignSystem().componentTokensToggleColorKnobDisabledOn;
+        return KvDesignSystem().toggleColorKnobDisabledUnSelected;
       }
     }
   }
@@ -26,15 +26,15 @@ class KvSwitchThemeData {
   Color get trackColor {
     if (enabled) {
       if (value) {
-        return KvDesignSystem().componentTokensToggleColorBgDefaultOn;
+        return KvDesignSystem().toggleColorBGSelectedDefault;
       } else {
-        return KvDesignSystem().componentTokensToggleColorBgDefaultOff;
+        return KvDesignSystem().toggleColorBGUnselectedDefault;
       }
     } else {
       if (value) {
-        return KvDesignSystem().componentTokensToggleColorBgDisabledOn;
+        return KvDesignSystem().toggleColorBGSelectedDisabled;
       } else {
-        return KvDesignSystem().componentTokensToggleColorBgDisabledOff;
+        return KvDesignSystem().toggleColorBGUnselectedDisabled;
       }
     }
   }

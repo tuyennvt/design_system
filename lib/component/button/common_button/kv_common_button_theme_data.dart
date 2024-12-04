@@ -22,10 +22,10 @@ enum KvCommonButtonVariant {
 }
 
 enum KvCommonButtonStyle {
-  solidButton,
-  outlinedButton,
-  fadedButton,
-  textButton,
+  solid,
+  outlined,
+  faded,
+  text,
 }
 
 class KvCommonButtonThemeData extends ButtonStyle {
@@ -133,7 +133,7 @@ class KvCommonButtonThemeData extends ButtonStyle {
 
   @override
   MaterialStateProperty<BorderSide?>? get side {
-    if (buttonStyle != KvCommonButtonStyle.outlinedButton) {
+    if (buttonStyle != KvCommonButtonStyle.outlined) {
       return null;
     }
     return MaterialStateProperty.resolveWith((states) {
@@ -186,13 +186,13 @@ class KvCommonButtonThemeData extends ButtonStyle {
   MaterialStateProperty<Color?>? get backgroundColor {
     return MaterialStateProperty.resolveWith((states) {
       switch (buttonStyle) {
-        case KvCommonButtonStyle.solidButton:
+        case KvCommonButtonStyle.solid:
           return _getBackgroundColorSolidButton(states);
-        case KvCommonButtonStyle.outlinedButton:
+        case KvCommonButtonStyle.outlined:
           return _getBackgroundColorOutlinedButton(states);
-        case KvCommonButtonStyle.fadedButton:
+        case KvCommonButtonStyle.faded:
           return _getBackgroundColorFadedButton(states);
-        case KvCommonButtonStyle.textButton:
+        case KvCommonButtonStyle.text:
           return _getBackgroundColorTextButton(states);
       }
     });
@@ -342,13 +342,13 @@ class KvCommonButtonThemeData extends ButtonStyle {
   MaterialStateProperty<Color?>? get foregroundColor {
     return MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       switch (buttonStyle) {
-        case KvCommonButtonStyle.solidButton:
+        case KvCommonButtonStyle.solid:
           return _getForegroundColorSolidButton(states);
-        case KvCommonButtonStyle.outlinedButton:
+        case KvCommonButtonStyle.outlined:
           return _getForegroundColorOutlinedButton(states);
-        case KvCommonButtonStyle.fadedButton:
+        case KvCommonButtonStyle.faded:
           return _getForegroundColorFadedButton(states);
-        case KvCommonButtonStyle.textButton:
+        case KvCommonButtonStyle.text:
           return _getForegroundColorTextButton(states);
       }
     });
@@ -481,13 +481,13 @@ class KvCommonButtonThemeData extends ButtonStyle {
           states.contains(MaterialState.focused) ||
           states.contains(MaterialState.hovered)) {
         switch (buttonStyle) {
-          case KvCommonButtonStyle.solidButton:
+          case KvCommonButtonStyle.solid:
             return _getOverlayColorSolidButton();
-          case KvCommonButtonStyle.outlinedButton:
+          case KvCommonButtonStyle.outlined:
             return _getOverlayColorOutlineButton();
-          case KvCommonButtonStyle.fadedButton:
+          case KvCommonButtonStyle.faded:
             return _getOverlayColorFadedButton();
-          case KvCommonButtonStyle.textButton:
+          case KvCommonButtonStyle.text:
             return _getOverlayColorTextButton();
         }
       }
@@ -613,11 +613,11 @@ class KvCommonButtonThemeData extends ButtonStyle {
 
   KvBadgeStyle get badgeStyle {
     switch (buttonStyle) {
-      case KvCommonButtonStyle.solidButton:
+      case KvCommonButtonStyle.solid:
         return KvBadgeStyle.onBackground;
-      case KvCommonButtonStyle.outlinedButton:
-      case KvCommonButtonStyle.fadedButton:
-      case KvCommonButtonStyle.textButton:
+      case KvCommonButtonStyle.outlined:
+      case KvCommonButtonStyle.faded:
+      case KvCommonButtonStyle.text:
         return KvBadgeStyle.solid;
     }
   }
@@ -653,13 +653,13 @@ class KvCommonButtonThemeData extends ButtonStyle {
 
   Color getIconColor(bool enabled) {
     switch (buttonStyle) {
-      case KvCommonButtonStyle.solidButton:
+      case KvCommonButtonStyle.solid:
         return _getIconColorSolidButton(enabled);
-      case KvCommonButtonStyle.outlinedButton:
+      case KvCommonButtonStyle.outlined:
         return _getIconColorOutlinedButton(enabled);
-      case KvCommonButtonStyle.fadedButton:
+      case KvCommonButtonStyle.faded:
         return _getIconColorFadedButton(enabled);
-      case KvCommonButtonStyle.textButton:
+      case KvCommonButtonStyle.text:
         return _getIconColorTextButton(enabled);
     }
   }

@@ -11,10 +11,12 @@ class KvCloseButton extends StatelessWidget implements KvButton {
     super.key,
     this.onPressed,
     this.color,
+    this.iconSize = KvIconSize.iconXS,
   });
 
   final VoidCallback? onPressed;
   final Color? color;
+  final KvIconSize iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class KvCloseButton extends StatelessWidget implements KvButton {
       child: KvIcon(
         icon: KvIcons.circle_xmark_regular,
         color: color ?? KvDesignSystem().iconNeutralPrimaryAction,
-        size: KvIconSize.iconXS,
+        size: iconSize,
       ),
     );
   }

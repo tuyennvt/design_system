@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../employee_flutter_design_system.dart';
+import '../../../kv_design_system.dart';
 
 enum KvTextContentHierarchy {
   primary,
@@ -58,9 +59,9 @@ class KvTextContent extends StatelessWidget
   Color get contentColor {
     switch (hierarchy) {
       case KvTextContentHierarchy.primary:
-        return KvDesignSystem().colorTextNeutralBase;
+        return KvDesignSystem().textNeutralBase;
       case KvTextContentHierarchy.secondary:
-        return KvDesignSystem().colorTextNeutralSecondary;
+        return KvDesignSystem().textNeutralSecondary;
     }
   }
 

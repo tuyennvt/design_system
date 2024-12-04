@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../employee_flutter_design_system.dart';
 import '../../kv_design_system.dart';
 import '../../utils.dart';
 import '../button/close_button/kv_close_button.dart';
-import 'kv_dialog_action.dart';
 
 class KvDialog extends StatelessWidget {
   const KvDialog({
@@ -11,87 +11,88 @@ class KvDialog extends StatelessWidget {
     this.title,
     this.onClosePressed,
     required this.content,
+    this.divider = false,
     required this.dialogAction,
   });
 
   final String? title;
   final VoidCallback? onClosePressed;
   final Widget content;
+  final bool divider;
   final KvDialogAction dialogAction;
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: KvDesignSystem().bGLayerLevel0,
-      insetPadding: const EdgeInsets.symmetric(
-        horizontal: KvDesignSystem().sizeSize32,
-      ),
-      shape: const RoundedRectangleBorder(
-        borderRadius: _borderRadius,
-      ),
-      child: DecoratedBox(
-        decoration: const BoxDecoration(
-          color: KvDesignSystem().colorBgLayerLevel0,
-          borderRadius: _borderRadius,
+      shape: RoundedRectangleBorder(borderRadius: borderRadius),
+      child: Container(
+        padding: EdgeInsets.only(
+          top: KvDesignSystem().modalPaddingVerticalContainerTop,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            if (title.isNotNullOrEmpty) ...{
-              _KvAppBarPopup(
-                title: title!,
-                onClosePressed: () {
-                  onClosePressed?.call();
+        decoration: BoxDecoration(
+          color: KvDesignSystem().bGLayerLevel0,
+          borderRadius: borderRadius,
+        ),
+        child: SingleChildScrollView(
+          child: IntrinsicWidth(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (title.isNotNullOrEmpty || onClosePressed != null) ...{
+                  _KvHeaderDialog(
+                    title: title ?? '',
+                    onClosePressed: onClosePressed,
+                  ),
                 },
-              )
-            },
-            Padding(
-              padding: contentPadding,
-              child: content,
+                Padding(
+                  padding: contentPadding,
+                  child: content,
+                ),
+                if (divider) ...{
+                  const KvDivider(),
+                },
+                dialogAction,
+              ],
             ),
-            dialogAction,
-          ],
+          ),
         ),
       ),
     );
   }
 
-  static const BorderRadius _borderRadius = BorderRadius.all(
-    Radius.circular(
-      KvDesignSystem().sizeSize16,
-    ),
-  );
+  BorderRadius get borderRadius {
+    return BorderRadius.circular(KvDesignSystem().modalRadius);
+  }
 
   EdgeInsets get contentPadding {
-    return EdgeInsets.only(
-      left: KvDesignSystem().sizeSize16,
-      top: title.isNullOrEmpty ? KvDesignSystem().sizeSize20 : 0,
-      right: KvDesignSystem().sizeSize16,
-      bottom: 8,
+    return EdgeInsets.symmetric(
+      vertical: KvDesignSystem().modalPaddingVerticalContent,
+      horizontal: KvDesignSystem().modalPaddingHorizontal,
     );
   }
 }
 
-class _KvAppBarPopup extends StatelessWidget {
-  const _KvAppBarPopup({
+class _KvHeaderDialog extends StatelessWidget {
+  const _KvHeaderDialog({
     required this.title,
-    required this.onClosePressed,
+    this.onClosePressed,
   });
 
   final String title;
-  final VoidCallback onClosePressed;
+  final VoidCallback? onClosePressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.centerLeft,
-      height: KvDesignSystem().sizeSize56,
+    return Padding(
+      padding: EdgeInsets.only(
+        left: KvDesignSystem().modalPaddingHorizontal,
+        top: KvDesignSystem().modalPaddingVerticalContent,
+        right: KvDesignSystem().modalPaddingHorizontal,
+      ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            width: KvDesignSystem().sizeSize16,
-          ),
           Expanded(
             child: Text(
               title,
@@ -100,12 +101,12 @@ class _KvAppBarPopup extends StatelessWidget {
               maxLines: 1,
             ),
           ),
-          KvCloseButton(
-            onPressed: onClosePressed,
-          ),
-          const SizedBox(
-            width: KvDesignSystem().sizeSize16,
-          ),
+          if (onClosePressed != null) ...{
+            KvCloseButton(
+              onPressed: onClosePressed,
+              iconSize: KvIconSize.iconM,
+            ),
+          },
         ],
       ),
     );

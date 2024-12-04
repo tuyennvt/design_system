@@ -1,41 +1,35 @@
 import 'package:flutter/material.dart';
 
-import '../../style_dictionary/style_dictionary_size.dart';
+import '../../kv_design_system.dart';
 import 'kv_switch_theme_data.dart';
 
 class KvSwitch extends StatelessWidget {
   const KvSwitch({
     super.key,
     required this.value,
-    required this.onChanged,
-    this.enabled = true,
+    this.onChanged,
   });
 
   final bool value;
-  final ValueChanged<bool> onChanged;
-  final bool enabled;
+  final ValueChanged<bool>? onChanged;
 
   @override
   Widget build(BuildContext context) {
     final switchThemeData = KvSwitchThemeData(
       value: value,
-      enabled: enabled,
+      enabled: onChanged != null,
     );
     return GestureDetector(
-      onTap: () {
-        if (!enabled) {
-          return;
-        }
-        onChanged.call(!value);
-      },
+      onTap: () => onChanged?.call(!value),
+      behavior: HitTestBehavior.opaque,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 2),
+        padding: EdgeInsets.all(KvDesignSystem().togglePadding),
         decoration: ShapeDecoration(
           color: switchThemeData.trackColor,
           shape: const StadiumBorder(),
         ),
-        width: KvDesignSystem().sizeSize40,
-        height: KvDesignSystem().sizeSize24,
+        width: KvDesignSystem().toggleSizeBasicWidth,
+        height: 26,
         child: AnimatedAlign(
           alignment: value ? Alignment.centerRight : Alignment.centerLeft,
           duration: const Duration(milliseconds: 167),
@@ -44,8 +38,8 @@ class KvSwitch extends StatelessWidget {
               color: switchThemeData.thumbColor,
               shape: BoxShape.circle,
             ),
-            width: KvDesignSystem().sizeSize20,
-            height: KvDesignSystem().sizeSize20,
+            width: KvDesignSystem().toggleSizeBasicKnob,
+            height: KvDesignSystem().toggleSizeBasicKnob,
           ),
         ),
       ),

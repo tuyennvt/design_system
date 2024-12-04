@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
-import '../../generated/assets.dart';
-import '../../utils.dart';
+import '../../foundation/kv_icons.dart';
 
 class KvTag extends StatelessWidget implements KvTextSupportWidget {
   const KvTag({
     super.key,
     this.size = KvTagSize.medium,
-    this.style = KvTagStyle.neutral,
-    this.type = KvTagType.faded,
+    this.variant = KvTagVariant.neutral,
+    this.style = KvTagStyle.faded,
     required this.label,
-    this.assetPrefixIcon,
+    this.prefixIcon,
     this.onClearPressed,
     this.onSelectPressed,
   }) : assert(
@@ -20,10 +19,10 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
         );
 
   final KvTagSize size;
+  final KvTagVariant variant;
   final KvTagStyle style;
-  final KvTagType type;
   final String label;
-  final KvSvgAsset? assetPrefixIcon;
+  final IconData? prefixIcon;
   final VoidCallback? onClearPressed;
   final VoidCallback? onSelectPressed;
 
@@ -36,13 +35,12 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
         border: theme.border,
         borderRadius: theme.borderRadius,
       ),
-      height: size.value,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (assetPrefixIcon.isNotNullOrEmpty) ...{
+          if (prefixIcon != null) ...{
             KvIcon(
-              icon: assetPrefixIcon!,
+              icon: prefixIcon!,
               color: theme.prefixIconColor,
               size: theme.prefixIconSize,
             ),
@@ -54,7 +52,7 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
               style: theme.labelStyle,
             ),
           ),
-          if (assetSuffixIcon.isNotNullOrEmpty) ...{
+          if (suffixIcon != null) ...{
             SizedBox(width: theme.gutter),
             KvMinimumTapArea(
               onTap: () {
@@ -64,11 +62,7 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
                   onSelectPressed!.call();
                 }
               },
-              child: KvIcon(
-                icon: assetSuffixIcon!,
-                color: theme.suffixIconColor,
-                size: theme.suffixIconSize,
-              ),
+              child: suffixIcon!,
             ),
           },
         ],
@@ -78,23 +72,21 @@ class KvTag extends StatelessWidget implements KvTextSupportWidget {
 
   KvTagThemeData get theme => KvTagThemeData(
         size: size,
+        variant: variant,
         style: style,
-        type: type,
       );
 
-  KvSvgAsset? get assetSuffixIcon {
-    if (onClearPressed != null) {
-      return KvSvgAsset(
-        Assets.iconsXmark,
-        assetPackage: packageRoot,
-      );
-    } else if (onSelectPressed != null) {
-      return KvSvgAsset(
-        Assets.iconsChevronDown,
-        assetPackage: packageRoot,
-      );
+  KvIcon? get suffixIcon {
+    if (onClearPressed == null && onSelectPressed == null) {
+      return null;
     }
-    return null;
+    return KvIcon(
+      icon: onClearPressed != null
+          ? KvIcons.xmark_regular
+          : KvIcons.angle_down_regular,
+      color: theme.suffixIconColor,
+      size: theme.suffixIconSize,
+    );
   }
 
   @override
