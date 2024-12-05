@@ -6,7 +6,9 @@ import 'text_style/export_text_style.dart';
 import 'theme/export_theme.dart';
 
 export 'breakpoint/export_breakpoint.dart';
+export 'component/kv_component.dart';
 export 'dimension/export_dimension.dart';
+export 'foundation/kv_foundation.dart';
 export 'text_style/export_text_style.dart';
 export 'theme/export_theme.dart';
 

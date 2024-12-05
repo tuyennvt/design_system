@@ -36,7 +36,7 @@ Ex:
 ```
 KvSvgAsset(
     'assets/icons/bars-progress.svg',
-    assetPackage: 'packages/employee_flutter_design_system/',
+    assetPackage: 'packages/kv_design_system/',
 )
 ```
 

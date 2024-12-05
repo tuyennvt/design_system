@@ -64,4 +64,4 @@ extension ListExtension on List? {
   }
 }
 
-const String packageRoot = 'packages/employee_flutter_design_system/';
+const String packageRoot = 'packages/kv_design_system/';

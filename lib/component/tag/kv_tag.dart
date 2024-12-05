@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 import '../../foundation/kv_icons.dart';
 
 class KvTag extends StatelessWidget implements KvTextSupportWidget {

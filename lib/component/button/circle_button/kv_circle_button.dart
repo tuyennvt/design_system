@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../employee_flutter_design_system.dart';
+import '../../../kv_design_system.dart';
 import 'kv_circle_button_child.dart';
 
 class KvCircleButton extends ButtonStyleButton implements KvButton {

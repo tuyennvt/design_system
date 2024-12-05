@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../employee_flutter_design_system.dart';
+import '../../../kv_design_system.dart';
 
 class KvInlineButton extends StatelessWidget implements KvButton {
   const KvInlineButton({

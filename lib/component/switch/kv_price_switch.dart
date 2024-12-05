@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 
 enum KvPriceSwitchValue {
   primary,
@@ -104,7 +104,7 @@ class _KvPriceSwitchState extends State<KvPriceSwitch> {
                 size: widget.size,
                 theme: theme,
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -141,7 +141,7 @@ class _Knob extends StatelessWidget {
             color: Color(0x1A000000),
             offset: Offset(0, 4),
             blurRadius: 4,
-          )
+          ),
         ],
       ),
       width: theme.widthKnob,

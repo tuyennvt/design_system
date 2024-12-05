@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../employee_flutter_design_system.dart';
+import '../../kv_design_system.dart';
 import '../../kv_design_system.dart';
 
 enum KvDotDividerSize {

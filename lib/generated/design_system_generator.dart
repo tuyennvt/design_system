@@ -9,11 +9,11 @@ import 'theme_generator.dart';
 
 void main() async {
   final themeGenerator = ThemeGenerator(
-    inputFile: File('assets/json/Data of Design System.json'),
+    inputFile: File('assets/json/Data_of_Design_System.json'),
     outputFilePath: 'lib/theme/',
   );
   final textStyleGenerator = TextStyleGenerator(
-    inputFile: File('assets/json/Text Style.json'),
+    inputFile: File('assets/json/Text_Style.json'),
     outputFilePath: 'lib/text_style/',
   );
   final foundationGenerator = FoundationGenerator(
@@ -28,7 +28,7 @@ void main() async {
     outputFilePath: 'lib/breakpoint/',
   );
   final mobileComponentsGenerator = MobileComponentsGenerator(
-    inputFile: File('assets/json/Mobile Components.json'),
+    inputFile: File('assets/json/Mobile_Components.json'),
   );
   final kvDesignSystemGenerator = DesignSystemGenerator(
     themeGenerator: themeGenerator,
@@ -64,8 +64,10 @@ class DesignSystemGenerator {
     final kvDesignSystemContentFoundation =
         await foundationGenerator.generate();
     final kvDesignSystemContentDimension = await dimensionGenerator.generate();
-    final kvDesignSystemContentBreakpoint = await breakpointGenerator.generate();
-    final kvDesignSystemContentMobileComponents = await mobileComponentsGenerator.generate();
+    final kvDesignSystemContentBreakpoint =
+        await breakpointGenerator.generate();
+    final kvDesignSystemContentMobileComponents =
+        await mobileComponentsGenerator.generate();
     final buffer = StringBuffer();
     buffer.writeln(kvDesignSystemContentTheme);
     buffer.writeln(kvDesignSystemContentTextStyle);

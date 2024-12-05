@@ -13,7 +13,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-  employee_flutter_design_system:
+  kv_design_system:
       path: ../
 
 dev_dependencies:

@@ -1,4 +1,4 @@
-name: employee_flutter_design_system
+name: kv_design_system
 description: A new Flutter project.
 version: 0.0.1
 homepage:
@@ -25,10 +25,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/images/1.5x/
-    - assets/images/2.0x/
-    - assets/images/3.0x/
-    - assets/images/4.0x/
+
   fonts:
     - family: CustomIcons
       fonts:
