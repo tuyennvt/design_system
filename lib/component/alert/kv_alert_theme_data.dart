@@ -73,7 +73,7 @@ class KvAlertThemeData {
   }
 
   TextStyle get contentTextStyle {
-    return KvTextStyles.cationRE();
+    return KvTextStyles.captionRE();
   }
 
   EdgeInsets get padding {

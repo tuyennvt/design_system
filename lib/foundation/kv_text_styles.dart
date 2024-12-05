@@ -390,7 +390,7 @@ class KvTextStyles {
     );
   }
 
-  static TextStyle cationRE({
+  static TextStyle captionRE({
     Color? color,
   }) {
     return TextStyle(
@@ -406,7 +406,7 @@ class KvTextStyles {
     );
   }
 
-  static TextStyle cationME({
+  static TextStyle captionME({
     Color? color,
   }) {
     return TextStyle(
@@ -422,7 +422,7 @@ class KvTextStyles {
     );
   }
 
-  static TextStyle cationSE({
+  static TextStyle captionSE({
     Color? color,
   }) {
     return TextStyle(
@@ -438,7 +438,7 @@ class KvTextStyles {
     );
   }
 
-  static TextStyle cationIT({
+  static TextStyle captionIT({
     Color? color,
   }) {
     return TextStyle(
@@ -455,7 +455,7 @@ class KvTextStyles {
     );
   }
 
-  static TextStyle cationStrikethrough({
+  static TextStyle captionStrikethrough({
     Color? color,
   }) {
     return TextStyle(
@@ -472,7 +472,7 @@ class KvTextStyles {
     );
   }
 
-  static TextStyle cationUnderline({
+  static TextStyle captionUnderline({
     Color? color,
   }) {
     return TextStyle(

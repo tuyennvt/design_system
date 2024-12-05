@@ -126,7 +126,7 @@ class KvToastContent extends StatelessWidget {
                   const SizedBox(height: 4.0),
                   Text(
                     description!,
-                    style: KvTextStyles.cationRE(color: descriptionColor),
+                    style: KvTextStyles.captionRE(color: descriptionColor),
                   ),
                 },
               ],

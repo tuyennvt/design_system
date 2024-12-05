@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../employee_flutter_design_system.dart';
 
-enum KvPriceSwitchSize {
-  small(Size(84, KvDesignSystem().sizeSize24)),
-  medium(Size(84, KvDesignSystem().sizeSize32));
-
-  const KvPriceSwitchSize(this.value);
-
-  final Size value;
+enum KvPriceSwitchValue {
+  primary,
+  secondary,
 }
 
 class KvPriceSwitch extends StatefulWidget {
@@ -16,52 +12,65 @@ class KvPriceSwitch extends StatefulWidget {
     super.key,
     this.size = KvPriceSwitchSize.medium,
     this.style = KvPriceSwitchStyle.primaryStyle,
-    this.initialValue,
-    required this.primaryText,
-    required this.secondaryText,
-    required this.onChanged,
+    this.value,
+    this.primaryText = 'VND',
+    this.secondaryText = '%',
+    this.onChanged,
   });
 
   final KvPriceSwitchSize size;
   final KvPriceSwitchStyle style;
-  final String? initialValue;
+  final KvPriceSwitchValue? value;
   final String primaryText;
   final String secondaryText;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<KvPriceSwitchValue>? onChanged;
 
   @override
   State<KvPriceSwitch> createState() => _KvPriceSwitchState();
 }
 
 class _KvPriceSwitchState extends State<KvPriceSwitch> {
-  late String _value;
+  var _value = KvPriceSwitchValue.primary;
 
   @override
   void initState() {
-    _value = widget.initialValue ?? widget.primaryText;
+    _value = widget.value ?? KvPriceSwitchValue.primary;
     super.initState();
+  }
+
+  @override
+  void didUpdateWidget(covariant KvPriceSwitch oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.value != widget.value) {
+      _value = widget.value ?? KvPriceSwitchValue.primary;
+    }
+  }
+
+  void _onTap() {
+    if (widget.onChanged == null) {
+      return;
+    }
+    setState(() {
+      _value = _value == KvPriceSwitchValue.primary
+          ? KvPriceSwitchValue.secondary
+          : KvPriceSwitchValue.primary;
+    });
+    widget.onChanged?.call(_value);
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          _value = _value == widget.primaryText
-              ? widget.secondaryText
-              : widget.primaryText;
-        });
-        widget.onChanged(_value);
-      },
+      onTap: _onTap,
       behavior: HitTestBehavior.opaque,
       child: Container(
-        padding: const EdgeInsets.all(2.0),
+        padding: theme.padding,
         decoration: BoxDecoration(
           color: theme.background,
           borderRadius: theme.borderRadius,
         ),
-        width: widget.size.value.width,
-        height: widget.size.value.height,
+        width: theme.width,
+        height: theme.height,
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -84,12 +93,14 @@ class _KvPriceSwitchState extends State<KvPriceSwitch> {
               ],
             ),
             AnimatedContainer(
-              alignment: _value == widget.primaryText
+              alignment: _value == KvPriceSwitchValue.primary
                   ? Alignment.centerLeft
                   : Alignment.centerRight,
               duration: const Duration(milliseconds: 167),
               child: _Knob(
-                knobText: _value,
+                text: _value == KvPriceSwitchValue.primary
+                    ? widget.primaryText
+                    : widget.secondaryText,
                 size: widget.size,
                 theme: theme,
               ),
@@ -103,17 +114,18 @@ class _KvPriceSwitchState extends State<KvPriceSwitch> {
   KvPriceSwitchThemeData get theme => KvPriceSwitchThemeData(
         size: widget.size,
         style: widget.style,
+        enable: widget.onChanged != null,
       );
 }
 
 class _Knob extends StatelessWidget {
   const _Knob({
-    required this.knobText,
+    required this.text,
     required this.size,
     required this.theme,
   });
 
-  final String knobText;
+  final String text;
   final KvPriceSwitchSize size;
   final KvPriceSwitchThemeData theme;
 
@@ -132,23 +144,12 @@ class _Knob extends StatelessWidget {
           )
         ],
       ),
-      width: width,
-      height: height,
+      width: theme.widthKnob,
+      height: theme.heightKnob,
       child: Text(
-        knobText,
+        text,
         style: theme.textStyle.copyWith(color: theme.knobTextColor),
       ),
     );
   }
-
-  double get height {
-    switch (size) {
-      case KvPriceSwitchSize.small:
-        return 20.0;
-      case KvPriceSwitchSize.medium:
-        return 28.0;
-    }
-  }
-
-  double get width => 40.0;
 }

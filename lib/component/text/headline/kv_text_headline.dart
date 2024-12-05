@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../employee_flutter_design_system.dart';
+import '../../../kv_design_system.dart';
 
 enum KvTextHeadlineStyle {
   neutral,
@@ -10,6 +11,11 @@ enum KvTextHeadlineStyle {
   info,
 }
 
+enum KvTextHeadlineSize {
+  medium,
+  large,
+}
+
 class KvTextHeadline extends StatelessWidget {
   const KvTextHeadline({
     super.key,
@@ -17,41 +23,53 @@ class KvTextHeadline extends StatelessWidget {
     required this.unit,
     this.visibleValue = true,
     this.style = KvTextHeadlineStyle.neutral,
+    this.size = KvTextHeadlineSize.medium,
   });
 
   final String value;
   final String unit;
   final bool visibleValue;
   final KvTextHeadlineStyle style;
+  final KvTextHeadlineSize size;
 
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
         text: visibleValue ? value : '***',
-        style: KvTextStyles.headlineL(color: valueColor),
+        style: valueStyle,
         children: [
           TextSpan(
             text: ' $unit',
-            style: KvTextStyles.labelM(),
+            style: KvTextStyles.captionME(
+                color: KvDesignSystem().textNeutralTertiary),
           ),
         ],
       ),
     );
   }
 
+  TextStyle get valueStyle {
+    switch (size) {
+      case KvTextHeadlineSize.medium:
+        return KvTextStyles.headlineS(color: valueColor);
+      case KvTextHeadlineSize.large:
+        return KvTextStyles.headlineL(color: valueColor);
+    }
+  }
+
   Color get valueColor {
     switch (style) {
       case KvTextHeadlineStyle.neutral:
-        return KvDesignSystem().colorTextNeutralBase;
+        return KvDesignSystem().textNeutralBase;
       case KvTextHeadlineStyle.success:
-        return KvDesignSystem().colorTextSuccessOnwhiteTertiary;
+        return KvDesignSystem().textSuccessonWhiteTertiary;
       case KvTextHeadlineStyle.danger:
-        return KvDesignSystem().colorTextDangerOnwhiteTertiary;
+        return KvDesignSystem().textDangeronWhiteTertiary;
       case KvTextHeadlineStyle.warning:
-        return KvDesignSystem().colorTextWarningOnwhiteTertiary;
+        return KvDesignSystem().textWarningonWhiteTertiary;
       case KvTextHeadlineStyle.info:
-        return KvDesignSystem().colorTextInfoOnwhiteTertiary;
+        return KvDesignSystem().textInfoonWhiteTertiary;
     }
   }
 }

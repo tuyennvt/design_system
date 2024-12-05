@@ -20,8 +20,8 @@ class KvAppBarMore extends StatelessWidget implements KvAppBarChild {
       mainAxisSize: MainAxisSize.min,
       children: [
         KvCacheNetworkImage(
-          imageUrl: avatarUrl,
-          imageType: KvCacheNetworkImageType.avatar,
+          url: avatarUrl,
+          shape: KvCacheNetworkImageType.avatar,
         ),
         const SizedBox(
           width: KvDesignSystem().sizeSize12,

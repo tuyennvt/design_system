@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../../../employee_flutter_design_system.dart';
+import '../../../kv_design_system.dart';
 
 class KvTextContentL extends StatelessWidget {
   const KvTextContentL({
     super.key,
     required this.content,
-    this.color = KvDesignSystem().colorTextNeutralBase,
+    this.color,
   });
 
   final String content;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       content,
-      style: KvTextStyles.bodyL(color: color),
+      style: KvTextStyles.bodyLRE(
+        color: color ?? KvDesignSystem().textNeutralBase,
+      ),
     );
   }
 }

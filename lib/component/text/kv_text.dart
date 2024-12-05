@@ -5,8 +5,6 @@ export 'content_l/kv_text_content_l.dart';
 export 'headline/kv_text_headline.dart';
 export 'helper/kv_text_helper_description.dart';
 export 'helper/kv_text_helper_error.dart';
-export 'link/kv_text_link.dart';
-export 'payment/kv_text_payment.dart';
 export 'selector_caption/kv_text_selector_caption.dart';
 export 'selector_content/kv_text_selector_content.dart';
 export 'sub_content/kv_text_sub_content.dart';
