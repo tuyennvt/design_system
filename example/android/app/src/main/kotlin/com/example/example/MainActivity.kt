@@ -1,4 +1,4 @@
-package com.example.demo_design_system
+package com.example.example
 
 import io.flutter.embedding.android.FlutterActivity
 
