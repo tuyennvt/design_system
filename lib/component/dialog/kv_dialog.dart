@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../kv_design_system.dart';
-import '../../kv_design_system.dart';
 import '../../utils.dart';
 import '../button/close_button/kv_close_button.dart';
 
@@ -38,6 +37,7 @@ class KvDialog extends StatelessWidget {
           child: IntrinsicWidth(
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 if (title.isNotNullOrEmpty || onClosePressed != null) ...{
                   _KvHeaderDialog(
@@ -45,13 +45,8 @@ class KvDialog extends StatelessWidget {
                     onClosePressed: onClosePressed,
                   ),
                 },
-                Padding(
-                  padding: contentPadding,
-                  child: content,
-                ),
-                if (divider) ...{
-                  const KvDivider(),
-                },
+                Padding(padding: contentPadding, child: content),
+                if (divider) ...{const KvDivider()},
                 dialogAction,
               ],
             ),
@@ -91,7 +86,6 @@ class _KvHeaderDialog extends StatelessWidget {
         right: KvDesignSystem().modalPaddingHorizontal,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Text(
@@ -104,7 +98,7 @@ class _KvHeaderDialog extends StatelessWidget {
           if (onClosePressed != null) ...{
             KvCloseButton(
               onPressed: onClosePressed,
-              iconSize: KvIconSize.iconM,
+              iconSize: KvIconSize.iconS,
             ),
           },
         ],

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../kv_design_system.dart';
 import '../../foundation/kv_icons.dart';
 import '../../kv_design_system.dart';
 import '../../utils.dart';
-import '../button/close_button/kv_close_button.dart';
 
 class KvToastContent extends StatelessWidget {
   const KvToastContent._({
@@ -134,9 +132,12 @@ class KvToastContent extends StatelessWidget {
           ),
           if (onClosed != null) ...{
             SizedBox(width: KvDesignSystem().toastGutter),
-            KvCloseButton(
-              onPressed: onClosed,
-              color: closedIconColor,
+            KvMinimumTapArea(
+              onTap: onClosed!,
+              child: KvIcon(
+                icon: KvIcons.xmark_regular,
+                color: closedIconColor,
+              ),
             ),
           },
         ],
@@ -214,18 +215,7 @@ class KvToastContent extends StatelessWidget {
   }
 
   Color get closedIconColor {
-    switch (type) {
-      case KvToastType.system:
-        return KvDesignSystem().iconNeutralonSolidPrimaryAction;
-      case KvToastType.information:
-        return KvDesignSystem().iconInfoSecondaryAction;
-      case KvToastType.success:
-        return KvDesignSystem().iconSuccessSecondaryAction;
-      case KvToastType.warning:
-        return KvDesignSystem().iconWarningSecondaryAction;
-      case KvToastType.danger:
-        return KvDesignSystem().iconDangerSecondaryAction;
-    }
+    return KvDesignSystem().iconNeutralSecondaryAction;
   }
 
   EdgeInsets get margin => const EdgeInsets.only(

@@ -32,7 +32,7 @@ extension _FontWeightExt on num {
 class KvTextStyles {
   static const String fontFamily = 'Inter';
 
-  static double _getHeight(double size, double lineHeight) => size / lineHeight;
+  static double _getHeight(double size, double lineHeight) => lineHeight / size;
 
   static Color _getColor(Color? color) =>
       color ?? KvDesignSystem().textNeutralBase;

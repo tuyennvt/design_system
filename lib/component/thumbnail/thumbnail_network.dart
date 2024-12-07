@@ -27,6 +27,8 @@ class ThumbnailNetwork extends StatelessWidget {
       imageBuilder: (_, imageProvider) => ThumbnailFilled(
         imageProvider: imageProvider,
         theme: theme,
+        onTap: onTap,
+        onDeletePressed: onDeletePressed,
       ),
       placeholder: (_, __) => ThumbnailPlaceholder(theme: theme),
       errorWidget: (_, __, error) => ThumbnailError(

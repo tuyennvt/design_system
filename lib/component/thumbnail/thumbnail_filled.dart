@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../kv_design_system.dart';
 import '../../foundation/kv_icons.dart';
 import '../../kv_design_system.dart';
-import 'kv_thumbnail_theme_data.dart';
 
 class ThumbnailFilled extends StatelessWidget {
   const ThumbnailFilled({
@@ -49,28 +47,76 @@ class ThumbnailFilled extends StatelessWidget {
         break;
     }
     return Stack(
+      fit: StackFit.expand,
       children: [
         GestureDetector(
           onTap: onTap,
           child: child,
         ),
-        if (onDeletePressed != null) ...{
+        if (onDeletePressed != null &&
+            (theme.size == KvThumbnailSize.medium ||
+                theme.size == KvThumbnailSize.large ||
+                theme.size == KvThumbnailSize.xlarge ||
+                theme.size == KvThumbnailSize.fluid)) ...{
           Align(
             alignment: Alignment.topRight,
             child: Padding(
               padding: const EdgeInsets.only(top: 3, right: 3),
-              child: KvMinimumTapArea(
-                onTap: onDeletePressed!,
-                child: KvIcon(
-                  icon: KvIcons.circle_xmark_solid,
-                  color: KvDesignSystem().iconNeutralonSolidSecondaryAction,
-                  size: KvIconSize.iconXS,
-                ),
+              child: _DeleteButton(
+                size: _deleteIconSize,
+                onPressed: onDeletePressed!,
               ),
             ),
           ),
-        }
+        },
       ],
+    );
+  }
+
+  KvIconSize get _deleteIconSize {
+    switch (theme.size) {
+      case KvThumbnailSize.xSmall:
+        return KvIconSize.iconXXS;
+      case KvThumbnailSize.small:
+        return KvIconSize.iconXXS;
+      case KvThumbnailSize.medium:
+        return KvIconSize.iconXXS;
+      case KvThumbnailSize.large:
+        return KvIconSize.iconXS;
+      case KvThumbnailSize.xlarge:
+        return KvIconSize.iconXS;
+      case KvThumbnailSize.fluid:
+        return KvIconSize.iconXS;
+    }
+  }
+}
+
+class _DeleteButton extends StatelessWidget {
+  const _DeleteButton({
+    required this.size,
+    required this.onPressed,
+  });
+
+  final KvIconSize size;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return KvMinimumTapArea(
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          color: KvDesignSystem().bGLayerLevel0,
+          shape: BoxShape.circle,
+        ),
+        width: size.value,
+        height: size.value,
+        child: KvIcon(
+          icon: KvIcons.circle_xmark_solid,
+          color: KvDesignSystem().iconNeutralonSolidSecondaryAction,
+          size: size,
+        ),
+      ),
     );
   }
 }

@@ -23,7 +23,7 @@ class KvCloseButton extends StatelessWidget implements KvButton {
     return KvMinimumTapArea(
       onTap: () => onPressed?.call(),
       child: KvIcon(
-        icon: KvIcons.circle_xmark_regular,
+        icon: KvIcons.xmark_regular,
         color: color ?? KvDesignSystem().iconNeutralPrimaryAction,
         size: iconSize,
       ),

@@ -91,30 +91,24 @@ class KvCommonButtonThemeData extends ButtonStyle {
     if (label.isNullOrEmpty && icon != null && badgeText.isNullOrEmpty) {
       return const MaterialStatePropertyAll(EdgeInsets.zero);
     }
-    double verticalPadding;
     double horizontalPadding;
     switch (buttonSize) {
       case KvCommonButtonSize.xSmall:
       case KvCommonButtonSize.small:
-        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalS;
         horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalS;
         break;
       case KvCommonButtonSize.medium:
-        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalM;
         horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalM;
         break;
       case KvCommonButtonSize.large:
-        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalL;
         horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalL;
         break;
       case KvCommonButtonSize.xLarge:
-        verticalPadding = KvDesignSystem().buttonSizePaddingVerticalXL;
         horizontalPadding = KvDesignSystem().buttonSizePaddingHorizontalXL;
         break;
     }
     return MaterialStatePropertyAll(
       EdgeInsets.symmetric(
-        vertical: verticalPadding,
         horizontal: horizontalPadding,
       ),
     );

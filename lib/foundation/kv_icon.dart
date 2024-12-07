@@ -12,6 +12,27 @@ enum KvIconSize {
   iconXL,
 }
 
+extension KvIconSizeExt on KvIconSize {
+  double get value {
+    switch (this) {
+      case KvIconSize.iconXXXS:
+        return KvDesignSystem().iconXXXSSize;
+      case KvIconSize.iconXXS:
+        return KvDesignSystem().iconXXSSize;
+      case KvIconSize.iconXS:
+        return KvDesignSystem().iconXSSize;
+      case KvIconSize.iconS:
+        return KvDesignSystem().iconSSize;
+      case KvIconSize.iconM:
+        return KvDesignSystem().iconMSize;
+      case KvIconSize.iconL:
+        return KvDesignSystem().iconLSize;
+      case KvIconSize.iconXL:
+        return KvDesignSystem().iconXLSize;
+    }
+  }
+}
+
 class KvIcon extends StatelessWidget {
   const KvIcon({
     super.key,
@@ -28,27 +49,8 @@ class KvIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       icon,
-      size: _size,
+      size: size.value,
       color: color,
     );
-  }
-
-  double get _size {
-    switch (size) {
-      case KvIconSize.iconXXXS:
-        return KvDesignSystem().iconXXXSSize;
-      case KvIconSize.iconXXS:
-        return KvDesignSystem().iconXXSSize;
-      case KvIconSize.iconXS:
-        return KvDesignSystem().iconXSSize;
-      case KvIconSize.iconS:
-        return KvDesignSystem().iconSSize;
-      case KvIconSize.iconM:
-        return KvDesignSystem().iconMSize;
-      case KvIconSize.iconL:
-        return KvDesignSystem().iconLSize;
-      case KvIconSize.iconXL:
-        return KvDesignSystem().iconXLSize;
-    }
   }
 }

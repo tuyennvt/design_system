@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../kv_design_system.dart';
-import '../../kv_design_system.dart';
 import '../../utils.dart';
 
 class KvRadio<T> extends StatelessWidget {
@@ -40,6 +39,7 @@ class KvRadio<T> extends StatelessWidget {
         padding: padding,
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AnimatedContainer(
               decoration: BoxDecoration(
@@ -58,8 +58,8 @@ class KvRadio<T> extends StatelessWidget {
                   content!,
                   style: KvTextStyles.bodyMRE(color: contentColor),
                 ),
-              )
-            }
+              ),
+            },
           ],
         ),
       ),
