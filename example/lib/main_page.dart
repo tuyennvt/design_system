@@ -1,4 +1,7 @@
+import 'package:example/kv_chip.dart';
+import 'package:example/kv_chip_theme_data.dart';
 import 'package:flutter/material.dart';
+import 'package:kv_design_system/foundation/kv_icons.dart';
 import 'package:kv_design_system/kv_design_system.dart';
 
 class MainPage extends StatefulWidget {
@@ -20,20 +23,13 @@ class _MainPageState extends State<MainPage> {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Tuyen',
-                  labelStyle: KvTextStyles.bodyMME().copyWith(inherit: true),
-                  floatingLabelStyle:
-                      KvTextStyles.captionRE().copyWith(inherit: true),
-                ),
-                style: KvTextStyles.bodyMME().copyWith(inherit: true),
-              ),
-              Text(
-                'Tuyen',
-                style: KvTextStyles.captionRE(),
+              KvChip(
+                prefixIcon: KvIcons.bell_regular,
+                category: KvChipCategory.suggestion,
+                selected: false,
+                enabled: false,
+                style: KvChipStyle.faded,
               ),
             ],
           ),
