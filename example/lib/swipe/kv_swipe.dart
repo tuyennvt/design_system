@@ -1,6 +1,5 @@
 import 'package:example/swipe/kv_swipe_theme_data.dart';
 import 'package:flutter/material.dart';
-import 'package:kv_design_system/component/divider/kv_divider.dart';
 
 typedef KvSwipeLabelBuilder<T> = List<String> Function(List<T> items);
 
@@ -50,26 +49,8 @@ class _KvSwipeState<T> extends State<KvSwipe<T>> {
         borderRadius: _theme.borderRadius,
       ),
       height: _theme.height,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Row(
-            children: _itemWidgets,
-          ),
-          AnimatedContainer(
-            alignment: _value == KvSwipeValue.primary
-                ? Alignment.centerLeft
-                : Alignment.centerRight,
-            duration: const Duration(milliseconds: 167),
-            child: _Knob(
-              text: _value == KvSwipeValue.primary
-                  ? widget.primaryText
-                  : widget.secondaryText,
-              size: widget.size,
-              theme: theme,
-            ),
-          ),
-        ],
+      child: Row(
+        children: _itemWidgets,
       ),
     );
   }
@@ -82,12 +63,14 @@ class _KvSwipeState<T> extends State<KvSwipe<T>> {
     for (int i = 0; i < widget.items.length; i++) {
       final item = widget.items[i];
       itemWidgets.add(
-        _ItemWidget(
-          label: itemLabels[i],
-          visibleDivider: i < widget.items.length - 1,
-          theme: _theme,
-          enabled: widget.onChanged != null,
-          onPressed: () => _onItemPressed.call(item),
+        Expanded(
+          child: _ItemWidget(
+            label: itemLabels[i],
+            theme: _theme,
+            enabled: widget.onChanged != null,
+            onPressed: () => _onItemPressed.call(item),
+            selected: item == _itemSelected,
+          ),
         ),
       );
     }
@@ -105,15 +88,15 @@ class _ItemWidget<T> extends StatelessWidget {
   const _ItemWidget({
     super.key,
     required this.label,
-    required this.visibleDivider,
     required this.theme,
+    required this.selected,
     required this.enabled,
     required this.onPressed,
   });
 
   final String label;
-  final bool visibleDivider;
   final KvSwipeThemeData theme;
+  final bool selected;
   final bool enabled;
   final VoidCallback onPressed;
 
@@ -129,59 +112,70 @@ class _ItemWidget<T> extends StatelessWidget {
     return GestureDetector(
       onTap: _onPressed,
       behavior: HitTestBehavior.opaque,
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              label,
-              style: theme.labelStyle,
-              textAlign: TextAlign.center,
-            ),
-          ),
-          if (visibleDivider) ...{
-            KvDivider(
-              orientation: KvDividerOrientation.vertical,
-              indent: theme.paddingDivider,
-              endIndent: theme.paddingDivider,
-            ),
-          }
-        ],
+      child: Container(
+        alignment: Alignment.center,
+        decoration: selected
+            ? BoxDecoration(
+                color: theme.anchorBgColor,
+                borderRadius: theme.anchorBorderRadius,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0x0000000F),
+                    offset: Offset(0, 2),
+                    blurRadius: 6,
+                  ),
+                ],
+              )
+            : null,
+        child: Text(
+          label,
+          style: selected ? theme.anchorLabelStyle : theme.labelStyle,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
 }
 
-class _AnchorWidget extends StatelessWidget {
-  const _AnchorWidget({
-    required this.text,
-    required this.theme,
-  });
+// if (visibleDivider) ...{
+// KvDivider(
+// orientation: KvDividerOrientation.vertical,
+// indent: theme.dividerPadding,
+// endIndent: theme.dividerPadding,
+// color: theme.dividerColor,
+// ),
+// }
 
-  final String text;
-  final KvSwipeThemeData theme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: theme.anchorBgColor,
-        borderRadius: theme.anchorBorderRadius,
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x1A000000),
-            offset: Offset(0, 4),
-            blurRadius: 4,
-          ),
-        ],
-      ),
-      width: theme.widthKnob,
-      height: theme.heightKnob,
-      child: Text(
-        text,
-        style: theme.textStyle.copyWith(color: theme.knobTextColor),
-      ),
-    );
-  }
-}
-
+// class _AnchorWidget extends StatelessWidget {
+//   const _AnchorWidget({
+//     required this.text,
+//     required this.theme,
+//   });
+//
+//   final String text;
+//   final KvSwipeThemeData theme;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       alignment: Alignment.center,
+//       decoration: BoxDecoration(
+//         color: theme.anchorBgColor,
+//         borderRadius: theme.anchorBorderRadius,
+//         boxShadow: const [
+//           BoxShadow(
+//             color: Color(0x1A000000),
+//             offset: Offset(0, 4),
+//             blurRadius: 4,
+//           ),
+//         ],
+//       ),
+//       width: theme.widthKnob,
+//       height: theme.heightKnob,
+//       child: Text(
+//         text,
+//         style: theme.textStyle.copyWith(color: theme.knobTextColor),
+//       ),
+//     );
+//   }
+// }

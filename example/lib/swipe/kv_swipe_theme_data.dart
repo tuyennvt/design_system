@@ -45,7 +45,12 @@ class KvSwipeThemeData {
 
   double get height => _designSystem.swipeSizeContainer;
 
-  double get paddingDivider => _designSystem.swipePaddingDivider;
+  double get dividerPadding => _designSystem.swipePaddingDivider;
+
+  Color get dividerColor => _designSystem.swipeColorDivider;
 
   TextStyle get labelStyle => KvTextStyles.labelM(color: labelColor);
+
+  TextStyle get anchorLabelStyle =>
+      KvTextStyles.labelM(color: anchorLabelColor);
 }

@@ -10,21 +10,23 @@ enum KvDividerOrientation {
 class KvDivider extends StatelessWidget {
   const KvDivider({
     super.key,
+    this.orientation = KvDividerOrientation.horizontal,
     this.thickness = 1.0,
     this.indent = 0.0,
     this.endIndent = 0.0,
-    this.orientation = KvDividerOrientation.horizontal,
+    this.color,
   });
 
+  final KvDividerOrientation orientation;
   final double thickness;
   final double indent;
   final double endIndent;
-  final KvDividerOrientation orientation;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: KvDesignSystem().dividerBlock),
+      decoration: BoxDecoration(color: color ?? KvDesignSystem().dividerBlock),
       width: _width,
       height: _height,
       margin: _margin,
