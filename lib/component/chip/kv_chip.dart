@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kv_design_system/foundation/kv_foundation.dart';
-import 'package:kv_design_system/utils.dart';
 
+import '../../kv_design_system.dart';
+import '../../utils.dart';
 import 'kv_chip_theme_data.dart';
 
 class KvChip extends StatelessWidget {
@@ -14,6 +14,7 @@ class KvChip extends StatelessWidget {
     this.labelMaxWidth,
     this.prefixIcon,
     this.suffixIcon,
+    this.badgeText,
     this.selected = false,
     this.enabled = true,
     this.onPressed,
@@ -26,41 +27,42 @@ class KvChip extends StatelessWidget {
   final double? labelMaxWidth;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
+  final String? badgeText;
   final bool selected;
   final bool enabled;
   final VoidCallback? onPressed;
 
+  void _onTap() {
+    if (!enabled) {
+      return;
+    }
+    onPressed?.call();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        if (!enabled) {
-          return;
-        }
-        onPressed?.call();
-      },
+      onTap: _onTap,
       behavior: HitTestBehavior.opaque,
       child: Container(
+        padding: _theme.padding,
+        decoration: _theme.decoration,
         constraints: BoxConstraints(
+          minWidth: size.minWidth,
           minHeight: size.height,
           maxHeight: size.height,
-          minWidth: size.minWidth,
         ),
-        decoration: theme.decoration,
-        padding: theme.padding,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             if (prefixIcon != null) ...{
               KvIcon(
                 icon: prefixIcon!,
-                color: theme.prefixIconColor,
-                size: theme.iconSize,
+                color: _theme.prefixIconColor,
+                size: _theme.iconSize,
               ),
             },
-            if (prefixIcon != null && label.isNotNullOrEmpty) ...{
-              SizedBox(width: theme.gutter),
-            },
+            _gutter,
             if (label.isNotNullOrEmpty) ...{
               Flexible(
                 child: ConstrainedBox(
@@ -69,34 +71,52 @@ class KvChip extends StatelessWidget {
                   ),
                   child: Text(
                     label!,
-                    maxLines: 1,
+                    style: _theme.labelStyle,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.labelStyle,
+                    maxLines: 1,
                   ),
                 ),
               ),
             },
-            if (label.isNotNullOrEmpty && suffixIcon != null) ...{
-              SizedBox(width: theme.gutter),
+            _gutter,
+            if (badgeText.isNotNullOrEmpty) ...{
+              KvBadge(
+                size: _theme.badgeSize,
+                enable: enabled,
+                value: badgeText!,
+              ),
             },
+            _gutter,
             if (suffixIcon != null) ...{
               KvIcon(
                 icon: suffixIcon!,
-                color: theme.suffixIconColor,
-                size: theme.iconSize,
+                color: _theme.suffixIconColor,
+                size: _theme.iconSize,
               ),
-            },
+            }
           ],
         ),
       ),
     );
   }
 
-  KvChipThemeData get theme => KvChipThemeData(
+  KvChipThemeData get _theme => KvChipThemeData(
         size: size,
         category: category,
         style: style,
         selected: selected,
         enabled: enabled,
       );
+
+  Widget get _gutter => SizedBox(width: _showGutter ? _theme.gutter : 0);
+
+  bool get _showGutter {
+    final conditions = [
+      prefixIcon != null,
+      label.isNotNullOrEmpty,
+      badgeText.isNotNullOrEmpty,
+      suffixIcon != null
+    ];
+    return conditions.where((condition) => condition).length > 1;
+  }
 }

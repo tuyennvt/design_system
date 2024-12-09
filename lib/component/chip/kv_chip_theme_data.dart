@@ -445,4 +445,15 @@ class KvChipThemeData {
         return KvIconSize.iconXS;
     }
   }
+
+  KvBadgeSize get badgeSize {
+    switch (size) {
+      case KvChipSize.small:
+        return KvBadgeSize.small;
+      case KvChipSize.medium:
+        return KvBadgeSize.small;
+      case KvChipSize.large:
+        return KvBadgeSize.medium;
+    }
+  }
 }
