@@ -1,5 +1,3 @@
-import 'package:example/kv_chip.dart';
-import 'package:example/kv_chip_theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:kv_design_system/foundation/kv_icons.dart';
 import 'package:kv_design_system/kv_design_system.dart';

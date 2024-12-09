@@ -16,6 +16,8 @@ export 'banner/kv_banner.dart';
 export 'banner/kv_banner_theme_data.dart';
 export 'button/kv_button.dart';
 export 'checkbox/kv_checkbox.dart';
+export 'chip/kv_chip.dart';
+export 'chip/kv_chip_theme_data.dart';
 export 'dialog/kv_dialog.dart';
 export 'dialog/kv_dialog_action.dart';
 export 'divider/kv_divider.dart';
