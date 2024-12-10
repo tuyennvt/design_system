@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../kv_design_system.dart';
 import '../../utils.dart';
-import 'kv_chip_theme_data.dart';
 
 class KvChip extends StatelessWidget {
   const KvChip({
@@ -54,47 +53,7 @@ class KvChip extends StatelessWidget {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
-          children: [
-            if (prefixIcon != null) ...{
-              KvIcon(
-                icon: prefixIcon!,
-                color: _theme.prefixIconColor,
-                size: _theme.iconSize,
-              ),
-            },
-            _gutter,
-            if (label.isNotNullOrEmpty) ...{
-              Flexible(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxWidth: labelMaxWidth ?? double.infinity,
-                  ),
-                  child: Text(
-                    label!,
-                    style: _theme.labelStyle,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
-                ),
-              ),
-            },
-            _gutter,
-            if (badgeText.isNotNullOrEmpty) ...{
-              KvBadge(
-                size: _theme.badgeSize,
-                enable: enabled,
-                value: badgeText!,
-              ),
-            },
-            _gutter,
-            if (suffixIcon != null) ...{
-              KvIcon(
-                icon: suffixIcon!,
-                color: _theme.suffixIconColor,
-                size: _theme.iconSize,
-              ),
-            }
-          ],
+          children: _children.joinWidget(_gutter),
         ),
       ),
     );
@@ -108,15 +67,58 @@ class KvChip extends StatelessWidget {
         enabled: enabled,
       );
 
-  Widget get _gutter => SizedBox(width: _showGutter ? _theme.gutter : 0);
+  Widget get _gutter => SizedBox(width: _theme.gutter);
 
-  bool get _showGutter {
-    final conditions = [
-      prefixIcon != null,
-      label.isNotNullOrEmpty,
-      badgeText.isNotNullOrEmpty,
-      suffixIcon != null
-    ];
-    return conditions.where((condition) => condition).length > 1;
+  List<Widget> get _children {
+    final children = <Widget>[];
+    if (prefixIcon != null) {
+      children.add(
+        KvIcon(
+          icon: prefixIcon!,
+          color: _theme.prefixIconColor,
+          size: _theme.iconSize,
+        ),
+      );
+    }
+
+    if (label.isNotNullOrEmpty) {
+      children.add(
+        Flexible(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: labelMaxWidth ?? double.infinity,
+            ),
+            child: Text(
+              label!,
+              style: _theme.labelStyle,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (badgeText.isNotNullOrEmpty) {
+      children.add(
+        KvBadge(
+          size: _theme.badgeSize,
+          enable: enabled,
+          value: badgeText!,
+        ),
+      );
+    }
+
+    if (suffixIcon != null) {
+      children.add(
+        KvIcon(
+          icon: suffixIcon!,
+          color: _theme.suffixIconColor,
+          size: _theme.iconSize,
+        ),
+      );
+    }
+
+    return children;
   }
 }

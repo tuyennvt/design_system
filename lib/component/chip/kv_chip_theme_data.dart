@@ -432,7 +432,7 @@ class KvChipThemeData {
     return BoxDecoration(
       color: bgColor,
       border: border,
-      borderRadius: BorderRadius.circular(50),
+      borderRadius: const BorderRadius.all(Radius.circular(50)),
     );
   }
 

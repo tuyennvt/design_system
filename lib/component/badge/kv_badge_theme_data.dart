@@ -226,20 +226,20 @@ class KvBadgeThemeData {
   EdgeInsets get padding {
     switch (size) {
       case KvBadgeSize.small:
-        return EdgeInsets.only(
-          left: KvDesignSystem().badgeSizeSPaddingHorizontal,
+        return EdgeInsets.symmetric(
+          horizontal: KvDesignSystem().badgeSizeSPaddingHorizontal,
         );
       case KvBadgeSize.medium:
-        return EdgeInsets.only(
-          left: KvDesignSystem().badgeSizeMPaddingHorizontal,
+        return EdgeInsets.symmetric(
+          horizontal: KvDesignSystem().badgeSizeMPaddingHorizontal,
         );
       case KvBadgeSize.large:
-        return EdgeInsets.only(
-          left: KvDesignSystem().badgeSizeLPaddingHorizontal,
+        return EdgeInsets.symmetric(
+          horizontal: KvDesignSystem().badgeSizeLPaddingHorizontal,
         );
       case KvBadgeSize.xLarge:
-        return EdgeInsets.only(
-          left: KvDesignSystem().badgeSizeXLPaddingHorizontal,
+        return EdgeInsets.symmetric(
+          horizontal: KvDesignSystem().badgeSizeXLPaddingHorizontal,
         );
     }
   }

@@ -1,4 +1,5 @@
 import 'package:diacritic/diacritic.dart';
+import 'package:flutter/material.dart';
 
 import 'kv_design_system.dart';
 
@@ -61,6 +62,19 @@ extension ListExtension on List? {
       breakpoint: BreakpointM(),
     );
     return !isNullOrEmpty;
+  }
+}
+
+extension ListWidgetExtension on List<Widget> {
+  List<Widget> joinWidget(Widget separator) {
+    final joinWidgets = <Widget>[];
+    for (int i = 0; i < length; i++) {
+      joinWidgets.add(this[i]);
+      if (i < length - 1) {
+        joinWidgets.add(separator);
+      }
+    }
+    return joinWidgets;
   }
 }
 

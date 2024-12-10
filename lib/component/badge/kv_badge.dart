@@ -21,7 +21,7 @@ class KvBadge extends StatelessWidget implements KvTextSupportWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: theme.padding,
+      padding: theme.shape == BoxShape.circle ? null : theme.padding,
       decoration: BoxDecoration(
         color: theme.backgroundColor,
         border: theme.border,
